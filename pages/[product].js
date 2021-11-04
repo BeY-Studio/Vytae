@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 import Client from 'shopify-buy';
 // import styles from '../styles/Home.module.css';
 import Main from '../layouts/main';
@@ -12,6 +13,11 @@ import HandsSecMobile from "../components/hands-sec-mobile";
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
+    const [products, setProducts] = useState([]);
+    const [productDetail, setProductDetail] = useState({});
+    const [checkoutData, setCheckoutData] = useState({});
+
+    const router = useRouter();
 
     // Initializing a client to return content in the store's primary language
     const client = Client.buildClient({
@@ -19,26 +25,75 @@ export default function Home() {
         storefrontAccessToken: 'cd9938f5f518fd5362be333e604a4c87'
     });
 
+    const fetchAllProducts = async () => {
+        // Fetch all products in your shop
+        const products = await client.product.fetchAll();
+        setProducts(products);
+    };
+
+    const fetchProductWithId = async (id) => {
+        const productDetails = await client.product.fetch(id);
+        setProductDetail(productDetails);
+    };
+
+    // const addItemToCheckout = async (variantId, quantity) => {
+    const addItemToCheckout = async () => {
+        let variantId = productDetail.variants[0].id;
+        const lineItemsToAdd = [
+            {
+              variantId: variantId,
+              quantity: 1,
+            }
+        ];
+        // // // Add an item to the checkout
+        const checkoutDataUpdated = await client.checkout.addLineItems(checkoutData.id, lineItemsToAdd);
+        
+        // // // update the product in the state checkout
+        setCheckoutData(checkoutDataUpdated);
+    };
+
+    const createCheckout = async () => {
+        const checkoutData = await client.checkout.create();
+        setCheckoutData(checkoutData);
+        localStorage.setItem("checkoutId",JSON.stringify(checkoutData.id));
+    };
+
+    const getProductDetails = () => {
+        let productId = window.location.pathname.replace("/","");
+        fetchProductWithId(productId);
+    }
+
+    const fetchCheckout = async () => {
+        const checkoutId = JSON.parse(localStorage.getItem("checkoutId"));
+
+        const checkoutData = await client.checkout.fetch(checkoutId);
+        setCheckoutData(checkoutData);
+    }
+
     useEffect(() => {
+        if (JSON.parse(localStorage.getItem("checkoutId"))) {
+            fetchCheckout();
+        } else {
+            createCheckout();
+        }
         setWindowWidth(window.innerWidth);
 
-        // Fetch all products in your shop
-        // client.product.fetchAll().then((products) => {
-        //     // Do something with the products
-        //     console.log("Products: --- ", products);
-        // })
-        // .catch((error) => { console.log("Error: ", error)});
-
-
-        // // Fetch a single product by ID
-        // const productId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=';
-
-        // client.product.fetch(productId).then((product) => {
-        // // Do something with the product
-        //     console.log("Single product: ", product);
-        // });
+        getProductDetails();
+        fetchAllProducts();   
 
     },[]);
+
+    const onRouteChangeDone = () => {
+        // reload the product data
+        getProductDetails();
+    }
+
+    useEffect(() => {
+        router.events.on('routeChangeComplete', onRouteChangeDone);
+        return () => {
+            router.events.off('routeChangeComplete', onRouteChangeDone);
+          };
+    }, [router.events]);
 
     return (
         <Main
@@ -46,9 +101,11 @@ export default function Home() {
             description={"this will be product description for seo"}
             imageUrl={"this will be product image url"}
             keyword={"These will be product keywords"}
+            products={products}
+            checkout={checkoutData}
         >
-            <ProductSlider />
-            <ProductInsights />
+            <ProductSlider productDetail={productDetail} />
+            <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
             { windowWidth > 768 ? <HandsSecDesktop /> : null }
             { windowWidth < 769 ? <PackagingMobile /> : null }
             <Reviews />

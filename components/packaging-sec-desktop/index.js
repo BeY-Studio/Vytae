@@ -3,7 +3,7 @@ import NormalButton from "../buttons/normal";
 
 const PackagingSecDesktop = () => {
     return (
-        <div className="dark_bg_con" style={{ "background-image": "url(./images/backgrounds/vitae-prodotti-fondale-desktop2.png)" }}>
+        <div className="dark_bg_con" style={{ "backgroundImage": "url(./images/backgrounds/vitae-prodotti-fondale-desktop2.png)" }}>
             <div className="content ps_div_top">
                 <h2 className="section_h2 color_white">Canapa</h2>
                 <h3 className="section_h3 color_white">per la Salute del Pianeta</h3>

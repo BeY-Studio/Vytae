@@ -9,7 +9,9 @@ const Main = (
         title = META_TITLE,
         description = META_DESCRIPTION,
         imageUrl = META_IMAGE,
-        keyword = META_KEYWORDS
+        keyword = META_KEYWORDS,
+        products,
+        checkout
     }
 ) => {
   return (
@@ -42,7 +44,7 @@ const Main = (
       </Head>
 
       <div className="wrapper">
-        <Header />
+        <Header products={products} checkout={checkout} />
 
         {children}
 

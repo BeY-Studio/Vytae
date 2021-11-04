@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Menu from "./menu";
 import MobileMenu from "./mobile-menu";
 
-const Header = () => {
+const Header = (props) => {
     const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
@@ -15,8 +15,11 @@ const Header = () => {
                 <div className="inner">
                     {
                         windowWidth > 768
-                        ? <Menu />
-                        : <MobileMenu />
+                        ? <Menu
+                            products={props.products}
+                            checkout={props.checkout}
+                        />
+                        : <MobileMenu products={props.products} checkout={props.checkout} />
                     }
                 </div>
             </div>

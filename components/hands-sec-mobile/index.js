@@ -5,7 +5,7 @@ const HandsSecMobile = () => {
     return (
         <div
             className="dark_bg_con"
-            style={{ "background-image": "url(./images/backgrounds/hands-sec-mob-bg.png)" }}
+            style={{ "backgroundImage": "url(./images/backgrounds/hands-sec-mob-bg.png)" }}
         >
             <div className="content text_center">
                 <h2 className="section_h2 color_white">Canapa</h2>

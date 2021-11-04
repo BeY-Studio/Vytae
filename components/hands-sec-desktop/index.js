@@ -3,7 +3,7 @@ import NormalButton from "../buttons/normal";
 
 const HandsSecDesktop = () => {
     return (
-        <div className="dark_bg_con" style={{ "background-image": "url(./images/backgrounds/hands-background-lvl1.png)" }}>
+        <div className="dark_bg_con" style={{ "backgroundImage": "url(./images/backgrounds/hands-background-lvl1.png)" }}>
             <div className="hands_con">
                 <img id="left_hand" className="left" src="./images/backgrounds/hands-left-1-cropped.png" alt="hand-left" />
                 <img id="right_hand" className="right" src="./images/backgrounds/hands-right-1-cropped.png" alt="hand-left" />

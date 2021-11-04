@@ -5,7 +5,7 @@ const PackagingMobile = () => {
     return (
         <div
             className="dark_bg_con packaging_con"
-            style={{ "background-image": "url(./images/backgrounds/packaging-bg-mob.png)" }}
+            style={{ "backgroundImage": "url(./images/backgrounds/packaging-bg-mob.png)" }}
         >
             <div className="content text_center">
                 <h2 className="section_h2 color_white">Packaging</h2>

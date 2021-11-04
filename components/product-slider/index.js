@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const ProductSlider = () => {
+const ProductSlider = (props) => {
     const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const ProductSlider = () => {
                 ?
                 <div className="slider_product_details_left">
                     <div>
-                        <h1 className="theme_text_color">calm</h1>
+                        <h1 className="theme_text_color">{props.productDetail?.title}</h1>
                         <h2 className="theme_text_color">CBD OIL | 1500mg</h2>
                     </div>    
                 </div>
@@ -46,9 +46,9 @@ const ProductSlider = () => {
                     }}
                 >
                     {
-                        [1,2,3].map((index) => (
+                        props.productDetail && props.productDetail.images?.map((image, index) => (
                             <SwiperSlide key={index}>
-                                <img className="product_img" src={"https://www.vytae.com/wp-content/uploads/2021/09/pianta_vytae_2.2.png"} alt={"product name here"} />
+                                <img className="product_img" src={image.src} alt={"product name here"} />
                             </SwiperSlide>
                         ))
                     }
@@ -62,7 +62,7 @@ const ProductSlider = () => {
                 ?
                 <div className="slider_product_details_left">
                     <div className="">
-                        <h1 className="theme_text_color">calm</h1>
+                        <h1 className="theme_text_color">{props.productDetail?.title}</h1>
                         <h2 className="theme_text_color">CBD OIL | 1500mg</h2>
                         <div className="p_slider_icons">
                             <img src="./images/icons/sleep.png" alt="sleep icon" />
@@ -92,8 +92,7 @@ const ProductSlider = () => {
                     : null
                 }
                 <div className="description theme_text_color text_justify">
-                    <p>Calm è un integratore alimentare a base di Olio di semi di Canapa ricco di omega 3 e omega 6.</p>
-                    <p>Utile per favorire un fisiologico effetto rilassante e il benessere mentale.</p>
+                    <div dangerouslySetInnerHTML={{__html: props.productDetail?.descriptionHtml}}></div>
                 </div>
             </div>
         </div>

@@ -106,21 +106,24 @@ p {
    top: calc(100% + 5px);
    background: #fff;
    box-shadow: 0px 0px 8px rgba(0,0,0,0.16);
-   padding: 5px 20px;
-   min-width: 100px;
+   padding: 0px;
+   min-width: 180px;
    left: 10px;
 }
 
-.menu_nav ul li .menu_dropdown span {
+.menu_nav ul li .menu_dropdown a {
    font-size: 13px;
    font-weight: 400;
+   padding: 8px 20px;
+   display: block;
+   cursor: pointer;
 }
 
 .menu_nav ul li.drop_menu:hover .menu_dropdown {
    display: block;
 }
 
-.menu_nav ul li .menu_dropdown:hover {
+.menu_nav ul li .menu_dropdown a:hover {
    background: #ccc;
 }
 
@@ -447,7 +450,35 @@ section {
    max-width: 60%;
 }
 
-.ps_div_bottom p {
+.menu_span_dd {
+   display: block;
+   width: 100%;
+   border-bottom: 1px solid #ccc;
+}
+
+.menu_cart {
+   color: var(--color-theme-text);
+   position: relative;
+   cursor: pointer;
+}
+.menu_cart i {
+   z-index: 1;
+}
+.menu_cart span {
+   width: 14px;
+   height: 14px;
+   border: 1px solid var(--color-theme-text);
+   border-radius: 50px;
+   font-size: 11px;
+   position: absolute;
+   top: -2px;
+   right: -4px;
+   z-index: 2;
+   background: #fff;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -617,5 +648,17 @@ section {
    }
    .hand_sec_icons div img {
       max-width: 65px;
+   }
+   .menu_span_dd {
+      border-bottom: none;
+   }
+   .menu_cart i {
+      font-size: 25px;
+      position: relative;
+      top: -2px;
+      margin-left: 8px;
+   }
+   .menu_cart span {
+      top: -12px;
    }
 }
