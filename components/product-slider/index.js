@@ -29,16 +29,6 @@ const ProductSlider = () => {
                 : null
             }
             <div className="mobile_con_ps_icons">
-                {
-                    windowWidth < 769
-                    ?                    
-                    <div className="p_slider_icons">
-                        <img src="./images/icons/group-279.png" alt="abc" />
-                        <img src="./images/icons/group-280.png" alt="abc" />
-                        <img src="./images/icons/group-276.png" alt="abc" />
-                    </div>
-                    : null
-                }
                 <Swiper
                     modules={[Pagination]}
                     pagination={{ clickable: true }}
@@ -75,9 +65,11 @@ const ProductSlider = () => {
                         <h1 className="theme_text_color">calm</h1>
                         <h2 className="theme_text_color">CBD OIL | 1500mg</h2>
                         <div className="p_slider_icons">
-                            <img src="./images/icons/group-279.png" alt="abc" />
-                            <img src="./images/icons/group-280.png" alt="abc" />
-                            <img src="./images/icons/group-276.png" alt="abc" />
+                            <img src="./images/icons/sleep.png" alt="sleep icon" />
+                            <img src="./images/icons/mood.png" alt="mood icon" />
+                            <img src="./images/icons/heart-friendly.png" alt="heard friendly icon" />
+                            <img src="./images/icons/antioxydant.png" alt="antioxydant icon" />
+                            <img src="./images/icons/energy.png" alt="energy icon" />
                         </div>
                     </div>    
                 </div>
@@ -86,7 +78,17 @@ const ProductSlider = () => {
             <div className="slider_product_details_right">
                 {
                     windowWidth < 769
-                    ? <h1 className="theme_text_color">Overview</h1>
+                    ? 
+                    <>
+                        <h2 className="theme_text_color benefici_h2 font_200">Benefici</h2>
+                        <div className="p_slider_icons">
+                            <img src="./images/icons/sleep.png" alt="sleep icon" />
+                            <img src="./images/icons/mood.png" alt="mood icon" />
+                            <img src="./images/icons/heart-friendly.png" alt="heard friendly icon" />
+                            <img src="./images/icons/antioxydant.png" alt="antioxydant icon" />
+                            <img src="./images/icons/energy.png" alt="energy icon" />
+                        </div>
+                    </>
                     : null
                 }
                 <div className="description theme_text_color text_justify">

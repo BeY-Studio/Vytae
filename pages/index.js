@@ -10,24 +10,12 @@ import Reviews from "../components/reviews-section";
 import PackagingSecDesktop from "../components/packaging-sec-desktop";
 
 export default function Home() {
-    const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
-        setWindowWidth(window.innerWidth);
+        window.location.href = "https://www.vytae.com/";
     },[]);
 
     return (
-        <Main
-            title={"this will be product title for seo"}
-            description={"this will be product description for seo"}
-            imageUrl={"this will be product image url"}
-            keyword={"These will be product keywords"}
-        >
-            <ProductSlider />
-            <ProductInsights />
-            { windowWidth > 768 ? <HandsSecDesktop /> : null }
-            <Reviews />
-            { windowWidth > 768 ? <PackagingSecDesktop /> : null }
-        </Main>
+        <></>
     );
 }

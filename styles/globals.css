@@ -41,6 +41,8 @@ p {
 .font_600 { font-weight: 600; }
 .font_700 { font-weight: 700; }
 
+.font_italic { font-style: italic; }
+
 * {
    box-sizing: border-box;
 }
@@ -237,6 +239,8 @@ p {
 .p_slider_icons {
    text-align: left;
    padding-top: 30px;
+   left: -14px;
+   position: relative;
 }
 .p_slider_icons img {
    max-width: 60px;
@@ -502,11 +506,19 @@ section {
       position: relative;
    }
    .p_slider_icons {
-      position: absolute;
+      position: relative;
       display: flex;
-      flex-direction: column;
-      top: 50%;
-      transform: translateY(-50%);
+      flex-direction: row;
+      transform: translateY(0%);
+      top: 0;
+      padding: 10px 0;
+      left: 0;
+      justify-content: space-between;
+   }
+   .benefici_h2 {
+      font-size: 20px;
+      line-height: 28px;
+      margin: 0;
    }
    .slider_product_details_right .description {
       width: 100%;
@@ -540,8 +552,8 @@ section {
       line-height: 36px;
    }
    .section_h3 {
-      font-size: 24px;
-      line-height: 30px;
+      font-size: 18px;
+      line-height: 24px;
    }
    .review_slide_content {
       border-radius: 20px 20px 20px 0px;
@@ -557,5 +569,53 @@ section {
    }
    .product_uploader .inner {
       max-width: 300px;
+   }
+   .dark_bg_con {
+      background-size: 100% 100%;
+      margin: 30px 0px;
+      padding: 80px 20px 50px;
+      border-radius: 0px;
+      box-shadow: none;
+      /* box-shadow: 0px 0px 20px rgb(0 0 0 / 45%); */
+   }
+   .packaging_con {
+      margin: 40px 0 0;
+      box-shadow: none;
+      border-radius: 0px;
+   }
+   .packaging_con .content {
+      margin-top: 350px;
+   }
+   .packaging_con .content P {
+      font-size: 11px;
+      line-height: 15px;
+   }
+   .packaging_con .content .button_pair {
+      margin: 40px auto 40px;
+   }
+   .hands_img_mob {
+      max-width: calc(100% + 40px);
+      transform: translateX(-20px);
+   }
+   .hands_sec_b_p {
+      flex-direction: column;
+      padding: 30px;
+   }
+   .hands_sec_b_p .normal_button {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+   }
+   .note_p {
+      font-size: 10px;
+      line-height: 13px;
+   }
+   .hand_sec_icons div {
+      display: flex;
+      justify-content: center;
+      grid-gap: 10px;
+   }
+   .hand_sec_icons div img {
+      max-width: 65px;
    }
 }

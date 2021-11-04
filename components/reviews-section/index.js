@@ -17,7 +17,7 @@ const Reviews = (props) => {
         <section className="reviews_section">
             <div className="content text_center">
                 <h2 className="section_h2 color_theme_text">Rewiews</h2>
-                <h3 className="section_h3 color_theme_text">What people says about us</h3>
+                <h3 className="section_h3 color_theme_text">What people say about us</h3>
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}
