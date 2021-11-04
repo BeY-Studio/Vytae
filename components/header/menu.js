@@ -40,7 +40,7 @@ const Menu = (props) => {
                         </div>
                     </li>
                     <li className="drop_menu">
-                        <a href="/">English <i className="fa fa-caret-down"></i></a>
+                        <a href="#">English <i className="fa fa-caret-down"></i></a>
                         <div className="menu_dropdown">
                             <span>Italian</span>
                         </div>
