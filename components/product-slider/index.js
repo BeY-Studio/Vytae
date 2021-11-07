@@ -81,7 +81,7 @@ const ProductSlider = (props) => {
                     </>
                     : null
                 }
-                <div className="description theme_text_color text_justify">
+                <div className="description theme_text_color text_right">
                     <div dangerouslySetInnerHTML={{__html: props.productDetail?.descriptionHtml}}></div>
                 </div>
             </div>

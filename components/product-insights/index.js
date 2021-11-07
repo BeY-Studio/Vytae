@@ -16,15 +16,17 @@ const ProductInsights = (props) => {
                 ? <AddToCartButton 
                     price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
                     onClick={props.addItemToCheckout} 
+                    classsName="add_to_cart"
                 />
                 : null
             }
-            <InsightsIcons windowWidth={windowWidth} />
+            <InsightsIcons />
             {
                 windowWidth > 768
                 ? <AddToCartButton
                     price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
                     onClick={props.addItemToCheckout}
+                    classsName="add_to_cart fixed_cart_btn"
                 />
                 : null
             }            
