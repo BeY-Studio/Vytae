@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
+
+import "swiper/css";
 import 'swiper/css/pagination';
 
 const ProductSlider = (props) => {
@@ -32,22 +31,13 @@ const ProductSlider = (props) => {
                 <Swiper
                     modules={[Pagination]}
                     pagination={{ clickable: true }}
+                    spaceBetween={20}
                     className="product_slider"
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1,
-                        },
-                        600: {
-                            slidesPerView: 1,
-                        },
-                        1024: {
-                            slidesPerView: 1,
-                        },
-                    }}
+                    slidesPerView={1}
                 >
                     {
-                        props.productDetail && props.productDetail.images?.map((image, index) => (
-                            <SwiperSlide key={index}>
+                        props.productDetail && props.productDetail.images?.map((image) => (
+                            <SwiperSlide key={image.src}>
                                 <img className="product_img" src={image.src} alt={"product name here"} />
                             </SwiperSlide>
                         ))
