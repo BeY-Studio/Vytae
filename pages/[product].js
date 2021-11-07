@@ -8,7 +8,7 @@ import ProductInsights from '../components/product-insights';
 import HandsSecDesktop from "../components/hands-sec-desktop";
 import Reviews from "../components/reviews-section";
 import PackagingSecDesktop from "../components/packaging-sec-desktop";
-import PackagingMobile from "../components/packaging-mob";
+import Packaging from "../components/packaging";
 import HandsSecMobile from "../components/hands-sec-mobile";
 
 export default function Home() {
@@ -106,9 +106,9 @@ export default function Home() {
         >
             <ProductSlider productDetail={productDetail} />
             <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
-            { windowWidth > 768 ? <HandsSecDesktop /> : null }
-            { windowWidth < 769 ? <PackagingMobile /> : null }
+            <Packaging windowWidth={windowWidth} />
             <Reviews />
+            { windowWidth > 768 ? <HandsSecDesktop /> : null }
             { windowWidth > 768 ? <PackagingSecDesktop /> : null }
             { windowWidth < 769 ? <HandsSecMobile /> : null }
         </Main>
