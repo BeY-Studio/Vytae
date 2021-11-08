@@ -5,6 +5,7 @@ import Client from 'shopify-buy';
 import Main from '../layouts/main';
 import ProductSlider from '../components/product-slider';
 import ProductInsights from '../components/product-insights';
+import TabsSection from "../components/tabsSection";
 import Reviews from "../components/reviews-section";
 import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
@@ -104,6 +105,7 @@ export default function Home() {
         >
             <ProductSlider productDetail={productDetail} />
             <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
+            <TabsSection />
             <Packaging windowWidth={windowWidth} />
             <Reviews />
             <HandsSec windowWidth={windowWidth} />
