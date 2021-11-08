@@ -5,11 +5,9 @@ import Client from 'shopify-buy';
 import Main from '../layouts/main';
 import ProductSlider from '../components/product-slider';
 import ProductInsights from '../components/product-insights';
-import HandsSecDesktop from "../components/hands-sec-desktop";
 import Reviews from "../components/reviews-section";
-import PackagingSecDesktop from "../components/packaging-sec-desktop";
 import Packaging from "../components/packaging";
-import HandsSecMobile from "../components/hands-sec-mobile";
+import HandsSec from "../components/hands-sec";
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -108,9 +106,7 @@ export default function Home() {
             <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
             <Packaging windowWidth={windowWidth} />
             <Reviews />
-            { windowWidth > 768 ? <HandsSecDesktop /> : null }
-            { windowWidth > 768 ? <PackagingSecDesktop /> : null }
-            { windowWidth < 769 ? <HandsSecMobile /> : null }
+            <HandsSec windowWidth={windowWidth} />
         </Main>
     );
 }

@@ -17,7 +17,7 @@ const ProductSlider = (props) => {
 
             {/* Display product title at the top for mobile */}
             {
-                windowWidth < 769
+                windowWidth < 1025
                 ?
                 <div className="slider_product_details_left">
                     <div>
@@ -48,7 +48,7 @@ const ProductSlider = (props) => {
 
             {/* show the product title and subtitle on the left side of the slider in desktop */}
             {
-                windowWidth > 768
+                windowWidth > 1025
                 ?
                 <div className="slider_product_details_left">
                     <div className="">
@@ -67,7 +67,7 @@ const ProductSlider = (props) => {
             }
             <div className="slider_product_details_right">
                 {
-                    windowWidth < 769
+                    windowWidth < 1025
                     ? 
                     <>
                         <h2 className="theme_text_color benefici_h2 font_200">Benefici</h2>
