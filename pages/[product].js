@@ -6,6 +6,7 @@ import Main from '../layouts/main';
 import ProductSlider from '../components/product-slider';
 import ProductInsights from '../components/product-insights';
 import TabsSection from "../components/tabsSection";
+import AccordionSection from "../components/accordionSection";
 import Reviews from "../components/reviews-section";
 import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
@@ -105,7 +106,13 @@ export default function Home() {
         >
             <ProductSlider productDetail={productDetail} />
             <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
-            <TabsSection />
+            {
+                windowWidth > 999
+                ?
+                <TabsSection />
+                :
+                <AccordionSection />
+            }
             <Packaging windowWidth={windowWidth} />
             <Reviews />
             <HandsSec windowWidth={windowWidth} />

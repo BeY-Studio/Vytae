@@ -582,6 +582,7 @@ section {
    display: block;
    overflow: auto;
    margin: 60px 15% 80px;
+   padding: 10px;
 }
 .tabs_section h2 {
    text-align: center;
@@ -643,6 +644,55 @@ section {
 .react-tabs__tab-panel h4 {
    margin-top: 0px;
 }
+
+
+/* accordion styling */
+.accordion {
+   display: flex;
+   flex-direction: column;
+   grid-gap: 26px;
+   overflow: visible;
+}
+.accordion-header button {
+   height: auto;
+   list-style: none;
+   cursor: pointer;
+   color: var(--color-theme-text);
+   background: rgba(255,255,255,.5);
+   border-radius: 80px;
+   text-align: center;
+   font-size: 20px;
+   font-weight: 500;
+   filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
+   transition: all .3s ease;
+}
+.accordion-item:last-of-type,
+.accordion-item,
+.accordion-item:first-of-type {
+   border: 0px !important;
+}
+.accordion-body {
+   color: var(--color-theme-text);
+}
+
+.accordion-button:not(.collapsed),
+.accordion-item:first-of-type .accordion-button.collapsed,
+.accordion-item .accordion-button.collapsed,
+.accordion-item:last-of-type .accordion-button.collapsed {
+   border-radius: 80px !important;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button:active,
+.accordion-button:focus,
+.accordion-button:hover {
+   border-color: transparent !important;
+   color: var(--color-white) !important;
+   box-shadow: inset 0px 0px 60px #FFFFFF !important;
+   background: var(--color-theme-text) !important;
+   background: radial-gradient(circle, rgba(165,156,148,0.6502976190476191) 0%, rgba(255,255,255,0.3029586834733894) 120%) !important;
+}
+
 
 @media only screen and (min-width: 1000px) and (max-width: 1300px) {
    .product_slider {
@@ -1151,5 +1201,12 @@ section {
    }
    .tabs_section {
       margin: 45px 20px 70px;
+   }
+   .accordion-header button {
+      font-size: 14px;
+      padding: 12px 20px;
+   }
+   .accordion-body h4 {
+      font-size: 13px;
    }
 }
