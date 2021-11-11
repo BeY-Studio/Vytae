@@ -111,7 +111,7 @@ export default function Home() {
                 ?
                 <TabsSection productDetail={productDetail} />
                 :
-                <AccordionSection />
+                <AccordionSection productDetail={productDetail} />
             }
             <Packaging windowWidth={windowWidth} />
             <Reviews />
