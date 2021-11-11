@@ -440,15 +440,18 @@ p {
 .normal_button {
    font-size: 16px;
    line-height: 20px;
-   background-color: rgba(0,0,0,0.6);
    border-radius: 40px;
-   border: 0px;
    padding: 10px 30px;
    cursor: pointer;
+   background: rgba( 84, 76, 70, 0.4 );
+   backdrop-filter: blur( 11.5px );
+   -webkit-backdrop-filter: blur( 11.5px );
+   border: 1px solid rgba( 255, 255, 255, 0.18 );
+   transition: all ease 0.5s;
 }
 
 .normal_button:hover {
-   background: rgba(0,0,0,0.3);
+   opacity: 0.7;
 }
 
 .hands_sec_b_p {
@@ -542,8 +545,8 @@ section {
 }
 
 .packaging_text {
-   margin-top: 60px;
-   margin-bottom: 45px;
+   /* margin-top: 60px;
+   margin-bottom: 45px; */
 }
 
 .menu_span_dd {
@@ -1034,7 +1037,8 @@ section {
       height: auto;
    }
    .product_slider .product_img {
-      max-height: 350px;
+      max-height: auto;
+      max-width: 100%;
    }
    .product_slider .swiper-slide {
       padding: 30px;

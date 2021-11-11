@@ -22,7 +22,7 @@ const ProductSlider = (props) => {
                 <div className="slider_product_details_left">
                     <div>
                         <h1 className="theme_text_color">{props.productDetail?.title}</h1>
-                        <h2 className="theme_text_color">CBD OIL | 1500mg</h2>
+                        {/* <h2 className="theme_text_color">CBD OIL | 1500mg</h2> */}
                     </div>    
                 </div>
                 : null
@@ -53,7 +53,7 @@ const ProductSlider = (props) => {
                 <div className="slider_product_details_left">
                     <div className="">
                         <h1 className="theme_text_color">{props.productDetail?.title}</h1>
-                        <h2 className="theme_text_color">CBD OIL | 1500mg</h2>
+                        {/* <h2 className="theme_text_color">CBD OIL | 1500mg</h2> */}
                         <div className="p_slider_icons">
                             <img src="./images/icons/sleep.png" alt="sleep icon" />
                             <img src="./images/icons/mood.png" alt="mood icon" />

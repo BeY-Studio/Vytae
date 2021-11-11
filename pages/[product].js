@@ -97,7 +97,7 @@ export default function Home() {
 
     return (
         <Main
-            title={"this will be product title for seo"}
+            title={productDetail?.title}
             description={"this will be product description for seo"}
             imageUrl={"this will be product image url"}
             keyword={"These will be product keywords"}
@@ -109,7 +109,7 @@ export default function Home() {
             {
                 windowWidth > 999
                 ?
-                <TabsSection />
+                <TabsSection productDetail={productDetail} />
                 :
                 <AccordionSection />
             }
