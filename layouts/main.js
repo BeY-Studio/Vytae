@@ -19,7 +19,7 @@ const Main = (
       <Head>
         {/*Primary Meta Tags*/}
         <title>{title}</title>
-        <link rel="shortcut icon" href="./favicon.png" />
+        <link rel="shortcut icon" href="./favicon1.png" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="keywords" content={keyword} />
