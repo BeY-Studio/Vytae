@@ -20,7 +20,7 @@ const TabsSection = (props) => {
                     <p>{props.productDetail?.title === "Calm Caps" ? "Iperico e.s. | 230 mg" : "Giffonia e.s. | 140 mg"}</p>
                     <p>{props.productDetail?.title === "Calm Caps" ? "Di cui Ipericina | 0,69mg" : "Di cui 5-HTP (5-idrossitriptofano) | 35mg"}</p>
                     <p>{props.productDetail?.title === "Calm Caps" ? "Rodiola e.s. | 100 mg" : "Valeriana e.s. tit. 0,8% acidi valerenici | 140 mg"}</p>
-                    {props.productDetail?.title === "Calm Caps" ? <p>"Rosavi - HLPC | 3mg"</p> : null}
+                    {props.productDetail?.title === "Calm Caps" ? <p>Rosavi - HLPC | 3mg</p> : null}
                     <p>{props.productDetail?.title === "Calm Caps" ? "Rosmarino e.s. | 100mg" : "Melissa e.s. tit. 4% acidi rosmarinico| 140 mg"}</p>
                     <p>{props.productDetail?.title === "Calm Caps" ? "tit. 20% in fenoli diterpenici - 10% in acido carnosico" : "Passiflora e.s. tit. 2,5% in vitexina | 110 mg"}</p>
                 </TabPanel>

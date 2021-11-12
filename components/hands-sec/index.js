@@ -1,7 +1,7 @@
 import React from "react";
 import NormalButton from "../buttons/normal";
 
-const HandsSec = ({ windowWidth }) => {
+const HandsSec = ({ windowWidth, productDetail }) => {
     return (
         <div
             className="dark_bg_con hands_section_bg"
@@ -55,13 +55,30 @@ const HandsSec = ({ windowWidth }) => {
                     />
                 </div>
                 <div className="hand_sec_icons">
-                    <img src="./images/icons/plastic-free-world.png" alt="plastic free world image" />
+                    {/* <img src="./images/icons/plastic-free-world.png" alt="plastic free world image" />
                     <img src="./images/icons/reduces-water-consumption.png" alt="reduces water consumption image" />
                     <img src="./images/icons/save-the-bees.png" alt="save the bees image" />
                     <img src="./images/icons/fights-deforestation.png" alt="fights deforestation image" />
                     <img src="./images/icons/purifies-soil.png" alt="purifies soil image" />
                     <img src="./images/icons/absorb-more-co2.png" alt="absorb more co2 image" />
-                    <img src="./images/icons/it-is-alternative-to-fossil-fuel.png" alt="fossil fuel alternative image" />
+                    <img src="./images/icons/it-is-alternative-to-fossil-fuel.png" alt="fossil fuel alternative image" /> */}
+                    {
+                        windowWidth > 768
+                        ?
+                            productDetail?.title === "Calm Caps" || productDetail?.title === "Sleep Caps"
+                            ?
+                                productDetail?.title === "Calm Caps"
+                                ? <img src="./images/icons/CALM/Sustainability/Desktop/Vytae_Sustainability_Desktop_ITA_text-ok-01.svg" alt="stainability icons" />
+                                : <img src="./images/icons/SLEEP/Sustainability/Desktop/Vytae_Sustainability_Desktop_ITA.svg" alt="stainability icons" />
+                            : <img src="./images/icons/OIL/Sustainability/Desktop/Vytae_Sustainability_Desktop_ITA.svg" alt="stainability icons" />
+                        :
+                            productDetail?.title === "Calm Caps" || productDetail?.title === "Sleep Caps"
+                            ?
+                                productDetail?.title === "Calm Caps"
+                                ? <img src="./images/icons/CALM/Sustainability/Mobile/Vytae_Sustainability_Mobile_ITA_text_ok-01.svg" alt="stainability icons" />
+                                : <img src="./images/icons/SLEEP/Sustainability/Mobile/Vytae_Sustainability_Mobile_ITA.svg" alt="stainability icons" />
+                            : <img src="./images/icons/OIL/Sustainability/Mobile/Vytae_Sustainability_Mobile_ITA.svg" alt="stainability icons" />
+                    }
                 </div>
             </div>
         </div>

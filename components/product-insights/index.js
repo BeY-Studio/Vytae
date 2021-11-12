@@ -20,7 +20,7 @@ const ProductInsights = (props) => {
                 />
                 : null
             }
-            <InsightsIcons />
+            <InsightsIcons windowWidth={windowWidth} productDetail={props.productDetail} />
             {
                 windowWidth > 768
                 ? <AddToCartButton

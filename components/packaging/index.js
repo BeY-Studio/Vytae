@@ -15,7 +15,7 @@ const Packaging = (props) => {
                 <div className="inner">
                     <h2 className="section_h2 color_white">Packaging</h2>
                     <p className="text_center color_white font_300 packaging_text">Ricerchiamo, testiamo e realizziamo continuamente prodotti con biomateriali derivati dalla canapa. I tappi dei nostri vasi e i portacapsule sono in bio-plastica di canapa. Le nostre scatole, le brochure e il materiale informativo in carta derivata dalla canapa.</p>
-                    <p className="text_center color_white font_300 packaging_text">Promuoviamo il paradigma delle 3R per costruire un’economia circolare materiale attraverso l'uso efficace di risorse e materiali.</p>
+                    <p className="text_center color_white font_300 packaging_text">Promuoviamo il paradigma delle 3R per costruire un’economia circolare materiale attraverso l&apos;uso efficace di risorse e materiali.</p>
                     <div className="single_button_row">
                         <NormalButton
                             data={'Scopri di più'}

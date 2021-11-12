@@ -46,6 +46,7 @@ const Reviews = (props) => {
                             <SwiperSlide key={index}>
                                 <div className="review_slide_content text_left">
                                     <p>Lorem ipsum is a dummy text. Which is used in the media industry. This is a standard practice to be used as a dummy text where ever needed.</p>
+                                    <span className="name">Mario Rossi</span>
                                     {/* {
                                         swiper.activeIndex ? <p>This slide is active {index}</p> : null
                                     } */}

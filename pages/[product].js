@@ -115,7 +115,7 @@ export default function Home() {
             }
             <Packaging windowWidth={windowWidth} />
             <Reviews />
-            <HandsSec windowWidth={windowWidth} />
+            <HandsSec windowWidth={windowWidth} productDetail={productDetail} />
         </Main>
     );
 }
