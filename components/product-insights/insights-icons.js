@@ -17,9 +17,7 @@ const InsightsIcons = (props) => {
                 {
                     props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Sleep Caps"
                     ?
-                        props.productDetail?.title === "Calm Caps"
-                        ? <img src="./images/icons/CALM/Ingredients/Vytae_Calm_Ingredients_ITA_text ok-01.svg" alt="Ingredients" />
-                        : <img src="./images/icons/SLEEP/Ingredients/Vytae_Sleep_Ingredients_ITA_text ok-01.svg" alt="Ingredients" />
+                    <img src="./images/icons/CALM/Ingredients/Vytae_Ingredients_Desktop_ITA_Nov 12 edit-01-01.svg" alt="Ingredients" />
                     :
                     props.windowWidth > 768
                     ?
