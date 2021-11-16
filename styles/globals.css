@@ -1058,9 +1058,9 @@ section {
       height: auto !important;
    }
    .product_slider .product_img {
-      max-height: auto;
+      max-height: auto !important;
       max-width: 100%;
-      height: auto;
+      height: auto !important;
       width: 100%;
    }
    .product_slider .swiper-slide {
