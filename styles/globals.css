@@ -900,7 +900,10 @@ section {
       height: auto;
    }
    .product_slider .product_img {
-      max-height: 400px;
+      max-height: auto;
+      height: auto;
+      max-width: 100%;
+      width: 100%;
    }
    .product_slider .swiper-slide {
       padding: 30px;
@@ -1058,9 +1061,9 @@ section {
       height: auto !important;
    }
    .product_slider .product_img {
-      max-height: auto !important;
+      max-height: auto;
+      height: auto;
       max-width: 100%;
-      height: auto !important;
       width: 100%;
    }
    .product_slider .swiper-slide {
