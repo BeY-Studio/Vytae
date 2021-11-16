@@ -1055,11 +1055,13 @@ section {
       padding-top: 100px;
    }
    .product_slider {
-      height: auto;
+      height: auto !important;
    }
    .product_slider .product_img {
       max-height: auto;
       max-width: 100%;
+      height: auto;
+      width: 100%;
    }
    .product_slider .swiper-slide {
       padding: 30px;
