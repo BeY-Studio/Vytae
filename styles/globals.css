@@ -1058,7 +1058,7 @@ section {
       padding-top: 100px;
    }
    .product_slider {
-      height: auto !important;
+      height: auto;
    }
    .product_slider .product_img {
       max-height: auto;
