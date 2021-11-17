@@ -35,6 +35,7 @@ p {
 .text_left { text-align: left; }
 .text_right { text-align: right; }
 .color_white { color: var(--color-white); }
+.color_black { color: var(--color-black); }
 .color_theme_text { color: var(--color-theme-text); }
 .font_200 { font-weight: 200; }
 .font_300 { font-weight: 300; }
@@ -775,6 +776,116 @@ section {
 .swiper-slide-active .review_slide_content .name { display: block; }
 
 
+/* cart design */
+.backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   background-color: rgba(0,0,0,0.3);
+   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.backdrop_closed {
+   z-index: -1;
+   opacity: 0;
+}
+.backdrop_open {
+   z-index: 100;
+   opacity: 1;
+}
+.cart_container {
+   z-index: 101;
+   width: 500px;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   background-color: var(--color-theme-background);
+   padding: 20px 30px;
+   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.cart_container_closed {
+   right: -100%;
+}
+.cart_container_open {
+   right: 0;
+}
+
+.c_p_con {
+   position: relative;
+   width: 100%;
+   height: calc(100vh - 250px);
+   overflow: auto;
+}
+.c_p_con .inner {
+   padding: 15px 10px 10px;
+   border-bottom: 1px solid rgba(124, 117, 111, 0.3);
+}
+.c_p_con .inner .title {
+   font-size: 20px;
+}
+.c_p_con .inner .p_and_q {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: space-between;
+}
+.c_p_con .inner .p_and_q .price {
+   font-size: 14px;
+}
+.c_p_con .inner .p_and_q .quantity {
+   display: flex;
+   grid-gap: 14px;
+   align-items: center;
+}
+.c_p_con .inner .p_and_q .quantity > i {
+   cursor: pointer;
+}
+.c_p_con .inner .p_and_q .quantity .q_inner {
+   border: 1px solid rgba(124, 117, 111, 0.5);
+   padding: 0px;
+}
+.c_p_con .inner .p_and_q .quantity .q_inner i {
+   padding: 6px;
+   cursor: pointer;
+}
+.c_p_con .inner .p_and_q .quantity .q_inner .quantity_number {
+   margin: 0 8px;
+}
+
+.checkout_con {
+   text-align: right;
+}
+.checkout_con button {}
+.close_cart {
+   cursor: pointer;
+   position: absolute;
+   top: 47px;
+   right: 30px;
+}
+.close_cart i {
+   font-size: 25px;
+   opacity: 0.7;
+}
+.empty_cart {
+   display: grid;
+   grid-template-columns: 1fr;
+   margin-top: 40px;
+}
+.empty_cart span {
+   font-size: 28px;
+   text-align: center;
+}
+.empty_cart span.go_back {
+   font-size: 20px;
+   display: flex;
+   align-items: center;
+   grid-gap: 10px;
+   justify-content: center;
+   cursor: pointer;
+}
+/* cart design end */
+
 @media only screen and (min-width: 1000px) and (max-width: 1300px) {
    .product_slider {
       height: auto;
@@ -827,7 +938,9 @@ section {
    .p_slider_icons {
       justify-content: flex-start;
    }
-
+   .p_slider_icons img {
+      width: 40%;
+   }
    .slider_product_details_left {
       top: 0px;
    }
@@ -903,6 +1016,10 @@ section {
    .tabs_section {
       margin: 60px 60px 80px;
    }
+   .cart_h2 {
+      font-size: 60px;
+      line-height: 80px;
+   }
 }
 
 @media only screen and (max-width: 999px) {
@@ -935,7 +1052,7 @@ section {
    .product_slider .product_img {
       max-height: auto;
       height: auto;
-      max-width: 100%;
+      max-width: 70%;
       width: 100%;
    }
    .product_slider .swiper-slide {
@@ -1064,6 +1181,23 @@ section {
    .tabs_section {
       margin-left: 40px;
       margin-right: 40px;
+   }
+   .add_to_cart {
+      position: relative;
+      right: 0;
+      top: 0;
+      transform: translateY(0%);
+      width: 100%;
+      margin-bottom: 20px;
+   }
+   .cart_h2 {
+      margin-top: 20px;
+   }
+   .c_p_con .inner .title {
+      font-size: 18px;
+   }
+   .c_p_con .inner .p_and_q .quantity {
+      font-size: 14px;
    }
 }
 
@@ -1301,5 +1435,18 @@ section {
    }
    .slider_product_details_right .description {
       max-width: 100%;
+   }
+   .cart_container {
+      width: 100%;
+   }
+   .cart_h2 {
+      margin-top: 26px;
+   }
+   .c_p_con .inner .title {
+      font-size: 17px;
+   }
+   .c_p_con .inner .p_and_q .price,
+   .c_p_con .inner .p_and_q .quantity {
+      font-size: 13px;
    }
 }

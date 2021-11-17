@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 
 const MobileMenu = (props) => {
@@ -6,20 +6,20 @@ const MobileMenu = (props) => {
     const [toggleProducts, setToggleProducts] = useState(false);
     const [toggleLanguageDd, setToggleLanguageDd] = useState(false);
 
+    const [itemsNumber, setItemsNumber] = useState(0);
+    useEffect(() => {
+        let num = 0;
+        for (let i=0;i<props.checkout?.lineItems?.length;i++) {
+            num = num + Number(props.checkout?.lineItems[i]?.quantity);
+        }
+        setItemsNumber(num);
+    },[props.checkout.lineItems]);
+
     const toggleMobileMenu = () => {
         setMenuOpen(!menuOpen);
         setToggleProducts(false);
         setToggleLanguageDd(false);
     };
-
-    const goToShopifyCheckout = () => {
-        if (props.checkout.lineItems.length) {
-            localStorage.clear();
-            window.location.href = props.checkout.webUrl;
-        } else {
-            alert("You do not have any item in the cart.");
-        }
-    }
 
     return (
         <>
@@ -36,9 +36,9 @@ const MobileMenu = (props) => {
                         : <i onClick={toggleMobileMenu} className="fa fa-bars fa-2x theme_text_color"></i>
                     }
                     &nbsp;&nbsp;
-                    <span className="menu_cart" onClick={goToShopifyCheckout}>
+                    <span className="menu_cart" onClick={props.toggleCart}>
                         <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                        <span className="number">{props.checkout ? props.checkout.lineItems ? props.checkout.lineItems.length : null : null}</span>
+                        <span className="number">{itemsNumber}</span>
                     </span>
                 </div>
                 <ul className={menuOpen ? `mobile_menu_con opened_menu_mob` : `mobile_menu_con closed_menu_mob`}>

@@ -18,8 +18,13 @@ const Header = (props) => {
                         ? <Menu
                             products={props.products}
                             checkout={props.checkout}
+                            toggleCart={props.toggleCart}
                         />
-                        : <MobileMenu products={props.products} checkout={props.checkout} />
+                        : <MobileMenu 
+                            products={props.products}
+                            checkout={props.checkout}
+                            toggleCart={props.toggleCart}
+                        />
                     }
                 </div>
             </div>

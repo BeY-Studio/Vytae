@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 
 const Menu = (props) => {
-    const goToShopifyCheckout = () => {
-        if (props.checkout.lineItems.length) {
-            localStorage.clear();
-            window.location.href = props.checkout.webUrl;
-        } else {
-            alert("You do not have any item in the cart.");
+    const [itemsNumber, setItemsNumber] = useState(0);
+    useEffect(() => {
+        let num = 0;
+        for (let i=0;i<props.checkout?.lineItems?.length;i++) {
+            num = num + Number(props.checkout?.lineItems[i]?.quantity);
         }
-    }
+        setItemsNumber(num);
+    },[props.checkout.lineItems]);
 
     return (
         <>
@@ -48,9 +48,9 @@ const Menu = (props) => {
                         </div>
                     </li>
                 </ul>
-                <span className="menu_cart" onClick={goToShopifyCheckout}>
+                <span className="menu_cart" onClick={props.toggleCart}>
                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span className="number">{props.checkout ? props.checkout.lineItems ? props.checkout.lineItems.length : null : null}</span>
+                    <span className="number">{itemsNumber}</span>
                 </span>
             </nav>
         </>

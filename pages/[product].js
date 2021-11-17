@@ -16,6 +16,7 @@ export default function Home() {
     const [products, setProducts] = useState([]);
     const [productDetail, setProductDetail] = useState({});
     const [checkoutData, setCheckoutData] = useState({});
+    const [openCart, setOpenCart] = useState(false);
 
     const router = useRouter();
 
@@ -108,6 +109,26 @@ export default function Home() {
         }
     }
 
+    const updateLineItem = async (id, quantity) => {
+        const lineItemsToUpdate = [ {id: id, quantity: quantity} ];
+        // Update the line item on the checkout (change the quantity or variant)
+        const checkoutDataUpdated = await client.checkout.updateLineItems(checkoutData.id, lineItemsToUpdate);
+        // // // update the product in the state checkout
+        setCheckoutData(checkoutDataUpdated);
+    }
+
+    const deleteLineItem = async (id) => {
+        const lineItemIdsToRemove = [id];        
+        // Remove an item from the checkout
+        const checkoutDataUpdated = await client.checkout.removeLineItems(checkoutData.id, lineItemIdsToRemove)
+        // // // update the product in the state checkout
+        setCheckoutData(checkoutDataUpdated);
+    }
+
+    const toggleCart = () => {
+        setOpenCart(!openCart);
+    }
+
     useEffect(() => {
         router.events.on('routeChangeComplete', onRouteChangeDone);
         return () => {
@@ -123,6 +144,11 @@ export default function Home() {
             keyword={"These will be product keywords"}
             products={products}
             checkout={checkoutData}
+            openCart={openCart}
+            setOpenCart={setOpenCart}
+            toggleCart={toggleCart}
+            updateLineItem={updateLineItem}
+            deleteLineItem={deleteLineItem}
         >
             <ProductSlider productDetail={productDetail} />
             <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />

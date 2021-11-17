@@ -2,6 +2,7 @@ import Header from "../components/header/site-header";
 import Footer from "../components/footer/site-footer";
 import Head from "next/head";
 import {META_DESCRIPTION, META_IMAGE, META_KEYWORDS, META_TITLE} from "../configs/configs";
+import Cart from "../components/cart-sidebar";
 
 const Main = (
     {
@@ -11,7 +12,11 @@ const Main = (
         imageUrl = META_IMAGE,
         keyword = META_KEYWORDS,
         products,
-        checkout
+        checkout,
+        toggleCart,
+        openCart,
+        updateLineItem,
+        deleteLineItem
     }
 ) => {
   return (
@@ -43,8 +48,19 @@ const Main = (
       </Head>
 
       <div className="wrapper">
-        <Header products={products} checkout={checkout} />
-
+        <Header
+          checkout={checkout}
+          products={products}
+          toggleCart={toggleCart}
+        />
+        <Cart
+          products={products}
+          checkout={checkout}
+          toggleCart={toggleCart}
+          openCart={openCart}
+          updateLineItem={updateLineItem}
+          deleteLineItem={deleteLineItem}
+        />
         {children}
 
         <Footer />
