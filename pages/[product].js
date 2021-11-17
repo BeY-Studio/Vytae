@@ -10,6 +10,7 @@ import AccordionSection from "../components/accordionSection";
 import Reviews from "../components/reviews-section";
 import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
+import Loader from "../components/loader";
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -17,6 +18,7 @@ export default function Home() {
     const [productDetail, setProductDetail] = useState({});
     const [checkoutData, setCheckoutData] = useState({});
     const [openCart, setOpenCart] = useState(false);
+    const [loader, setLoader] = useState(false);
 
     const router = useRouter();
 
@@ -27,6 +29,8 @@ export default function Home() {
     });
 
     const fetchAllProducts = async () => {
+        // initiate loader first
+        setLoader(true);
         // Fetch all products in your shop
         const products = await client.product.fetchAll();
         setProducts(products);
@@ -42,6 +46,7 @@ export default function Home() {
 
     // const addItemToCheckout = async (variantId, quantity) => {
     const addItemToCheckout = async () => {
+        setLoader(true);
         let variantId = productDetail.variants[0].id;
         const lineItemsToAdd = [
             {
@@ -54,6 +59,7 @@ export default function Home() {
         
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
+        setLoader(false);
     };
 
     const createCheckout = async () => {
@@ -77,6 +83,7 @@ export default function Home() {
             }
             fetchProductWithId(productId);
         }
+        setLoader(false);
     }
 
     const fetchCheckout = async () => {
@@ -110,19 +117,23 @@ export default function Home() {
     }
 
     const updateLineItem = async (id, quantity) => {
+        setLoader(true);
         const lineItemsToUpdate = [ {id: id, quantity: quantity} ];
         // Update the line item on the checkout (change the quantity or variant)
         const checkoutDataUpdated = await client.checkout.updateLineItems(checkoutData.id, lineItemsToUpdate);
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
+        setLoader(false);
     }
 
     const deleteLineItem = async (id) => {
+        setLoader(true);
         const lineItemIdsToRemove = [id];        
         // Remove an item from the checkout
         const checkoutDataUpdated = await client.checkout.removeLineItems(checkoutData.id, lineItemIdsToRemove)
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
+        setLoader(false);
     }
 
     const toggleCart = () => {
@@ -150,6 +161,7 @@ export default function Home() {
             updateLineItem={updateLineItem}
             deleteLineItem={deleteLineItem}
         >
+            {loader ? <Loader /> : null}
             <ProductSlider productDetail={productDetail} />
             <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
             {
