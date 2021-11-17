@@ -12,7 +12,7 @@ const ProductInsights = (props) => {
     return (
         <div className="product_insights_con">
             {
-                windowWidth < 769
+                windowWidth < 1025
                 ? <AddToCartButton 
                     price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
                     onClick={props.addItemToCheckout} 
@@ -22,7 +22,7 @@ const ProductInsights = (props) => {
             }
             <InsightsIcons windowWidth={windowWidth} productDetail={props.productDetail} />
             {
-                windowWidth > 768
+                windowWidth > 1024
                 ? <AddToCartButton
                     price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
                     onClick={props.addItemToCheckout}

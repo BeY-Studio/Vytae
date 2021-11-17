@@ -78,7 +78,7 @@ const ProductSlider = (props) => {
                     windowWidth < 1025
                     ? 
                     <>
-                        <h2 className="theme_text_color benefici_h2 font_200">Benefici</h2>
+                        {/* <h2 className="theme_text_color benefici_h2 font_200">Benefici</h2> */}
                         <div className="p_slider_icons">
                             {/* <img src="./images/icons/sleep.png" alt="sleep icon" />
                             <img src="./images/icons/mood.png" alt="mood icon" />

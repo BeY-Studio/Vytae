@@ -19,13 +19,13 @@ const Menu = (props) => {
                 </div>
                 <ul>
                     <li>
-                        <a href="https://www.vytae.com/">Home</a>
+                        <a href="https://vytae.org/">Home</a>
                     </li>
                     <li>
-                        <a href="https://www.vytae.com/sustainability/">Sustainability</a>
+                        <a href="https://www.vytae.com/sustainability/">Sostenibilità</a>
                     </li>
                     <li className="drop_menu">
-                        <a href="#">Products <i className="fa fa-caret-down"></i></a>
+                        <a href="#">Prodotti <i className="fa fa-caret-down"></i></a>
                         <div className="menu_dropdown">
                             {
                                 props.products.map((product) => (

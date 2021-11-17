@@ -4,7 +4,7 @@ import NormalButton from "../buttons/normal";
 const Packaging = (props) => {
     return (
         <div
-            className="dark_bg_con"
+            className="dark_bg_con packaging_con"
             style={{ "backgroundImage": "url(./images/backgrounds/packaging-bg-desktop.png)" }}
         >
             <div className="content text_center packaging_content">
@@ -13,9 +13,10 @@ const Packaging = (props) => {
                     { props.windowWidth > 999 ? <img className="right" src="./images/backgrounds/packaging-product.png" alt="packaging product image" /> : null }
                 </div>
                 <div className="inner">
-                    <h2 className="section_h2 color_white">Packaging</h2>
+                    <h2 className="section_h2 color_white">Sostenibilità</h2>
                     <p className="text_center color_white font_300 packaging_text">Ricerchiamo, testiamo e realizziamo continuamente prodotti con biomateriali derivati dalla canapa. I tappi dei nostri vasi e i portacapsule sono in bio-plastica di canapa. Le nostre scatole, le brochure e il materiale informativo in carta derivata dalla canapa.</p>
                     <p className="text_center color_white font_300 packaging_text">Promuoviamo il paradigma delle 3R per costruire un’economia circolare materiale attraverso l&apos;uso efficace di risorse e materiali.</p>
+                    <p className="text_center color_white font_300 packaging_text">REDUSE, REUSE, RECYCLE</p>
                     <div className="single_button_row">
                         <NormalButton
                             data={'Scopri di più'}

@@ -107,7 +107,7 @@ export default function Home() {
             <ProductSlider productDetail={productDetail} />
             <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
             {
-                windowWidth > 999
+                windowWidth > 1025
                 ?
                 <TabsSection productDetail={productDetail} />
                 :
