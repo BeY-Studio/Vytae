@@ -62,7 +62,7 @@ const MobileMenu = (props) => {
                                     props.products.map((product) => (
                                         <li key={product.id} className="sub_menu_mob_li">
                                             <Link 
-                                                href={"/" + product.id}
+                                                href={"/" + product.title.split(" ").join("-").replace("%", "%25")}
                                             >
                                                 <a onClick={toggleMobileMenu} className="menu_span_dd">{product.title}</a>
                                             </Link>

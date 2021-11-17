@@ -32,7 +32,7 @@ const Menu = (props) => {
                             {
                                 props.products.map((product) => (
                                     <Link 
-                                        href={"/" + product.id} 
+                                        href={"/" + product.title.split(" ").join("-").replace("%", "%25")}
                                         key={product.id}
                                     >
                                         <a className="menu_span_dd">{product.title}</a>

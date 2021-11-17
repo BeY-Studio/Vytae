@@ -29,6 +29,9 @@ export default function Home() {
         // Fetch all products in your shop
         const products = await client.product.fetchAll();
         setProducts(products);
+
+        // once the products are fetched initially then get the product details by matching the name
+        getProductDetails(products);
     };
 
     const fetchProductWithId = async (id) => {
@@ -58,9 +61,21 @@ export default function Home() {
         localStorage.setItem("checkoutId",JSON.stringify(checkoutData.id));
     };
 
-    const getProductDetails = () => {
-        let productId = window.location.pathname.replace("/","");
-        fetchProductWithId(productId);
+    const getProductDetails = (allProducts) => {
+        // old method fetch product by id
+        // let productId = window.location.pathname.replace("/","");
+        // fetchProductWithId(productId);
+        
+        if (allProducts.length) {
+            let productId = "";
+            let productName = window.location.pathname.replace("/","");
+            for (let i=0;i<allProducts.length;i++) {
+                if (allProducts[i].title.split(" ").join("-") === productName.replace("%25", "%")) {
+                    productId = allProducts[i].id;
+                }
+            }
+            fetchProductWithId(productId);
+        }
     }
 
     const fetchCheckout = async () => {
@@ -78,14 +93,19 @@ export default function Home() {
         }
         setWindowWidth(window.innerWidth);
 
-        getProductDetails();
+        // getProductDetails();
         fetchAllProducts();   
 
     },[]);
 
     const onRouteChangeDone = () => {
         // reload the product data
-        getProductDetails();
+        if (products.length === 0) {
+            fetchAllProducts();
+        } else {
+            // in the old method we only need the line below
+            getProductDetails(products);
+        }
     }
 
     useEffect(() => {
