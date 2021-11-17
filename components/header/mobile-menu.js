@@ -3,9 +3,13 @@ import Link from 'next/link';
 
 const MobileMenu = (props) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [toggleProducts, setToggleProducts] = useState(false);
+    const [toggleLanguageDd, setToggleLanguageDd] = useState(false);
 
     const toggleMobileMenu = () => {
         setMenuOpen(!menuOpen);
+        setToggleProducts(false);
+        setToggleLanguageDd(false);
     };
 
     const goToShopifyCheckout = () => {
@@ -44,22 +48,48 @@ const MobileMenu = (props) => {
                     <li>
                         <a href="https://www.vytae.org/sostenibilita/?lang=it">Sostenibilità</a>
                     </li>
-                    {
-                        props.products.map((product) => (
-                            <li key={product.id}>
-                                <Link 
-                                    href={"/" + product.id}
-                                >
-                                    <a onClick={toggleMobileMenu} className="menu_span_dd">{product.title}</a>
-                                </Link>
-                            </li>
-                        ))
-                    }                    
-                    <li className="drop_menu">
-                        <a href="#">English</a>
+                    <li className={toggleProducts ? "open_menu_dropdown" : "closed_menu_dropdown"}>
+                        <span 
+                            className={toggleProducts ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"}
+                            onClick={() => setToggleProducts(!toggleProducts)}
+                        >
+                            Prodotti &nbsp;
+                            <i className="fa fa-caret-down"></i>
+                        </span>
+                        <div className="sub_menu_mob">
+                            <ul>
+                                {
+                                    props.products.map((product) => (
+                                        <li key={product.id} className="sub_menu_mob_li">
+                                            <Link 
+                                                href={"/" + product.id}
+                                            >
+                                                <a onClick={toggleMobileMenu} className="menu_span_dd">{product.title}</a>
+                                            </Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
                     </li>
-                    <li className="drop_menu">
-                        <a href="#">Italian</a>
+                    <li className={toggleLanguageDd ? "open_menu_dropdown" : "closed_menu_dropdown"}>
+                        <span
+                            className={ toggleLanguageDd ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"} 
+                            onClick={() => setToggleLanguageDd(!toggleLanguageDd)}
+                        >
+                            Lingue &nbsp;
+                            <i className="fa fa-caret-down"></i>
+                        </span>
+                        <div className="sub_menu_mob">
+                            <ul>
+                                <li className="drop_menu sub_menu_mob_li">
+                                    <a href="#">English</a>
+                                </li>
+                                <li className="drop_menu sub_menu_mob_li">
+                                    <a href="#">Italian</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>

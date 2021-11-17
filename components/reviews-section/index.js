@@ -27,8 +27,8 @@ const Reviews = (props) => {
                     loop={true}
                     centeredSlides={true}
                     slidesPerGroup={1}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={(a) => console.log(a)}
+                    // onSwiper={(swiper) => console.log("")}
+                    // onSlideChange={(a) => console.log("")}
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
