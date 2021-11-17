@@ -21,7 +21,9 @@ const MobileMenu = (props) => {
         <>
            <nav className="menu_nav">
                 <div className="logo">
-                    <img src={"./images/logo/menu-logo-mobile.svg"} alt="vytae" />
+                    <a href="https://vytae.org/">
+                        <img src={"./images/logo/menu-logo-mobile.svg"} alt="vytae" />
+                    </a>
                 </div>
                 <div className="menu_bars">
                     {
@@ -40,13 +42,7 @@ const MobileMenu = (props) => {
                         <a href="https://www.vytae.com/">Home</a>
                     </li>
                     <li>
-                        <a href="https://www.vytae.com/sustainability/">Sustainability</a>
-                    </li>
-                    <li className="drop_menu">
-                        <a href="#">English</a>
-                    </li>
-                    <li className="drop_menu">
-                        <a href="#">Italian</a>
+                        <a href="https://www.vytae.org/sostenibilita/?lang=it">Sostenibilità</a>
                     </li>
                     {
                         props.products.map((product) => (
@@ -58,7 +54,13 @@ const MobileMenu = (props) => {
                                 </Link>
                             </li>
                         ))
-                    }
+                    }                    
+                    <li className="drop_menu">
+                        <a href="#">English</a>
+                    </li>
+                    <li className="drop_menu">
+                        <a href="#">Italian</a>
+                    </li>
                 </ul>
             </nav>
         </>

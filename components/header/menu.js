@@ -15,14 +15,16 @@ const Menu = (props) => {
         <>
             <nav className="menu_nav">
                 <div className="logo">
-                    <img src={"./images/logo/menu-logo.svg"} alt="vytae" />
+                    <a href="https://vytae.org/">
+                        <img src={"./images/logo/menu-logo.svg"} alt="vytae" />
+                    </a>
                 </div>
                 <ul>
                     <li>
                         <a href="https://vytae.org/">Home</a>
                     </li>
                     <li>
-                        <a href="https://www.vytae.com/sustainability/">Sostenibilità</a>
+                        <a href="https://www.vytae.org/sostenibilita/?lang=it">Sostenibilità</a>
                     </li>
                     <li className="drop_menu">
                         <a href="#">Prodotti <i className="fa fa-caret-down"></i></a>
