@@ -59,7 +59,7 @@ const Cart = (props) => {
                                 }                            
                             </div>
                             <div className="checkout_con">
-                                <button className="normal_button color_white"  onClick={goToShopifyCheckout}>Check out</button>
+                                <button className="normal_button color_white" onClick={goToShopifyCheckout}>Check out</button>
                             </div>
                         </>
                     :

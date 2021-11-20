@@ -13,10 +13,13 @@ const ProductInsights = (props) => {
         <div className="product_insights_con">
             {
                 windowWidth < 1025
-                ? <AddToCartButton 
+                ? <AddToCartButton
+                    itemAdded={props.itemAdded}
+                    checkout={props.checkout}
+                    toggleCart={props.toggleCart}
                     price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
-                    onClick={props.addItemToCheckout} 
-                    classsName="add_to_cart"
+                    onClick={props.addItemToCheckout}
+                    conClassName="add_to_cart_con"
                 />
                 : null
             }
@@ -24,9 +27,12 @@ const ProductInsights = (props) => {
             {
                 windowWidth > 1024
                 ? <AddToCartButton
+                    itemAdded={props.itemAdded}
+                    checkout={props.checkout}
+                    toggleCart={props.toggleCart}
                     price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
                     onClick={props.addItemToCheckout}
-                    classsName="add_to_cart fixed_cart_btn"
+                    conClassName="add_to_cart_con fixed_cart_btn"
                 />
                 : null
             }            

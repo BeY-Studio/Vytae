@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Client from 'shopify-buy';
-// import styles from '../styles/Home.module.css';
 import Main from '../layouts/main';
 import ProductSlider from '../components/product-slider';
 import ProductInsights from '../components/product-insights';
 import TabsSection from "../components/tabsSection";
 import AccordionSection from "../components/accordionSection";
-import Reviews from "../components/reviews-section";
+// import Reviews from "../components/reviews-section";
 import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
 import Loader from "../components/loader";
@@ -19,6 +18,7 @@ export default function Home() {
     const [checkoutData, setCheckoutData] = useState({});
     const [openCart, setOpenCart] = useState(false);
     const [loader, setLoader] = useState(false);
+    const [itemAdded, setItemAdded] = useState(false);
 
     const router = useRouter();
 
@@ -60,6 +60,8 @@ export default function Home() {
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
+        setItemAdded(true);
+        setTimeout(() => { setItemAdded(false); },5000);
     };
 
     const createCheckout = async () => {
@@ -163,7 +165,13 @@ export default function Home() {
         >
             {loader ? <Loader /> : null}
             <ProductSlider productDetail={productDetail} />
-            <ProductInsights productDetail={productDetail} addItemToCheckout={addItemToCheckout} />
+            <ProductInsights
+                productDetail={productDetail}
+                addItemToCheckout={addItemToCheckout}
+                toggleCart={toggleCart}
+                checkout={checkoutData}
+                itemAdded={itemAdded}
+            />
             {
                 windowWidth > 1025
                 ?
@@ -172,7 +180,7 @@ export default function Home() {
                 <AccordionSection productDetail={productDetail} />
             }
             <Packaging windowWidth={windowWidth} />
-            <Reviews />
+            {/* <Reviews /> */}
             <HandsSec windowWidth={windowWidth} productDetail={productDetail} />
         </Main>
     );
