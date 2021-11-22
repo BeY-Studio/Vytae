@@ -21,10 +21,10 @@ export default function Home() {
     const [itemAdded, setItemAdded] = useState(false);
     const [lang, setLang] = useState("en");
     const [langChangedAfter, setLangChangedAfter] = useState(false);
-    const [initialLoad, setInitialLoad] = useState(false);
+    // const [initialLoad, setInitialLoad] = useState(false);
     const [langProdList, setLangProductList] = useState({
-        "en": ["CBD Oil 10%", "CBD Oil 4%", "Calm Caps", "Sleep Caps"],
-        "it": ["Olio CBD 10%", "Olio CBD 4%", "Capsule Calm", "CapsuleSleep"]
+        "en": ["CBD-Oil-10%25", "CBD-Oil-4%25", "Calm-Caps", "Sleep-Caps"],
+        "it": ["Olio-CBD-10%25", "Olio-CBD-4%25", "Capsule-Calm", "Capsule-Sleep"]
     });
 
     const router = useRouter();
@@ -37,11 +37,13 @@ export default function Home() {
     });
 
     const updateClient = (lang) => {
+        console.log("Client will now be updated with the new lang");
         client = Client.buildClient({
             domain: 'vytaescience.myshopify.com',
             storefrontAccessToken: 'cd9938f5f518fd5362be333e604a4c87',
             language: lang
         });
+        console.log("Client after changing: ", client);
     }
 
     const fetchAllProducts = async (initialLoad, langChanged, language) => {
@@ -90,6 +92,13 @@ export default function Home() {
         // old method fetch product by id
         // let productId = window.location.pathname.replace("/","");
         // fetchProductWithId(productId);
+
+        // console.log("----------------------------------");
+        // console.log("Products: ", allProducts);
+        // console.log("initialLoad: ", initialLoad);
+        // console.log("langChanged: ", langChanged);
+        // console.log("language: ", language);
+        // console.log("----------------------------------");
         
         if (allProducts?.length) {
             let productName = "";
@@ -98,10 +107,8 @@ export default function Home() {
                 if (language === "en") {
                     langToCheck = "it";
                 }
-                const nameInUrl = window.location.pathname.replace("/","").split("-").join(" ");
-                if (nameInUrl.indexOf("%25") !== -1) {
-                    nameInUrl = nameInUrl.replace("%25", "%");
-                }
+                const nameInUrl = window.location.pathname.replace("/","");
+                console.log("Name in url: ", nameInUrl);
                 let nameIndex = 0;
                 for (let i=0;i<langProdList.en.length;i++) {
                     if (nameInUrl === langProdList[langToCheck][i]) {
@@ -112,6 +119,7 @@ export default function Home() {
                 productName = langProdList[language][nameIndex];
             } else {
                 productName = window.location.pathname.replace("/","");
+                console.log("Product name req: ", productName);
             }
             matchProductAndFetchIt(allProducts, productName)
         }
@@ -123,7 +131,7 @@ export default function Home() {
         //
         let productId = "";
         for (let i=0;i<allProducts.length;i++) {
-            if (allProducts[i].title.split(" ").join("-") === productName.replace("%25", "%").split(" ").join("-")) {
+            if (allProducts[i].title.split(" ").join("-") === productName.replaceAll("%25", "%").split(" ").join("-")) {
                 productId = allProducts[i].id;
             }
         }
