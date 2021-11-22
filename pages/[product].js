@@ -20,8 +20,6 @@ export default function Home() {
     const [loader, setLoader] = useState(false);
     const [itemAdded, setItemAdded] = useState(false);
     const [lang, setLang] = useState("en");
-    const [langChangedAfter, setLangChangedAfter] = useState(false);
-    // const [initialLoad, setInitialLoad] = useState(false);
     const [langProdList, setLangProductList] = useState({
         "en": ["CBD-Oil-10%25", "CBD-Oil-4%25", "Calm-Caps", "Sleep-Caps"],
         "it": ["Olio-CBD-10%25", "Olio-CBD-4%25", "Capsule-Calm", "Capsule-Sleep"]
@@ -37,16 +35,14 @@ export default function Home() {
     });
 
     const updateClient = (lang) => {
-        console.log("Client will now be updated with the new lang");
         client = Client.buildClient({
             domain: 'vytaescience.myshopify.com',
             storefrontAccessToken: 'cd9938f5f518fd5362be333e604a4c87',
             language: lang
         });
-        console.log("Client after changing: ", client);
     }
 
-    const fetchAllProducts = async (initialLoad, langChanged, language) => {
+    const fetchAllProducts = async () => {
         // initiate loader first
         setLoader(true);
         // Fetch all products in your shop
@@ -54,13 +50,36 @@ export default function Home() {
         setProducts(products);
 
         // once the products are fetched initially then get the product details by matching the name
-        getProductDetails(products, initialLoad, langChanged, language);
+        getProductDetails(products);
     };
 
     const fetchProductWithId = async (id) => {
         const productDetails = await client.product.fetch(id);
         setProductDetail(productDetails);
     };
+
+    const getProductDetails = (allProducts) => {
+        // old method fetch product by id
+        // let productId = window.location.pathname.replace("/","");
+        // fetchProductWithId(productId);
+        
+        if (allProducts?.length) {
+            let productName = "";
+            productName = window.location.pathname.replace("/","");
+            matchProductAndFetchIt(allProducts, productName)
+        }
+        setLoader(false);
+    }
+
+    const matchProductAndFetchIt = (allProducts, productName) => {
+        let productId = "";
+        for (let i=0;i<allProducts.length;i++) {
+            if (allProducts[i].title.split(" ").join("-") === productName.replaceAll("%25", "%").split(" ").join("-")) {
+                productId = allProducts[i].id;
+            }
+        }
+        fetchProductWithId(productId);
+    }
 
     // const addItemToCheckout = async (variantId, quantity) => {
     const addItemToCheckout = async () => {
@@ -88,62 +107,12 @@ export default function Home() {
         localStorage.setItem("checkoutId",JSON.stringify(checkoutData.id));
     };
 
-    const getProductDetails = (allProducts, initialLoad, langChanged, language) => {
-        // old method fetch product by id
-        // let productId = window.location.pathname.replace("/","");
-        // fetchProductWithId(productId);
+    const fetchCheckout = async () => {
+        const checkoutId = JSON.parse(localStorage.getItem("checkoutId"));
 
-        // console.log("----------------------------------");
-        // console.log("Products: ", allProducts);
-        // console.log("initialLoad: ", initialLoad);
-        // console.log("langChanged: ", langChanged);
-        // console.log("language: ", language);
-        // console.log("----------------------------------");
-        
-        if (allProducts?.length) {
-            let productName = "";
-            if (initialLoad === false && langChanged === true) {
-                let langToCheck = "en";
-                if (language === "en") {
-                    langToCheck = "it";
-                }
-                const nameInUrl = window.location.pathname.replace("/","");
-                console.log("Name in url: ", nameInUrl);
-                let nameIndex = 0;
-                for (let i=0;i<langProdList.en.length;i++) {
-                    if (nameInUrl === langProdList[langToCheck][i]) {
-                        nameIndex = i;
-                    }
-                }
-                console.log("Index ---, ", nameIndex);
-                productName = langProdList[language][nameIndex];
-            } else {
-                productName = window.location.pathname.replace("/","");
-                console.log("Product name req: ", productName);
-            }
-            matchProductAndFetchIt(allProducts, productName)
-        }
-        setLoader(false);
+        const checkoutData = await client.checkout.fetch(checkoutId);
+        setCheckoutData(checkoutData);
     }
-
-    const matchProductAndFetchIt = (allProducts, productName) => {
-        // console.log("Product name: ----- ", productName);
-        //
-        let productId = "";
-        for (let i=0;i<allProducts.length;i++) {
-            if (allProducts[i].title.split(" ").join("-") === productName.replaceAll("%25", "%").split(" ").join("-")) {
-                productId = allProducts[i].id;
-            }
-        }
-        fetchProductWithId(productId);
-    }
-
-    // const fetchCheckout = async () => {
-    //     const checkoutId = JSON.parse(localStorage.getItem("checkoutId"));
-
-    //     const checkoutData = await client.checkout.fetch(checkoutId);
-    //     setCheckoutData(checkoutData);
-    // }
 
     const SetLangValue = () => {
         if (window.location?.search) {
@@ -154,31 +123,14 @@ export default function Home() {
                 langValue = window.location?.search.split("=")[1];
                 setLang(langValue);
             } else { setLang(langValue); }
-
             updateClient(langValue);
         }
     }
 
-    useEffect(() => {
-        SetLangValue();
-        // if (JSON.parse(localStorage.getItem("checkoutId"))) {
-        //     console.log(true);
-        //     fetchCheckout();
-        // } else {
-        //     console.log(false);
-        //     createCheckout();
-        // }
-        setWindowWidth(window.innerWidth);
-
-        createCheckout();
-        fetchAllProducts(true, false);
-
-    },[]);
-
     const onRouteChangeDone = () => {
         // reload the product data
         if (products.length === 0) {
-            fetchAllProducts(true, false);
+            fetchAllProducts();
         } else {
             // in the old method we only need the line below
             getProductDetails(products);
@@ -200,7 +152,7 @@ export default function Home() {
         const lineItemIdsToRemove = [id];        
         // Remove an item from the checkout
         const checkoutDataUpdated = await client.checkout.removeLineItems(checkoutData.id, lineItemIdsToRemove)
-        // // // update the product in the state checkout
+        // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
     }
@@ -217,18 +169,33 @@ export default function Home() {
     }, [router.events]);
 
     const changeLangFromMenu = (lang) => {
-        setLang(lang);
-        updateClient(lang);
-        createCheckout();
-        fetchAllProducts(false, true, lang);
-        setLangChangedAfter(!langChangedAfter);
-    }
+        const nameInUrl = window.location.pathname.replace("/","");
+        let langToCheck = "en";
+        if (lang === "en") {
+            langToCheck = "it";
+        }
+        let productName = "";
+        let nameIndex = 0;
+        for (let i=0;i<langProdList.en.length;i++) {
+            if (nameInUrl === langProdList[langToCheck][i]) {
+                nameIndex = i;
+            }
+        }
+        productName = langProdList[lang][nameIndex]; 
+        window.location.href = window.location.origin + "/" + productName + "?lang=" + lang;     
+    }    
 
-    
-    // useEffect(() => {
-    //     createCheckout();
-    //     fetchAllProducts(false, true);
-    // },[langChangedAfter]);
+    useEffect(() => {
+        SetLangValue();
+        if (JSON.parse(localStorage.getItem("checkoutId"))) {
+            fetchCheckout();
+        } else {
+            createCheckout();
+        }
+        setWindowWidth(window.innerWidth);
+        fetchAllProducts();
+
+    },[]);
 
     return (
         <Main

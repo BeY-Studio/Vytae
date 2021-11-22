@@ -65,7 +65,7 @@ const ProductSlider = (props) => {
                                 ?
                                     props.productDetail?.title === "Calm Caps"
                                     ? <img src={"./images/icons/CALM/Benefits/Vytae_Calm_Benefits_" + (props.lang === "it" ? "ITA" : "ENG") + "_text-ok-01.svg"} alt="benefits" />
-                                    : <img src={"./images/icons/SLEEP/Benefits/Vytae_Sleep_Benefits_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="benefits" />
+                                    : <img src={"./images/icons/SLEEP/Benefits/Vytae_Sleep_Benefits_" + (props.lang === "it" ? "ITA" : "ENG") + "_text-ok-01.svg"} alt="benefits" />
                                 : null
                             }
                         </div>
