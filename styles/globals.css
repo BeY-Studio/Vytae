@@ -91,13 +91,18 @@ p {
    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.menu_nav .drop_menu .menu_links,
 .menu_nav ul li a {
    padding: 10px;
    color: var(--color-theme-text);
    font-weight: 200;
    transition: all 0.9s ease-in-out;
+   display: inline;
 }
 
+.menu_nav ul li .menu_links:hover,
+.menu_nav ul li .menu_links:active,
+.menu_nav ul li .menu_links:focus,
 .menu_nav ul li a:hover,
 .menu_nav ul li a:active,
 .menu_nav ul li a:focus {

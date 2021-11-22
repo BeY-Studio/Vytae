@@ -24,15 +24,29 @@ const Menu = (props) => {
                         <a href="https://vytae.org/">Home</a>
                     </li>
                     <li>
-                        <a href="https://www.vytae.org/sostenibilita/?lang=it">Sostenibilità</a>
+                        <a href={"https://www.vytae.org/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
+                            {
+                                props.lang === "it"
+                                ? "Sostenibilità"
+                                : "Sustainability"
+                            }
+                        </a>
                     </li>
                     <li className="drop_menu">
-                        <a href="#">Prodotti <i className="fa fa-caret-down"></i></a>
+                        <a href="#">
+                            {
+                                props.lang === "it"
+                                ? "Prodotti"
+                                : "Products"
+                            }
+                            &nbsp;                            
+                            <i className="fa fa-caret-down"></i>
+                        </a>
                         <div className="menu_dropdown">
                             {
                                 props.products.map((product) => (
                                     <Link 
-                                        href={"/" + product.title.split(" ").join("-").replace("%", "%25")}
+                                        href={"/" + product.title.split(" ").join("-").replace("%", "%25") + "?lang=" + props.lang}
                                         key={product.id}
                                     >
                                         <a className="menu_span_dd">{product.title}</a>
@@ -42,9 +56,17 @@ const Menu = (props) => {
                         </div>
                     </li>
                     <li className="drop_menu">
-                        <a href="#">English <i className="fa fa-caret-down"></i></a>
+                        {
+                            props.lang === "it"
+                            ? <div className="menu_links" onClick={() => props.changeLangFromMenu("it")}>Italiano <i className="fa fa-caret-down"></i></div>
+                            : <div className="menu_links" onClick={() => props.changeLangFromMenu("en")}>English <i className="fa fa-caret-down"></i></div>
+                        }
                         <div className="menu_dropdown">
-                            <span>Italian</span>
+                            {
+                                props.lang === "it"
+                                ? <span onClick={() => props.changeLangFromMenu("en")}>English</span>
+                                : <span onClick={() => props.changeLangFromMenu("it")}>Italian</span>
+                            }
                         </div>
                     </li>
                 </ul>

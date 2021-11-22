@@ -16,7 +16,9 @@ const Main = (
         toggleCart,
         openCart,
         updateLineItem,
-        deleteLineItem
+        deleteLineItem,
+        lang,
+        changeLangFromMenu
     }
 ) => {
   return (
@@ -52,6 +54,8 @@ const Main = (
           checkout={checkout}
           products={products}
           toggleCart={toggleCart}
+          lang={lang}
+          changeLangFromMenu={changeLangFromMenu}
         />
         <Cart
           products={products}
@@ -60,6 +64,8 @@ const Main = (
           openCart={openCart}
           updateLineItem={updateLineItem}
           deleteLineItem={deleteLineItem}
+          lang={lang}
+          changeLangFromMenu={changeLangFromMenu}
         />
         {children}
 

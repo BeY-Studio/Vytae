@@ -46,14 +46,25 @@ const MobileMenu = (props) => {
                         <a href="https://www.vytae.com/">Home</a>
                     </li>
                     <li>
-                        <a href="https://www.vytae.org/sostenibilita/?lang=it">Sostenibilità</a>
+                        <a href={"https://www.vytae.org/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
+                            {
+                                props.lang === "it"
+                                ? "Sostenibilità"
+                                : "Sustainability"
+                            }
+                        </a>
                     </li>
                     <li className={toggleProducts ? "open_menu_dropdown" : "closed_menu_dropdown"}>
                         <span 
                             className={toggleProducts ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"}
                             onClick={() => setToggleProducts(!toggleProducts)}
                         >
-                            Prodotti &nbsp;
+                            {
+                                props.lang === "it"
+                                ? "Prodotti"
+                                : "Products"
+                            }
+                            &nbsp;
                             <i className="fa fa-caret-down"></i>
                         </span>
                         <div className="sub_menu_mob">
@@ -62,7 +73,7 @@ const MobileMenu = (props) => {
                                     props.products.map((product) => (
                                         <li key={product.id} className="sub_menu_mob_li">
                                             <Link 
-                                                href={"/" + product.title.split(" ").join("-").replace("%", "%25")}
+                                                href={"/" + product.title.split(" ").join("-").replace("%", "%25") + "?lang=" + props.lang}
                                             >
                                                 <a onClick={toggleMobileMenu} className="menu_span_dd">{product.title}</a>
                                             </Link>
@@ -77,16 +88,20 @@ const MobileMenu = (props) => {
                             className={ toggleLanguageDd ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"} 
                             onClick={() => setToggleLanguageDd(!toggleLanguageDd)}
                         >
-                            Lingue &nbsp;
+                            {
+                                props.lang === "it"
+                                ? "Lingue"
+                                : "Language"
+                            } &nbsp;
                             <i className="fa fa-caret-down"></i>
                         </span>
                         <div className="sub_menu_mob">
                             <ul>
                                 <li className="drop_menu sub_menu_mob_li">
-                                    <a href="#">English</a>
+                                    <span onClick={() => props.changeLangFromMenu("en")}>English</span>
                                 </li>
                                 <li className="drop_menu sub_menu_mob_li">
-                                    <a href="#">Italian</a>
+                                    <span onClick={() => props.changeLangFromMenu("it")}>{props.lang === "it" ? "Italiano" : "Italian"}</span>
                                 </li>
                             </ul>
                         </div>

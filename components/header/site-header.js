@@ -19,11 +19,15 @@ const Header = (props) => {
                             products={props.products}
                             checkout={props.checkout}
                             toggleCart={props.toggleCart}
+                            lang={props.lang}
+                            changeLangFromMenu={props.changeLangFromMenu}
                         />
                         : <MobileMenu 
                             products={props.products}
                             checkout={props.checkout}
                             toggleCart={props.toggleCart}
+                            lang={props.lang}
+                            changeLangFromMenu={props.changeLangFromMenu}
                         />
                     }
                 </div>
