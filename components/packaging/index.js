@@ -1,5 +1,6 @@
 import React from "react";
 import NormalButton from "../buttons/normal";
+import Link from "next/link";
 
 const Packaging = (props) => {
     return (
@@ -32,10 +33,14 @@ const Packaging = (props) => {
                     </p>
                     <p className="text_center color_white font_300 packaging_text">REDUSE, REUSE, RECYCLE</p>
                     <div className="single_button_row">
-                        <NormalButton
-                            data={'Scopri di più'}
-                            classes={'normal_button color_white'}
-                        />
+                        <Link href={"https://vytae.org/sostenibilita/?lang=" + (props.lang === "it" ? "it" : "")}>
+                            <a>
+                                <NormalButton
+                                    data={'Scopri di più'}
+                                    classes={'normal_button color_white'}
+                                />
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </div>
