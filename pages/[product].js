@@ -254,9 +254,9 @@ export default function Home() {
                 :
                 <AccordionSection productDetail={productDetail} />
             }
-            <Packaging windowWidth={windowWidth} />
+            <Packaging windowWidth={windowWidth} lang={lang} />
             {/* <Reviews /> */}
-            <HandsSec windowWidth={windowWidth} productDetail={productDetail} />
+            <HandsSec windowWidth={windowWidth} productDetail={productDetail} lang={lang} />
         </Main>
     );
 }

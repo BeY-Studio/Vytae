@@ -1,7 +1,8 @@
 import React from "react";
 import NormalButton from "../buttons/normal";
+import Link from "next/link";
 
-const HandsSec = ({ windowWidth, productDetail }) => {
+const HandsSec = ({ windowWidth, productDetail, lang }) => {
     return (
         <div
             className="dark_bg_con hands_section_bg"
@@ -20,39 +21,72 @@ const HandsSec = ({ windowWidth, productDetail }) => {
             }
             </div>
             <div className="content text_center hands_sec_content hands_sec_top">
-                <h2 className="section_h2 color_white">Canapa</h2>
-                <h3 className="section_h3 color_white">per la Salute Umana</h3>
-                <p className="text_center color_white font_300">Ricerche recenti hanno dimostrato il ruolo cruciale della canapa e del CBD per la regolazione di stress e ansia, la qualità del sonno, il sollievo dal dolore, e la cura delle infiammazioni.</p>
+                <h2 className="section_h2 color_white">{ lang === "it" ? "Canapa" : "Hemp"}</h2>
+                <h3 className="section_h3 color_white">{ lang === "it" ? "per la Salute Umana" : "for Human Health"}</h3>
+                <p className="text_center color_white font_300">
+                    {
+                        lang === "it"
+                        ? "Ricerche recenti hanno dimostrato il ruolo cruciale della canapa e del CBD per la regolazione di stress e ansia, la qualità del sonno, il sollievo dal dolore, e la cura delle infiammazioni."
+                        : "Current research has proven the crucial role of hemp and CBD in the regulation of stress &amp; anxiety, the relief of pain and the ease of inflammation"
+                    }
+                </p>
                 <div className="button_pair hands_sec_b_p">
-                    <NormalButton
-                        data={'Ansia & stress'}
-                        classes={'normal_button color_white'}
-                    />
-                    <NormalButton
-                        data={'Sonno'}
-                        classes={'normal_button color_white'}
-                    />
-                    <NormalButton
-                        data={'Sollievo dal dolore'}
-                        classes={'normal_button color_white'}
-                    />
-                    <NormalButton
-                        data={'Anti-infiammazione'}
-                        classes={'normal_button color_white'}
-                    />
+                    <Link href={"https://vytae.org/cbd-e-ansia/?lang=" + lang === "it" ? "it" : ""}>
+                        <a>
+                            <NormalButton
+                                data={lang === "it" ? 'Ansia & stress' : "Anxiety & stress"}
+                                classes={'normal_button color_white'}
+                            />
+                        </a>
+                    </Link>
+                    <Link href={"https://vytae.org/cbd-e-ansia/?lang=" + lang === "it" ? "it" : ""}>
+                        <a>
+                            <NormalButton
+                                data={lang === "it" ? 'Sonno' : "Sleep"}
+                                classes={'normal_button color_white'}
+                            />
+                        </a>
+                    </Link>
+                    <Link href={"https://vytae.org/cdb-e-sonno/?lang=" + lang === "it" ? "it" : ""}>
+                        <a>
+                            <NormalButton
+                                data={lang === "it" ? 'Sollievo dal dolore' : "Pain relief"}
+                                classes={'normal_button color_white'}
+                            />
+                        </a>
+                    </Link>
+                    <Link href={"https://vytae.org/cbd-e-infiammazione/?lang=" + lang === "it" ? "it" : ""}>
+                        <a>
+                            <NormalButton
+                                data={lang === "it" ? 'Anti-infiammazione' : "Anti-inflammatory"}
+                                classes={'normal_button color_white'}
+                            />
+                        </a>
+                    </Link>                    
+                    
                 </div>
             </div>
             <div className="content text_center hands_sec_content_two">
-                <h2 className="section_h2 color_white">Canapa</h2>
-                <h3 className="section_h3 color_white">per la Salute del Pianeta</h3>
+                <h2 className="section_h2 color_white">{ lang === "it" ? "Canapa" : "Hemp"}</h2>
+                <h3 className="section_h3 color_white">{ lang === "it" ? "per la Salute del Pianeta" : "for Planet Health"}</h3>
                 <img id="globe" src="./images/backgrounds/globe-mob.png" alt="globe image" />
-                <p className="text_center color_white font_300 font_italic hands_sec_italic_text">“La canapa è una pianta circolare, della quale tutte le parti possono avere un impatto sociale, ecologico o industriale.”</p>
+                <p className="text_center color_white font_300 font_italic hands_sec_italic_text">
+                    { 
+                        lang === "it"
+                        ? '“La canapa è una pianta circolare, della quale tutte le parti possono avere un impatto sociale, ecologico o industriale.”'
+                        : '“Hemp is a circular plant with all its parts potentially having societal, ecological or industrial value.”'
+                    }
+                </p>
                 <p className="note_p text_center color_white font_300">Tobias Luthe, Professor ETH Zurich</p>
                 <div className="single_button_row hands_sec_b_p">
-                    <NormalButton
-                        data={'Sostenibilità'}
-                        classes={'normal_button color_white'}
-                    />
+                    <Link href={"https://vytae.org/sostenibilita/?lang=" + lang === "it" ? "it" : ""}>
+                        <a>
+                            <NormalButton
+                                data={lang ==="it" ? 'Sostenibilità' : "Sustainability"}
+                                classes={'normal_button color_white'}
+                            />
+                        </a>
+                    </Link>                    
                 </div>
                 <div className="hand_sec_icons">
                     {/* <img src="./images/icons/plastic-free-world.png" alt="plastic free world image" />
