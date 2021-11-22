@@ -47,7 +47,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                             />
                         </a>
                     </Link>
-                    <Link href={"https://vytae.org/cdb-e-sonno/?lang=" + (lang === "it" ? "it" : "")}>
+                    <Link href={"https://vytae.org/cdb-e-sollievo-dal-dolore/?lang=" + (lang === "it" ? "it" : "")}>
                         <a>
                             <NormalButton
                                 data={lang === "it" ? 'Sollievo dal dolore' : "Pain relief"}
