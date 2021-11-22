@@ -17,12 +17,12 @@ const InsightsIcons = (props) => {
                 {
                     props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Sleep Caps"
                     ?
-                    <img src="./images/icons/CALM/Ingredients/Vytae_Ingredients_Desktop_ITA_Nov 12 edit-01-01.svg" alt="Ingredients" />
+                    <img src={"./images/icons/CALM/Ingredients/Vytae_Calm_Ingredients_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="Ingredients" />
                     :
                     props.windowWidth > 768
                     ?
-                    <img src="./images/icons/OIL/Ingredients/Desktop/Vytae_Oil_Ingredients_Desktop_ITA_text ok-01.svg" alt="Ingredients" />
-                    : <img src="./images/icons/OIL/Ingredients/Mobile/Vytae_Oil_Ingredients_Mobile_ITA_text ok-01.svg" alt="Ingredients" />
+                    <img src={"./images/icons/OIL/Ingredients/Desktop/Vytae_Oil_Ingredients_Desktop_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="Ingredients" />
+                    : <img src={"./images/icons/OIL/Ingredients/Mobile/Vytae_Oil_Ingredients_Mobile_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="Ingredients" />
                 }
             </div>
         </div>

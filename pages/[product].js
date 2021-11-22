@@ -239,13 +239,14 @@ export default function Home() {
             changeLangFromMenu={changeLangFromMenu}
         >
             {loader ? <Loader /> : null}
-            <ProductSlider productDetail={productDetail} />
+            <ProductSlider productDetail={productDetail} lang={lang} />
             <ProductInsights
                 productDetail={productDetail}
                 addItemToCheckout={addItemToCheckout}
                 toggleCart={toggleCart}
                 checkout={checkoutData}
                 itemAdded={itemAdded}
+                lang={lang}
             />
             {
                 windowWidth > 1025

@@ -23,7 +23,7 @@ const ProductInsights = (props) => {
                 />
                 : null
             }
-            <InsightsIcons windowWidth={windowWidth} productDetail={props.productDetail} />
+            <InsightsIcons windowWidth={windowWidth} productDetail={props.productDetail}  lang={props.lang} />
             {
                 windowWidth > 1024
                 ? <AddToCartButton

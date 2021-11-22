@@ -102,16 +102,16 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                             productDetail?.title === "Calm Caps" || productDetail?.title === "Sleep Caps"
                             ?
                                 productDetail?.title === "Calm Caps"
-                                ? <img src="./images/icons/CALM/Sustainability/Desktop/Vytae_Sustainability_Desktop_ITA_text-ok-01.svg" alt="stainability icons" />
-                                : <img src="./images/icons/SLEEP/Sustainability/Desktop/Vytae_Sustainability_Desktop_ITA.svg" alt="stainability icons" />
-                            : <img src="./images/icons/OIL/Sustainability/Desktop/Vytae_Sustainability_Desktop_ITA.svg" alt="stainability icons" />
+                                ? <img src={"./images/icons/CALM/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + "_text-ok-01.svg"} alt="stainability icons" />
+                                : <img src={"./images/icons/SLEEP/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
+                            : <img src={"./images/icons/OIL/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
                         :
                             productDetail?.title === "Calm Caps" || productDetail?.title === "Sleep Caps"
                             ?
                                 productDetail?.title === "Calm Caps"
-                                ? <img src="./images/icons/CALM/Sustainability/Mobile/Vytae_Sustainability_Mobile_ITA_text_ok-01.svg" alt="stainability icons" />
-                                : <img src="./images/icons/SLEEP/Sustainability/Mobile/Vytae_Sustainability_Mobile_ITA.svg" alt="stainability icons" />
-                            : <img src="./images/icons/OIL/Sustainability/Mobile/Vytae_Sustainability_Mobile_ITA.svg" alt="stainability icons" />
+                                ? <img src={"./images/icons/CALM/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="stainability icons" />
+                                : <img src={"./images/icons/SLEEP/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
+                            : <img src={"./images/icons/OIL/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
                     }
                 </div>
             </div>
