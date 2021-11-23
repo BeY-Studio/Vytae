@@ -4,6 +4,7 @@ import { Accordion } from 'react-bootstrap';
 const AccordionSection = (props) => {
     return (
         props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Sleep Caps"
+        || props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Capsule Sleep"
         ?
         <div className="tabs_section">
             <Accordion defaultActiveKey="0">

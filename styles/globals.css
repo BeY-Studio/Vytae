@@ -777,7 +777,7 @@ section {
    height: auto;
 }
 .accordion-item .accordion-collapse {
-   transition: height 500ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
    overflow: hidden;
 }
 .accordion-item .inner {
@@ -1535,6 +1535,12 @@ section {
    }
    .cart_item_addition div .number {
       margin-right: 25px;
+   }
+   .add_to_cart {
+      z-index: 1; 
+   }
+   .slider_product_details_right .description {
+      font-size: 12px;
    }
 }
 

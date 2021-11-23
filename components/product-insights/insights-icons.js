@@ -16,8 +16,11 @@ const InsightsIcons = (props) => {
                 <img src="./images/icons/vegan-white.png" alt="vegan image" /> */}
                 {
                     props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Sleep Caps"
+                    || props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Capsule Sleep"
                     ?
-                    <img src={"./images/icons/CALM/Ingredients/Vytae_Calm_Ingredients_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="Ingredients" />
+                        props.windowWidth > 768
+                        ? <img src={"./images/icons/CALM/Ingredients/Vytae_Calm_Ingredients_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="Ingredients" />
+                        : <img src={"./images/icons/CALM/Ingredients/Vytae_Calm_Ingredients_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01_Mobile-01.svg"} alt="Ingredients" />
                     :
                     props.windowWidth > 768
                     ?
