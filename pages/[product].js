@@ -226,9 +226,9 @@ export default function Home() {
             {
                 windowWidth > 1025
                 ?
-                <TabsSection productDetail={productDetail} />
+                <TabsSection productDetail={productDetail} lang={lang} />
                 :
-                <AccordionSection productDetail={productDetail} />
+                <AccordionSection productDetail={productDetail} lang={lang} />
             }
             <Packaging windowWidth={windowWidth} lang={lang} />
             {/* <Reviews /> */}
