@@ -200,9 +200,9 @@ export default function Home() {
     return (
         <Main
             title={productDetail?.title}
-            description={"this will be product description for seo"}
-            imageUrl={"this will be product image url"}
-            keyword={"These will be product keywords"}
+            description={productDetail?.descriptionHtml}
+            imageUrl={productDetail?.images ? productDetail.images[0]?.src : null}
+            keyword={"Hemp Oil, Canapa, Olio, Oil"}
             products={products}
             checkout={checkoutData}
             openCart={openCart}

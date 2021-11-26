@@ -36,7 +36,7 @@ const ProductSlider = (props) => {
                     slidesPerView={1}
                 >
                     {
-                        props.productDetail && props.productDetail.images?.map((image) => (
+                        props.productDetail && props.productDetail?.images?.map((image) => (
                             <SwiperSlide key={image.src}>
                                 <img className="product_img" src={image.src} alt={"product name here"} />
                             </SwiperSlide>
