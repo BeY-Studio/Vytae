@@ -947,6 +947,14 @@ section {
 .single_button_row  a button {
    width: auto;
 }
+@media only screen and (min-width: 1301px) and (max-width: 1400px) {
+   .react-tabs__tab-list {
+      width: 34%;
+   }
+   .react-tabs__tab {
+      font-size: 18px;
+   }
+}
 @media only screen and (min-width: 1201px) and (max-width: 1300px) {
    .slider_product_details_left {
       left: 7%;
