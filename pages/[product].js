@@ -97,8 +97,9 @@ export default function Home() {
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
-        setItemAdded(true);
-        setTimeout(() => { setItemAdded(false); },5000);
+        toggleCart();
+        // setItemAdded(true);
+        // setTimeout(() => { setItemAdded(false); },5000);
     };
 
     const createCheckout = async () => {
@@ -124,6 +125,7 @@ export default function Home() {
                 setLang(langValue);
             } else { setLang(langValue); }
             updateClient(langValue);
+            console.log("Client updated: ", client);
         }
     }
 

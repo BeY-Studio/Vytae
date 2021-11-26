@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Cart = (props) => {
 
@@ -22,6 +22,16 @@ const Cart = (props) => {
         }
     }
 
+    useEffect(() => {
+        console.log("props.checkout: ", props.checkout);
+        console.log("props.checkout?.lineItems: ", props.checkout.lineItems);
+    }, []);
+
+    useEffect(() => {
+        console.log("props.checkout: ", props.checkout);
+        console.log("props.checkout?.lineItems: ", props.checkout.lineItems);
+    }, [props.checkout]);
+
 
     return (
         <>
@@ -33,7 +43,7 @@ const Cart = (props) => {
                 <div className="close_cart" onClick={props.toggleCart}>
                     <i className="far fa-2x fa-times-circle color_theme_text"></i>
                 </div>
-                <h2 className="section_h2 color_theme_text cart_h2">Cart</h2>
+                <h2 className="section_h2 color_theme_text cart_h2">{props.lang === "it" ? "Carrello": "Cart"}</h2>
                 {
                     props.checkout?.lineItems?.length
                     ?
@@ -58,15 +68,18 @@ const Cart = (props) => {
                                     ))
                                 }                            
                             </div>
+                            <div className="checkout_con mb_20">
+                                <button className="normal_button color_white" onClick={props.toggleCart}> <i className="fa fa-long-arrow-alt-left"></i> {props.lang === "it" ? "Continua con lo Shopping" : "Continue Shopping"}</button>
+                            </div>
                             <div className="checkout_con">
-                                <button className="normal_button color_white" onClick={goToShopifyCheckout}>Check out</button>
+                                <button className="normal_button color_white" onClick={goToShopifyCheckout}>{props.lang ==="it"? "Check out" : "Check out"}</button>
                             </div>
                         </>
                     :
                         <div className="empty_cart">
-                            <span>Your cart is empty</span>
+                            <span>{props.lang === "it" ? "Il carrello è vuoto" : "Your cart is empty"}</span>
                             <span className="go_back color_theme_text" onClick={props.toggleCart}>
-                                <i className="fa fa-long-arrow-alt-left"></i> go back
+                                <i className="fa fa-long-arrow-alt-left"></i> {props.lang === "it" ? "torna indietro" : "go back"}
                             </span>
                         </div>
                 }

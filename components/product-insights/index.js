@@ -23,7 +23,7 @@ const ProductInsights = (props) => {
                 />
                 : null
             }
-            <InsightsIcons windowWidth={windowWidth} productDetail={props.productDetail}  lang={props.lang} />
+            <InsightsIcons windowWidth={windowWidth} productDetail={props.productDetail} lang={props.lang} />
             {
                 windowWidth > 1024
                 ? <AddToCartButton
@@ -33,6 +33,7 @@ const ProductInsights = (props) => {
                     price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
                     onClick={props.addItemToCheckout}
                     conClassName="add_to_cart_con fixed_cart_btn"
+                    lang={props.lang}
                 />
                 : null
             }            

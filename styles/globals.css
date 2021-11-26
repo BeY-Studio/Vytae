@@ -315,7 +315,7 @@ p {
 }
 .add_to_cart_con {
    right: 40px;
-   width: 210px;
+   width: 260px;
    height: 100px;
 }
 .add_to_cart {
@@ -946,6 +946,9 @@ section {
 }
 .single_button_row  a button {
    width: auto;
+}
+.mb_20 {
+   margin-bottom: 20px;
 }
 @media only screen and (min-width: 1301px) and (max-width: 1400px) {
    .react-tabs__tab-list {
