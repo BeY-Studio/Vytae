@@ -26,7 +26,7 @@ const Packaging = (props) => {
                         {
                             props.lang === "it"
                             ?
-                            "Promuoviamo il paradigma delle 3R per costruire un’economia circolare materiale attraverso l&apos;uso efficace di risorse e materiali."
+                            "Promuoviamo il paradigma delle 3R per costruire un’economia circolare materiale attraverso l'uso efficace di risorse e materiali."
                             :
                             "We embrace the 3R paradigma to build a circular economy through the effective and conscious use of resources and materials."
                         }
