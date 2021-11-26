@@ -82,7 +82,7 @@ const AccordionSection = (props) => {
                                 <p>Keep out of reach of children.</p>
                                 <p>Do not exceed the recommended daily dose.</p>
                                 <p>Supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle</p>
-                                <p>If drugs are taken, before using the product, ask for the advice of the doctor because St. John&apos;s Wort extract can interfere with their metabolism and inhibit their activity. St. John’s Wort extract is contraindicated in pediatric age and in adolescence.</p>
+                                <p>{"If drugs are taken, before using the product, ask for the advice of the doctor because St. John's Wort extract can interfere with their metabolism and inhibit their activity. St. John’s Wort extract is contraindicated in pediatric age and in adolescence."}</p>
                             </>
                         }
                     </Accordion.Body>

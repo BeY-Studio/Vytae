@@ -35,7 +35,7 @@ const TabsSection = (props) => {
                         <>
                             <h4>Nutritional Information | Ammount per 2 caps (DIE)</h4>
                             <p>Hemp seed oil | 700 mg</p>
-                            <p>St. John&apos;s wort d.e. (Hypericum perforatum L) | 230 mg</p>
+                            <p>{"St. John's wort d.e. (Hypericum perforatum L) | 230 mg"}</p>
                             <p>Of which Hypericin | 0,69mg</p>
                             <p>Rhodiola d.e. (Rhodiola Rosea L.) | 100 mg</p>
                             <p>Rosavin - HPLC | 3mg</p>
@@ -68,7 +68,7 @@ const TabsSection = (props) => {
                             <p>Keep out of reach of children.</p>
                             <p>Do not exceed the recommended daily dose.</p>
                             <p>Supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle</p>
-                            <p>If drugs are taken, before using the product, ask for the advice of the doctor because St. John&apos;s Wort extract can interfere with their metabolism and inhibit their activity. St. John’s Wort extract is contraindicated in pediatric age and in adolescence.</p>
+                            <p>{"If drugs are taken, before using the product, ask for the advice of the doctor because St. John's Wort extract can interfere with their metabolism and inhibit their activity. St. John’s Wort extract is contraindicated in pediatric age and in adolescence."}</p>
                         </>
                     }
                 </TabPanel>
