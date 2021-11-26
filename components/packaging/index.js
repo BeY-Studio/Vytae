@@ -31,7 +31,7 @@ const Packaging = (props) => {
                             "We embrace the 3R paradigma to build a circular economy through the effective and conscious use of resources and materials."
                         }
                     </p>
-                    <p className="text_center color_white font_300 packaging_text">REDUSE, REUSE, RECYCLE</p>
+                    <p className="text_center color_white font_300 packaging_text">REDUCE, REUSE, RECYCLE</p>
                     <div className="single_button_row">
                         <Link href={"https://vytae.org/sostenibilita/?lang=" + (props.lang === "it" ? "it" : "")}>
                             <a>
