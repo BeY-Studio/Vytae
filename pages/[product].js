@@ -19,11 +19,11 @@ export default function Home() {
     const [openCart, setOpenCart] = useState(false);
     const [loader, setLoader] = useState(false);
     const [itemAdded, setItemAdded] = useState(false);
-    const [lang, setLang] = useState("en");
-    const [langProdList, setLangProductList] = useState({
+    const [lang, setLang] = useState("it");
+    const langProdList = {
         "en": ["CBD-Oil-10%25", "CBD-Oil-4%25", "Calm-Caps", "Sleep-Caps"],
         "it": ["Olio-CBD-10%25", "Olio-CBD-4%25", "Capsule-Calm", "Capsule-Sleep"]
-    });
+    };
 
     const router = useRouter();
 
@@ -31,14 +31,14 @@ export default function Home() {
     const client = Client.buildClient({
         domain: 'vytaescience.myshopify.com',
         storefrontAccessToken: 'cd9938f5f518fd5362be333e604a4c87',
-        language: lang
+        language: (lang === "en" ? "en-US" : "it-IT")
     });
 
     const updateClient = (lang) => {
         client = Client.buildClient({
             domain: 'vytaescience.myshopify.com',
             storefrontAccessToken: 'cd9938f5f518fd5362be333e604a4c87',
-            language: lang
+            language: (lang === "en" ? "en-US" : "it-IT")
         });
     }
 
@@ -125,7 +125,6 @@ export default function Home() {
                 setLang(langValue);
             } else { setLang(langValue); }
             updateClient(langValue);
-            console.log("Client updated: ", client);
         }
     }
 
