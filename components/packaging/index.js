@@ -36,7 +36,7 @@ const Packaging = (props) => {
                         <Link href={"https://vytae.org/sostenibilita/?lang=" + (props.lang === "it" ? "it" : "")}>
                             <a>
                                 <NormalButton
-                                    data={'Scopri di più'}
+                                    data={props.lang === "it" ? 'Scopri di più' : "Learn more"}
                                     classes={'normal_button color_white'}
                                 />
                             </a>
