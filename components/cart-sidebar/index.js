@@ -14,30 +14,28 @@ const Cart = (props) => {
     // temporary solution to translate products
     const allProductsWithTranslations = [
         {
-            id: "Z2lkOi8vc2hvcGlmeS9DaGVja291dExpbmVJdGVtLzQwNDQwNjE4MzIwMDgwMD9jaGVja291dD0yY2JkYzUzMGM2M2IzNmUxZTU1ZWNlOTI1NGFiZDNmYQ==",
             en: "CBD Oil 10%",
             it: "Olio CBD 10%"
         },
         {
-            id: "Z2lkOi8vc2hvcGlmeS9DaGVja291dExpbmVJdGVtLzQwNDQwNjE4NjgwNTI4MD9jaGVja291dD0yY2JkYzUzMGM2M2IzNmUxZTU1ZWNlOTI1NGFiZDNmYQ==",
             en: "CBD Oil 4%",
             it: "Olio CBD 4%"
         },
         {
-            id: "Z2lkOi8vc2hvcGlmeS9DaGVja291dExpbmVJdGVtLzQwNDQwNjE5MDczNzQ0MD9jaGVja291dD0yY2JkYzUzMGM2M2IzNmUxZTU1ZWNlOTI1NGFiZDNmYQ==",
             en: "Calm Caps",
             it: "Capsule Calm"
         },
         {
-            id: "Z2lkOi8vc2hvcGlmeS9DaGVja291dExpbmVJdGVtLzQwNDQwNjE5NDM0MTkyMD9jaGVja291dD0yY2JkYzUzMGM2M2IzNmUxZTU1ZWNlOTI1NGFiZDNmYQ==",
             en: "Sleep Caps",
             it: "Capsule Sleep"
         }
     ];
 
-    const returnProductName = (lang, itemId) => {
+
+    const returnProductName = (lang, item) => {
         for (let i=0;i<allProductsWithTranslations.length;i++) {
-            if (allProductsWithTranslations[i].id === itemId) return allProductsWithTranslations[i][lang]
+            if (allProductsWithTranslations[i].en === item.title) return allProductsWithTranslations[i][lang]
+            if (allProductsWithTranslations[i].it === item.title) return allProductsWithTranslations[i][lang]
         }
     };
 
@@ -72,7 +70,7 @@ const Cart = (props) => {
                                 {
                                     props.checkout?.lineItems.map((item, index) => (
                                         <div className="inner" key={"vy_" + index}>
-                                            <span className="title font_500">{returnProductName(props.lang,item.id)}</span>
+                                            <span className="title font_500">{returnProductName(props.lang,item)}</span>
                                             <div className="p_and_q color_black">
                                                 <span className="price font_500">&euro;{item.variant?.price}</span>
                                                 <div className="quantity">
