@@ -4,6 +4,7 @@ import Link from 'next/link';
 const MobileMenu = (props) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [toggleProducts, setToggleProducts] = useState(false);
+    const [toggleLearn, setToggleLearn] = useState(false);
     const [toggleLanguageDd, setToggleLanguageDd] = useState(false);
 
     const [itemsNumber, setItemsNumber] = useState(0);
@@ -18,6 +19,7 @@ const MobileMenu = (props) => {
     const toggleMobileMenu = () => {
         setMenuOpen(!menuOpen);
         setToggleProducts(false);
+        setToggleLearn(false);
         setToggleLanguageDd(false);
     };
 
@@ -45,15 +47,6 @@ const MobileMenu = (props) => {
                     <li>
                         <a href="https://www.vytae.com/">Home</a>
                     </li>
-                    <li>
-                        <a href={"https://www.vytae.org/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
-                            {
-                                props.lang === "it"
-                                ? "Sostenibilità"
-                                : "Sustainability"
-                            }
-                        </a>
-                    </li>
                     <li className={toggleProducts ? "open_menu_dropdown" : "closed_menu_dropdown"}>
                         <span 
                             className={toggleProducts ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"}
@@ -61,8 +54,8 @@ const MobileMenu = (props) => {
                         >
                             {
                                 props.lang === "it"
-                                ? "Prodotti"
-                                : "Products"
+                                ? "Shop"
+                                : "Shop"
                             }
                             &nbsp;
                             <i className="fa fa-caret-down"></i>
@@ -82,6 +75,75 @@ const MobileMenu = (props) => {
                                 }
                             </ul>
                         </div>
+                    </li>
+                    <li className={toggleLearn ? "open_menu_dropdown" : "closed_menu_dropdown"}>
+                        <span 
+                            className={toggleLearn ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"}
+                            onClick={() => setToggleLearn(!toggleLearn)}
+                        >
+                            {
+                                props.lang === "it"
+                                ? "Approfondisci"
+                                : "Learn"
+                            }
+                            &nbsp;
+                            <i className="fa fa-caret-down"></i>
+                        </span>
+                        <div className="sub_menu_mob">
+                            <ul>
+                                <li className="sub_menu_mob_li">
+                                    <Link 
+                                        href={"https://vytae.org/" + (props.lang === "it" ? "sec-101/?lang=it" : "learn/sec-101/")}
+                                    >
+                                        <a onClick={toggleMobileMenu} className="menu_span_dd">SEC 101</a>
+                                    </Link>
+                                </li>
+                                <li className="sub_menu_mob_li">
+                                    <Link 
+                                        href={"https://vytae.org/" + (props.lang === "it" ? "cbd-101/?lang=it" : "learn/cbd-101/")}
+                                    >
+                                        <a onClick={toggleMobileMenu} className="menu_span_dd">CBD 101</a>
+                                    </Link>
+                                </li>
+                                <li className="sub_menu_mob_li">
+                                    <Link 
+                                        href={"https://vytae.org/" + (props.lang === "it" ? "cdb-e-sonno/?lang=it" : "learn/cdb-e-sonno/")}
+                                    >
+                                        <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e Sonno" : "CDB and Insomnia"}</a>
+                                    </Link>
+                                </li>
+                                <li className="sub_menu_mob_li">
+                                    <Link 
+                                        href={"https://vytae.org/" + (props.lang === "it" ? "cbd-e-ansia/?lang=it" : "learn/cbd-and-anxiety/")}
+                                    >
+                                        <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e Ansia" : "CBD and Anxiety"}</a>
+                                    </Link>
+                                </li>
+                                <li className="sub_menu_mob_li">
+                                    <Link 
+                                        href={"https://vytae.org/" + (props.lang === "it" ? "cdb-e-sollievo-dal-dolore/?lang=it" : "learn/cdb-and-pain-relief/")}
+                                    >
+                                        <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e sollievo dal dolore" : "CBD and Pain Relief"}</a>
+                                    </Link>
+                                </li>
+                                <li className="sub_menu_mob_li">
+                                    <Link 
+                                        href={"https://vytae.org/" + (props.lang === "it" ? "cbd-e-infiammazione/?lang=it" : "learn/cbd-and-inflammation/")}
+                                    >
+                                        <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e infiammazione" : "CBD and Inflammation"}</a>
+                                    </Link>                                  
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href={"https://www.vytae.org/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
+                            {
+                                props.lang === "it"
+                                ? "Sostenibilità"
+                                : "Sustainability"
+                            }
+                        </a>
                     </li>
                     <li className={toggleLanguageDd ? "open_menu_dropdown" : "closed_menu_dropdown"}>
                         <span

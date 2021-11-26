@@ -122,14 +122,14 @@ p {
    background: #fff;
    box-shadow: 0px 0px 8px rgba(0,0,0,0.16);
    padding: 0px;
-   min-width: 180px;
+   min-width: 200px;
    left: 10px;
 }
 
 .menu_nav ul li .menu_dropdown a {
    font-size: 13px;
    font-weight: 400;
-   padding: 8px 20px;
+   padding: 8px 15px;
    display: block;
    cursor: pointer;
 }
@@ -164,7 +164,7 @@ p {
 }
 .closed_menu_dropdown {
    overflow: hidden;
-   height: 50px;
+   height: 38px;
 }
 .open_menu_dropdown {
    height: auto;
@@ -173,7 +173,7 @@ p {
    border-bottom: 1px solid #ccc;
 }
 .mobile_menu_con li {
-   padding: 2px 5px;
+   padding: 6px 5px;
    border-bottom: 1px solid #ccc;
 }
 .mobile_menu_con li a {
@@ -182,6 +182,12 @@ p {
 }
 .mobile_menu_con li:hover {
    background: #ccc;
+}
+.mobile_menu_con li a {
+   padding: 6px;
+}
+.mobile_menu_con li span {
+   padding: 0px 8px 6px !important;
 }
 
 .menu_bars i {
