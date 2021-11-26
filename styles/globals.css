@@ -947,8 +947,40 @@ section {
 .single_button_row  a button {
    width: auto;
 }
-
-@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+@media only screen and (min-width: 1201px) and (max-width: 1300px) {
+   .slider_product_details_left {
+      left: 7%;
+   }
+   .slider_product_details_right {
+      right: 7%;
+   }
+   .slider_product_details_right .description {
+      max-width: 360px;
+   }
+   .slider_product_details_left h1 {
+      font-size: 46px;
+      line-height: 52px;
+   }
+   .p_slider_icons {
+      padding-top: 0px;
+   }
+   .tabs_section {
+      margin: 60px 10% 80px;
+   }
+   .react-tabs__tab-list {
+      width: 35%;
+      grid-gap: 35px;
+   }
+   .react-tabs__tab-panel--selected {
+      display: block;
+      color: var(--color-theme-text);
+      width: calc(100% - 60px);
+   }
+   .react-tabs__tab {
+      font-size: 18px;
+   }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
    .product_slider {
       height: auto;
    }
