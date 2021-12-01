@@ -90,7 +90,7 @@ const Cart = (props) => {
                                 <button className="normal_button color_white" onClick={props.toggleCart}> <i className="fa fa-long-arrow-alt-left"></i> {props.lang === "it" ? "Continua con lo Shopping" : "Continue Shopping"}</button>
                             </div>
                             <div className="checkout_con">
-                                <button className="normal_button color_white" onClick={goToShopifyCheckout}>{props.lang ==="it"? "Check out" : "Check out"}</button>
+                                <button className="normal_button color_white" onClick={goToShopifyCheckout}>{props.lang ==="it"? "Paga ora" : "Check out"}</button>
                             </div>
                         </>
                     :

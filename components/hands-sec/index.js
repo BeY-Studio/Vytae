@@ -27,7 +27,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                     {
                         lang === "it"
                         ? "Ricerche recenti hanno dimostrato il ruolo cruciale della canapa e del CBD per la regolazione di stress e ansia, la qualità del sonno, il sollievo dal dolore, e la cura delle infiammazioni."
-                        : "Current research has proven the crucial role of hemp and CBD in the regulation of stress &amp; anxiety, the relief of pain and the ease of inflammation"
+                        : "Current research has proven the crucial role of hemp and CBD in the regulation of stress & anxiety, the relief of pain and the ease of inflammation."
                     }
                 </p>
                 <div className="button_pair hands_sec_b_p">
