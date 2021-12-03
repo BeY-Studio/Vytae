@@ -21,7 +21,11 @@ const AddToCartButton = (props) => {
                     <div className="number">+1</div>
                 </div>
             </div> */}
-            <button className="add_to_cart" onClick={props.onClick}><span>&euro;{props.price}</span> - {props.lang ==="it" ? "Aggiungi al carrello" : "Add to cart"}</button>
+            {
+                props.price?.variants?.length > 0 &&
+                <button className="add_to_cart" onClick={props.onClick}><span>&euro;{props.price?.variants[0].price}</span> - {props.lang ==="it" ? "Aggiungi al carrello" : "Add to cart"}</button>
+            }
+            
         </div>
     );
 };

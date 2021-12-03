@@ -17,7 +17,7 @@ const ProductInsights = (props) => {
                     itemAdded={props.itemAdded}
                     checkout={props.checkout}
                     toggleCart={props.toggleCart}
-                    price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
+                    price={props.productDetail}
                     onClick={props.addItemToCheckout}
                     conClassName="add_to_cart_con"
                 />
@@ -30,7 +30,7 @@ const ProductInsights = (props) => {
                     itemAdded={props.itemAdded}
                     checkout={props.checkout}
                     toggleCart={props.toggleCart}
-                    price={props.productDetail ? props.productDetail.variants ? props.productDetail.variants[0].price : null : null}
+                    price={props.productDetail}
                     onClick={props.addItemToCheckout}
                     conClassName="add_to_cart_con fixed_cart_btn"
                     lang={props.lang}
