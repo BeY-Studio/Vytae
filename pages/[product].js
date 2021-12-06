@@ -29,14 +29,14 @@ export default function Home() {
 
     // Initializing a client to return content in the store's primary language
     const client = Client.buildClient({
-        domain: 'vytaescience.myshopify.com',
+        domain: 'checkout.vytae.com',
         storefrontAccessToken: 'cd9938f5f518fd5362be333e604a4c87',
         language: (lang === "en" ? "en-US" : "it-IT")
     });
 
     const updateClient = (lang) => {
         client = Client.buildClient({
-            domain: 'vytaescience.myshopify.com',
+            domain: 'checkout.vytae.com',
             storefrontAccessToken: 'cd9938f5f518fd5362be333e604a4c87',
             language: (lang === "en" ? "en-US" : "it-IT")
         });
