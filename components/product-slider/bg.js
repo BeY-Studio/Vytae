@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react';
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 const BgComponent = () => {
 
-    useEffect(() => {
-        const waves = gsap.timeline({
-            repeat: -1,
-            defaults: {
-                duration: 4.0,
-                ease: 'none'
-            }
-        });
+    // useEffect(() => {
+    //     const waves = gsap.timeline({
+    //         repeat: -1,
+    //         defaults: {
+    //             duration: 4.0,
+    //             ease: 'none'
+    //         }
+    //     });
     
-        waves
-            .to('.c1', { scale: 2, opacity: 1 }, 0)
-            .to('.c2', { scale: 1.5, opacity: 0.5 }, 0)
-            .to('.c3', { scale: 1.33, opacity: 0 }, 0);
-    }, []);
+    //     waves
+    //         .to('.c1', { scale: 2, opacity: 1 }, 0)
+    //         .to('.c2', { scale: 1.5, opacity: 0.5 }, 0)
+    //         .to('.c3', { scale: 1.33, opacity: 0 }, 0);
+    // }, []);
 
 
     return (

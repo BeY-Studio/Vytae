@@ -19,7 +19,7 @@ const ProductInsights = (props) => {
                     toggleCart={props.toggleCart}
                     price={props.productDetail}
                     onClick={props.addItemToCheckout}
-                    conClassName="add_to_cart_con"
+                    conClassName="add_to_cart_con fixed_cart_btn"
                     lang={props.lang}
                 />
                 : null
