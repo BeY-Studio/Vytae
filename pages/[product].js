@@ -119,7 +119,12 @@ export default function Home() {
         if (window.location?.search) {
             let langValue = "en";
             if (window.location?.search?.length > 0) {
-                const langSplit = window.location?.search.split("=")[1];
+                const langSplit = window.location?.search.split("lang=")[1];
+                try {
+                    langSplit = langSplit.split("&")[0];
+                }
+                catch {}
+                console.log("langSplit: ", langSplit);
                 if (langSplit === undefined || langSplit.length === 0) return
                 langValue = window.location?.search.split("=")[1];
                 setLang(langValue);
