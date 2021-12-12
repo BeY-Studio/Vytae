@@ -1703,6 +1703,24 @@ button:not(:disabled) {
   .slider_product_details_right .description {
     font-size: 12px;
   }
+  .testing, .box {
+    top: 25%;
+  }
+  .top_con .inner {
+    overflow: hidden;
+  }
+  .c1 {
+    width: 120px;
+    height: 120px;
+  }
+  .c2 {
+    width: 200px;
+    height: 200px;
+  }
+  .c2 {
+    width: 280px;
+    height: 280px;
+  }
 }
 
 /* loader styling */
