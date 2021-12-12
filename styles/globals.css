@@ -1228,13 +1228,13 @@ button:not(:disabled) {
     font-size: 60px;
     line-height: 80px;
   }
-  .add_to_cart_con {
+  /* .add_to_cart_con {
     right: 0px;
     width: 350px;
     height: auto;
     margin: 30px auto;
     position: relative;
-  }
+  } */
 }
 
 @media only screen and (max-width: 999px) {
@@ -1414,13 +1414,13 @@ button:not(:disabled) {
   .c_p_con .inner .p_and_q .quantity {
     font-size: 14px;
   }
-  .add_to_cart_con {
+  /* .add_to_cart_con {
     right: 0px;
     width: 350px;
     height: auto;
     margin: 30px auto;
     position: relative;
-  }
+  } */
 }
 
 @media only screen and (max-width: 768px) {
@@ -1669,11 +1669,20 @@ button:not(:disabled) {
   .c_p_con .inner .p_and_q .quantity {
     font-size: 13px;
   }
-  .add_to_cart_con {
+  /* .add_to_cart_con {
     right: 0;
     width: 100%;
     height: 70px;
     margin-top: 30px;
+  } */
+  .fixed_cart_btn {
+    width: 100%;
+    right: 0;
+    padding: 0px 20px;
+    top: calc(100% - 65px);
+  }
+  .fixed_cart_btn .add_to_cart {
+    margin-bottom: 0px;
   }
   .cart_item_addition_closed {
     top: 50px;
