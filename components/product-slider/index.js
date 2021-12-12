@@ -4,6 +4,7 @@ import { Pagination } from 'swiper';
 
 import "swiper/css";
 import 'swiper/css/pagination';
+import BgComponent from "./bg";
 
 const ProductSlider = (props) => {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -14,7 +15,7 @@ const ProductSlider = (props) => {
 
     return (
         <div className="top_con">
-
+            <BgComponent />
             {/* Display product title at the top for mobile */}
             {
                 windowWidth < 1025
