@@ -15,13 +15,13 @@ const Menu = (props) => {
         <>
             <nav className="menu_nav">
                 <div className="logo">
-                    <a href="https://vytae.org/">
+                    <a href="https://vytae.com/">
                         <img src={"./images/logo/menu-logo.svg"} alt="vytae" />
                     </a>
                 </div>
                 <ul>
                     <li>
-                        <a href="https://vytae.org/">Home</a>
+                        <a href="https://vytae.com/">Home</a>
                     </li>
                     <li className="drop_menu">
                         <a href="#">
@@ -58,39 +58,39 @@ const Menu = (props) => {
                         </a>
                         <div className="menu_dropdown">
                             <Link 
-                                href={"https://vytae.org/" + (props.lang === "it" ? "sec-101/?lang=it" : "learn/sec-101/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "sec-101/?lang=it" : "learn/sec-101/")}
                             >
                                 <a className="menu_span_dd">SEC 101</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.org/" + (props.lang === "it" ? "cbd-101/?lang=it" : "learn/cbd-101/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-101/?lang=it" : "learn/cbd-101/")}
                             >
                                 <a className="menu_span_dd">CBD 101</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.org/" + (props.lang === "it" ? "cdb-e-sonno/?lang=it" : "learn/cdb-e-sonno/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sonno/?lang=it" : "learn/cdb-e-sonno/")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e Sonno" : "CDB and Insomnia"}</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.org/" + (props.lang === "it" ? "cbd-e-ansia/?lang=it" : "learn/cbd-and-anxiety/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-ansia/?lang=it" : "learn/cbd-and-anxiety/")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e Ansia" : "CBD and Anxiety"}</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.org/" + (props.lang === "it" ? "cdb-e-sollievo-dal-dolore/?lang=it" : "learn/cdb-and-pain-relief/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sollievo-dal-dolore/?lang=it" : "learn/cdb-and-pain-relief/")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e sollievo dal dolore" : "CBD and Pain Relief"}</a>
                             </Link>
                             <Link
-                                href={"https://vytae.org/" + (props.lang === "it" ? "cbd-e-infiammazione/?lang=it" : "learn/cbd-and-inflammation/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-infiammazione/?lang=it" : "learn/cbd-and-inflammation/")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e infiammazione" : "CBD and Inflammation"}</a>
                             </Link>
                         </div>
                     </li>
                     <li>
-                        <a href={"https://www.vytae.org/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
+                        <a href={"https://www.vytae.com/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
                             {
                                 props.lang === "it"
                                 ? "Sostenibilità"

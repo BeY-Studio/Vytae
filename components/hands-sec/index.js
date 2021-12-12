@@ -31,7 +31,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                     }
                 </p>
                 <div className="button_pair hands_sec_b_p">
-                    <Link href={"https://vytae.org/cbd-e-ansia/?lang=" + (lang === "it" ? "it" : "")}>
+                    <Link href={"https://vytae.com/cbd-e-ansia/?lang=" + (lang === "it" ? "it" : "")}>
                         <a>
                             <NormalButton
                                 data={lang === "it" ? 'Ansia & stress' : "Anxiety & stress"}
@@ -39,7 +39,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                             />
                         </a>
                     </Link>
-                    <Link href={"https://vytae.org/cdb-e-sonno/?lang=" + (lang === "it" ? "it" : "")}>
+                    <Link href={"https://vytae.com/cdb-e-sonno/?lang=" + (lang === "it" ? "it" : "")}>
                         <a>
                             <NormalButton
                                 data={lang === "it" ? 'Sonno' : "Sleep"}
@@ -47,7 +47,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                             />
                         </a>
                     </Link>
-                    <Link href={"https://vytae.org/cdb-e-sollievo-dal-dolore/?lang=" + (lang === "it" ? "it" : "")}>
+                    <Link href={"https://vytae.com/cdb-e-sollievo-dal-dolore/?lang=" + (lang === "it" ? "it" : "")}>
                         <a>
                             <NormalButton
                                 data={lang === "it" ? 'Sollievo dal dolore' : "Pain relief"}
@@ -55,7 +55,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                             />
                         </a>
                     </Link>
-                    <Link href={"https://vytae.org/cbd-e-infiammazione/?lang=" + (lang === "it" ? "it" : "")}>
+                    <Link href={"https://vytae.com/cbd-e-infiammazione/?lang=" + (lang === "it" ? "it" : "")}>
                         <a>
                             <NormalButton
                                 data={lang === "it" ? 'Anti-infiammazione' : "Anti-inflammatory"}
@@ -79,7 +79,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                 </p>
                 <p className="note_p text_center color_white font_300">Tobias Luthe, Professor ETH Zurich</p>
                 <div className="single_button_row hands_sec_b_p">
-                    <Link href={"https://vytae.org/sostenibilita/?lang=" + (lang === "it" ? "it" : "")}>
+                    <Link href={"https://vytae.com/sostenibilita/?lang=" + (lang === "it" ? "it" : "")}>
                         <a>
                             <NormalButton
                                 data={lang ==="it" ? 'Sostenibilità' : "Sustainability"}

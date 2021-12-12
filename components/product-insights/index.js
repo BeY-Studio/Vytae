@@ -20,6 +20,7 @@ const ProductInsights = (props) => {
                     price={props.productDetail}
                     onClick={props.addItemToCheckout}
                     conClassName="add_to_cart_con"
+                    lang={props.lang}
                 />
                 : null
             }

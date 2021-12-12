@@ -27,7 +27,7 @@ const MobileMenu = (props) => {
         <>
            <nav className="menu_nav">
                 <div className="logo">
-                    <a href="https://vytae.org/">
+                    <a href="https://vytae.com/">
                         <img src={"./images/logo/menu-logo-mobile.svg"} alt="vytae" />
                     </a>
                 </div>
@@ -93,42 +93,42 @@ const MobileMenu = (props) => {
                             <ul>
                                 <li className="sub_menu_mob_li">
                                     <Link 
-                                        href={"https://vytae.org/" + (props.lang === "it" ? "sec-101/?lang=it" : "learn/sec-101/")}
+                                        href={"https://vytae.com/" + (props.lang === "it" ? "sec-101/?lang=it" : "learn/sec-101/")}
                                     >
                                         <a onClick={toggleMobileMenu} className="menu_span_dd">SEC 101</a>
                                     </Link>
                                 </li>
                                 <li className="sub_menu_mob_li">
                                     <Link 
-                                        href={"https://vytae.org/" + (props.lang === "it" ? "cbd-101/?lang=it" : "learn/cbd-101/")}
+                                        href={"https://vytae.com/" + (props.lang === "it" ? "cbd-101/?lang=it" : "learn/cbd-101/")}
                                     >
                                         <a onClick={toggleMobileMenu} className="menu_span_dd">CBD 101</a>
                                     </Link>
                                 </li>
                                 <li className="sub_menu_mob_li">
                                     <Link 
-                                        href={"https://vytae.org/" + (props.lang === "it" ? "cdb-e-sonno/?lang=it" : "learn/cdb-e-sonno/")}
+                                        href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sonno/?lang=it" : "learn/cdb-e-sonno/")}
                                     >
                                         <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e Sonno" : "CDB and Insomnia"}</a>
                                     </Link>
                                 </li>
                                 <li className="sub_menu_mob_li">
                                     <Link 
-                                        href={"https://vytae.org/" + (props.lang === "it" ? "cbd-e-ansia/?lang=it" : "learn/cbd-and-anxiety/")}
+                                        href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-ansia/?lang=it" : "learn/cbd-and-anxiety/")}
                                     >
                                         <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e Ansia" : "CBD and Anxiety"}</a>
                                     </Link>
                                 </li>
                                 <li className="sub_menu_mob_li">
                                     <Link 
-                                        href={"https://vytae.org/" + (props.lang === "it" ? "cdb-e-sollievo-dal-dolore/?lang=it" : "learn/cdb-and-pain-relief/")}
+                                        href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sollievo-dal-dolore/?lang=it" : "learn/cdb-and-pain-relief/")}
                                     >
                                         <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e sollievo dal dolore" : "CBD and Pain Relief"}</a>
                                     </Link>
                                 </li>
                                 <li className="sub_menu_mob_li">
                                     <Link 
-                                        href={"https://vytae.org/" + (props.lang === "it" ? "cbd-e-infiammazione/?lang=it" : "learn/cbd-and-inflammation/")}
+                                        href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-infiammazione/?lang=it" : "learn/cbd-and-inflammation/")}
                                     >
                                         <a onClick={toggleMobileMenu} className="menu_span_dd">{props.lang === "it" ? "CBD e infiammazione" : "CBD and Inflammation"}</a>
                                     </Link>                                  
@@ -137,7 +137,7 @@ const MobileMenu = (props) => {
                         </div>
                     </li>
                     <li>
-                        <a href={"https://www.vytae.org/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
+                        <a href={"https://www.vytae.com/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
                             {
                                 props.lang === "it"
                                 ? "Sostenibilità"
