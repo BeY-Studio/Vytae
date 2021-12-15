@@ -124,9 +124,8 @@ export default function Home() {
                     langSplit = langSplit.split("&")[0];
                 }
                 catch {}
-                console.log("langSplit: ", langSplit);
                 if (langSplit === undefined || langSplit.length === 0) return
-                langValue = window.location?.search.split("=")[1];
+                langValue = langSplit;
                 setLang(langValue);
             } else { setLang(langValue); }
             updateClient(langValue);
