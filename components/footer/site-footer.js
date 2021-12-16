@@ -24,7 +24,7 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-            <div className="copy_rights">© 2021 All rights Reserved. Design by BeY Studio. Developed by Ciarus.</div>
+            <div className="copy_rights">© 2021 All rights Reserved. Design by BeY Studio.</div>
         </>
     );
 };
