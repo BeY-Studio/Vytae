@@ -1052,6 +1052,42 @@ button:not(:disabled) {
 
 /* end styling for background ripple effect */
 
+/* footer styling */
+
+.footer_links,
+.copy_rights {
+  color: #fff;
+  background-color: #717171;
+}
+
+.footer_links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 60px 60px 40px;
+  /* background-color: #808080; */
+}
+.footer_links div p {
+  font-size: 13px;
+  margin: 0 0 3px 0;
+  font-weight: 200;
+}
+.footer_links div p a {
+  color: #fff;
+}
+
+.footer_links div p a:hover {
+  text-decoration: underline;
+}
+
+.copy_rights {
+  border-top: 1px solid rgba(255,255,255,0.16);
+  text-align: center;
+  display: block;
+  padding: 15px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
 
 @media only screen and (min-width: 1301px) and (max-width: 1400px) {
   .react-tabs__tab-list {
@@ -1421,6 +1457,10 @@ button:not(:disabled) {
     margin: 30px auto;
     position: relative;
   } */
+  .footer_links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer_links div { margin-bottom: 40px; }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1721,6 +1761,11 @@ button:not(:disabled) {
     width: 280px;
     height: 280px;
   }
+  .footer_links {
+    padding: 50px 20px 40px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer_links div { margin-bottom: 15px; }
 }
 
 /* loader styling */
