@@ -1098,7 +1098,6 @@ button:not(:disabled) {
   background-color: rgba(0,0,0,.6);
   filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
 }
-.tabs_table thead tr {}
 .tabs_table tr:nth-child(even) {background-color: #f2f2f2;}
 .tabs_table thead tr th {
   text-align: left;
@@ -1107,7 +1106,6 @@ button:not(:disabled) {
   font-size: 15px;
   font-weight: 600;
 }
-.tabs_table tbody {}
 .tabs_table tbody tr td {
   padding: 5px 10px;
   font-size: 13.5px;
@@ -1794,6 +1792,12 @@ button:not(:disabled) {
     grid-template-columns: repeat(1, 1fr);
   }
   .footer_links div { margin-bottom: 15px; }
+  .tabs_table thead tr th {
+    font-size: 12px;
+  }
+  .tabs_table tbody tr td {
+    font-size: 11px;
+  }
 }
 
 /* loader styling */
