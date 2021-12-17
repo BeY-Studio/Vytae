@@ -1090,6 +1090,32 @@ button:not(:disabled) {
   font-weight: 300;
 }
 
+/* tabs table css styling */
+.tabs_table {
+  width: 100%;
+}
+.tabs_table thead {
+  background-color: rgba(0,0,0,.6);
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,.25));
+}
+.tabs_table thead tr {}
+.tabs_table tr:nth-child(even) {background-color: #f2f2f2;}
+.tabs_table thead tr th {
+  text-align: left;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.tabs_table tbody {}
+.tabs_table tbody tr td {
+  padding: 5px 10px;
+  font-size: 13.5px;
+}
+.ingredients {
+  font-size: 12px;
+}
+/* end tabs table styling */
 
 @media only screen and (min-width: 1301px) and (max-width: 1400px) {
   .react-tabs__tab-list {
