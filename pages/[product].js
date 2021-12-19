@@ -10,6 +10,7 @@ import AccordionSection from "../components/accordionSection";
 import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
 import Loader from "../components/loader";
+import RelatedProducts from "../components/related-products";
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -235,9 +236,21 @@ export default function Home() {
                 :
                 <AccordionSection productDetail={productDetail} lang={lang} />
             }
-            <Packaging windowWidth={windowWidth} lang={lang} />
+            <RelatedProducts
+                lang={lang}
+                products={products}
+                productDetail={productDetail}
+            />
+            <Packaging
+                windowWidth={windowWidth}
+                lang={lang}
+            />
             {/* <Reviews /> */}
-            <HandsSec windowWidth={windowWidth} productDetail={productDetail} lang={lang} />
+            <HandsSec
+                windowWidth={windowWidth}
+                productDetail={productDetail}
+                lang={lang}
+            />
         </Main>
     );
 }
