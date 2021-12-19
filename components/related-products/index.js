@@ -2,8 +2,6 @@ import React from "react";
 import Link from 'next/link';
 
 const RelatedProducts = (props) => {
-    console.log("PRoducts: ", props.products);
-    console.log("Detail id: ", props.productDetail.id);
     return (
         <div className="related_products">
             <h2 className="section_h2">{ props.lang === "it" ? "Prodotti correlati" : "Related Products" }</h2>
