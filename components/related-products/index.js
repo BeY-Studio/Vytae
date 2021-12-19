@@ -12,7 +12,7 @@ const RelatedProducts = (props) => {
                     props.products?.length > 0 ?
                         props.products.map(product => (
                             product.id !== props.productDetail.id ?
-                                <div className="product_con">
+                                <div className="product_con" key={product.id}>
                                     <div className="img_con">
                                         <img src={product?.images[0].src} alt={product?.title} />
                                     </div>
