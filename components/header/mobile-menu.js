@@ -27,7 +27,7 @@ const MobileMenu = (props) => {
         <>
            <nav className="menu_nav">
                 <div className="logo">
-                    <a href="https://vytae.com/">
+                    <a href={"https://vytae.com/?lang=" + props.lang}>
                         <img src={"./images/logo/menu-logo-mobile.svg"} alt="vytae" />
                     </a>
                 </div>
@@ -45,7 +45,7 @@ const MobileMenu = (props) => {
                 </div>
                 <ul className={menuOpen ? `mobile_menu_con opened_menu_mob` : `mobile_menu_con closed_menu_mob`}>
                     <li>
-                        <a href="https://www.vytae.com/">Home</a>
+                        <a href={"https://www.vytae.com/?lang=" + props.lang}>Home</a>
                     </li>
                     <li className={toggleProducts ? "open_menu_dropdown" : "closed_menu_dropdown"}>
                         <span 

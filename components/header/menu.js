@@ -15,13 +15,13 @@ const Menu = (props) => {
         <>
             <nav className="menu_nav">
                 <div className="logo">
-                    <a href="https://vytae.com/">
+                    <a href={"https://vytae.com/?lang=" + props.lang}>
                         <img src={"./images/logo/menu-logo.svg"} alt="vytae" />
                     </a>
                 </div>
                 <ul>
                     <li>
-                        <a href="https://vytae.com/">Home</a>
+                        <a href={"https://vytae.com/?lang=" + props.lang}>Home</a>
                     </li>
                     <li className="drop_menu">
                         <a href="#">
