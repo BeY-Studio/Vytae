@@ -236,11 +236,6 @@ export default function Home() {
                 :
                 <AccordionSection productDetail={productDetail} lang={lang} />
             }
-            <RelatedProducts
-                lang={lang}
-                products={products}
-                productDetail={productDetail}
-            />
             <Packaging
                 windowWidth={windowWidth}
                 lang={lang}
@@ -250,6 +245,11 @@ export default function Home() {
                 windowWidth={windowWidth}
                 productDetail={productDetail}
                 lang={lang}
+            />
+            <RelatedProducts
+                lang={lang}
+                products={products}
+                productDetail={productDetail}
             />
         </Main>
     );
