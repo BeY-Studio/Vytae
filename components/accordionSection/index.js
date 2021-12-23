@@ -1,11 +1,33 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
+import { CapsuleCalmDesc, CalmCapsDesc } from './description/calm';
+import { CapsuleSleepDesc, SleepCapsDesc } from './description/sleep';
+import { OlioCBDTenDesc, CBDOilTenDesc } from './description/cbd-10';
+import { OlioCBDFourDesc, CBDOilFourDesc } from './description/cbd-4';
 
 const AccordionSection = (props) => {
     return (
         <div className="tabs_section">
             <Accordion defaultActiveKey="0">
-                <Accordion.Item eventKey="0">
+            <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                        { props.lang === "it" ? "Descrizione" : "Description" }
+                    </Accordion.Header>
+                    <Accordion.Body>
+                        { props.productDetail?.title === "Capsule Calm" ? <CapsuleCalmDesc /> : null }
+                        { props.productDetail?.title === "Calm Caps" ? <CalmCapsDesc /> : null }
+                        
+                        { props.productDetail?.title === "Capsule Sleep" ? <CapsuleSleepDesc /> : null }                   
+                        { props.productDetail?.title === "Sleep Caps" ? <SleepCapsDesc /> : null }    
+
+                        { props.productDetail?.title === "Olio CBD 10%" ? <OlioCBDTenDesc /> : null }
+                        { props.productDetail?.title === "CBD Oil 10%" ? <CBDOilTenDesc /> : null }
+
+                        { props.productDetail?.title === "Olio CBD 4%" ? <OlioCBDFourDesc /> : null }
+                        { props.productDetail?.title === "CBD Oil 4%" ? <CBDOilFourDesc /> : null }
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
                     <Accordion.Header>
                         {
                             props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
@@ -196,7 +218,7 @@ const AccordionSection = (props) => {
                         }
                     </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="1">
+                <Accordion.Item eventKey="2">
                     <Accordion.Header>
                         {
                             props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
@@ -263,7 +285,7 @@ const AccordionSection = (props) => {
                     props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
                     props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps"
                     ?
-                    <Accordion.Item eventKey="2">
+                    <Accordion.Item eventKey="3">
                         <Accordion.Header>
                             {
                                 props.lang === "it"
