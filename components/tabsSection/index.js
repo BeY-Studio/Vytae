@@ -1,5 +1,9 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { CapsuleCalmDesc, CalmCapsDesc } from "../accordionSection/description/calm";
+import { OlioCBDTenDesc, CBDOilTenDesc } from "../accordionSection/description/cbd-10";
+import { OlioCBDFourDesc, CBDOilFourDesc } from "../accordionSection/description/cbd-4";
+import { CapsuleSleepDesc, SleepCapsDesc } from "../accordionSection/description/sleep";
 
 const TabsSection = (props) => {
     return (
@@ -8,6 +12,9 @@ const TabsSection = (props) => {
             <div className="tabs_border"></div>
             <Tabs>
                 <TabList>
+                    <Tab>
+                        { props.lang === "it" ? "Descrizione" : "Description" }
+                    </Tab>
                     {
                         props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
                         props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps"
@@ -47,6 +54,19 @@ const TabsSection = (props) => {
                     }
                     
                 </TabList>
+                <TabPanel>
+                    { props.productDetail?.title === "Capsule Calm" ? <CapsuleCalmDesc /> : null }
+                    { props.productDetail?.title === "Calm Caps" ? <CalmCapsDesc /> : null }
+                    
+                    { props.productDetail?.title === "Capsule Sleep" ? <CapsuleSleepDesc /> : null }                   
+                    { props.productDetail?.title === "Sleep Caps" ? <SleepCapsDesc /> : null }    
+
+                    { props.productDetail?.title === "Olio CBD 10%" ? <OlioCBDTenDesc /> : null }
+                    { props.productDetail?.title === "CBD Oil 10%" ? <CBDOilTenDesc /> : null }
+
+                    { props.productDetail?.title === "Olio CBD 4%" ? <OlioCBDFourDesc /> : null }
+                    { props.productDetail?.title === "CBD Oil 4%" ? <CBDOilFourDesc /> : null }
+                </TabPanel>
                 {
                     props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
                     props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps"
