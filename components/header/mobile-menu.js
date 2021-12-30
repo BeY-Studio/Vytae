@@ -14,7 +14,7 @@ const MobileMenu = (props) => {
             num = num + Number(props.checkout?.lineItems[i]?.quantity);
         }
         setItemsNumber(num);
-    },[props.checkout.lineItems]);
+    },[props.checkout?.lineItems]);
 
     const toggleMobileMenu = () => {
         setMenuOpen(!menuOpen);

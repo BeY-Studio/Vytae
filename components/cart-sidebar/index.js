@@ -1,11 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
+import ReactGA from 'react-ga';
 
 const Cart = (props) => {
 
     const goToShopifyCheckout = () => {
         if (props.checkout.lineItems.length) {
             localStorage.clear();
-            window.location.href = props.checkout.webUrl;
+            ReactGA.outboundLink(
+                {
+                  label: 'Clicked to go to checkout'
+                },
+                function () {
+                    window.location.href = props.checkout.webUrl;
+                },
+                ['tracker2']
+            );
+            // window.location.href = props.checkout.webUrl;
         } else {
             alert("You do not have any item in the cart.");
         }

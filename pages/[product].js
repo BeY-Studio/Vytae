@@ -11,6 +11,7 @@ import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
 import Loader from "../components/loader";
 import RelatedProducts from "../components/related-products";
+import ReactGA from 'react-ga';
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -200,6 +201,9 @@ export default function Home() {
         }
         setWindowWidth(window.innerWidth);
         fetchAllProducts();
+
+        ReactGA.initialize('GTM-T5D3KBB');
+        ReactGA.pageview(window.location.pathname + window.location.search);
 
     },[]);
 

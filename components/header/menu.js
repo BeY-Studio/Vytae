@@ -9,7 +9,7 @@ const Menu = (props) => {
             num = num + Number(props.checkout?.lineItems[i]?.quantity);
         }
         setItemsNumber(num);
-    },[props.checkout.lineItems]);
+    },[props.checkout?.lineItems]);
 
     return (
         <>
