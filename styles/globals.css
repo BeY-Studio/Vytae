@@ -1852,7 +1852,7 @@ button:not(:disabled) {
     font-size: 13px;
   }
   .testing, .box {
-    top: 21%;
+    top: 22.5%;
   }
   .top_con .inner {
     overflow: hidden;
