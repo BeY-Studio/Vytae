@@ -61,7 +61,7 @@ const ProductSlider = (props) => {
                             <img src="./images/icons/heart-friendly.png" alt="heard friendly icon" />
                             <img src="./images/icons/antioxydant.png" alt="antioxydant icon" />
                             <img src="./images/icons/energy.png" alt="energy icon" /> */}
-                            {
+                            {/* {
                                 props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Sleep Caps"
                                 || props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Capsule Sleep"
                                 ?
@@ -69,7 +69,7 @@ const ProductSlider = (props) => {
                                     ? <img src={"./images/icons/CALM/Benefits/Vytae_Calm_Benefits_" + (props.lang === "it" ? "ITA" : "ENG") + "_text-ok-01.svg"} alt="benefits" />
                                     : <img src={"./images/icons/SLEEP/Benefits/Vytae_Sleep_Benefits_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="benefits" />
                                 : null
-                            }
+                            } */}
                         </div>
                     </div>    
                 </div>
@@ -87,7 +87,7 @@ const ProductSlider = (props) => {
                             <img src="./images/icons/heart-friendly.png" alt="heard friendly icon" />
                             <img src="./images/icons/antioxydant.png" alt="antioxydant icon" />
                             <img src="./images/icons/energy.png" alt="energy icon" /> */}
-                            {
+                            {/* {
                                 props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Sleep Caps"
                                 || props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Capsule Sleep"
                                 ?
@@ -95,7 +95,7 @@ const ProductSlider = (props) => {
                                     ? <img src={"./images/icons/CALM/Benefits/Vytae_Calm_Benefits_" + (props.lang === "it" ? "ITA" : "ENG") + "_text-ok-01.svg"} alt="benefits" />
                                     : <img src={"./images/icons/SLEEP/Benefits/Vytae_Sleep_Benefits_" + (props.lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="benefits" />
                                 : null
-                            }
+                            } */}
                         </div>
                     </>
                     : null

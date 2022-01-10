@@ -1573,8 +1573,8 @@ button:not(:disabled) {
   .review_slide_content,
   .product_uploader .inner .position,
   .product_uploader .inner .rating span {
-    font-size: 11px;
-    line-height: 15px;
+    font-size: 13px;
+    line-height: 17px;
   }
   .header_container .inner {
     margin: 10px 10px 0px;
@@ -1619,7 +1619,7 @@ button:not(:disabled) {
     line-height: 36px;
   }
   .slider_product_details_left h2 {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 20px;
   }
   .mobile_con_ps_icons {
@@ -1657,7 +1657,7 @@ button:not(:disabled) {
     transform: translateY(0%);
     margin-bottom: 30px;
     width: 100%;
-    font-size: 14px;
+    font-size: 15px;
     padding: 12px;
   }
   .insights_icons_con img {
@@ -1692,8 +1692,8 @@ button:not(:disabled) {
     border-left: 20px solid #fff;
   }
   .product_uploader .inner .name {
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 20px;
   }
   .product_uploader .inner {
     max-width: 300px;
@@ -1723,8 +1723,8 @@ button:not(:disabled) {
     padding: 10px 30px 0px;
   }
   .packaging_con .content P {
-    font-size: 11px;
-    line-height: 15px;
+    font-size: 13px;
+    line-height: 17px;
   }
   .packaging_con .content .button_pair {
     margin: 40px auto 40px;
@@ -1758,10 +1758,10 @@ button:not(:disabled) {
     padding: 3px 60px 20px;
   }
   .hands_sec_italic_text {
-    font-size: 12px;
+    font-size: 13px;
   }
   .note_p {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 13px;
   }
   .menu_span_dd {
@@ -1789,14 +1789,17 @@ button:not(:disabled) {
     transform: scale(0.8);
   }
   .tabs_section {
-    margin: 45px 20px 70px;
+    margin: 45px 10px 70px;
   }
   .accordion-header button {
-    font-size: 14px;
+    font-size: 15px;
     padding: 12px 20px;
   }
+  .accordion-body {
+    padding: 16px 10px;
+  }
   .accordion-body h4 {
-    font-size: 13px;
+    font-size: 14px;
   }
   .slider_product_details_right .description {
     max-width: 100%;
@@ -1846,7 +1849,7 @@ button:not(:disabled) {
     z-index: 1;
   }
   .slider_product_details_right .description {
-    font-size: 12px;
+    font-size: 13px;
   }
   .testing, .box {
     top: 25%;
@@ -1872,10 +1875,10 @@ button:not(:disabled) {
   }
   .footer_links div { margin-bottom: 15px; }
   .tabs_table thead tr th {
-    font-size: 12px;
+    font-size: 13px;
   }
   .tabs_table tbody tr td {
-    font-size: 11px;
+    font-size: 13px;
   }
   .related_products {
     margin: 36px 0px 25px;
