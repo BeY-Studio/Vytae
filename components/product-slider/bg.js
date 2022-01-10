@@ -14,7 +14,7 @@ const BgComponent = (props) => {
         waves
             .to('.c1', { scale: 2, opacity: 1 }, 0)
             .to('.c2', { scale: 1.5, opacity: 0.5 }, 0)
-            .to('.c3', { scale: 1.33, opacity: 0 }, 0);
+            .to('.c3', { scale: 1.33, opacity: 0.1 }, 0);
     }, []);
 
 
