@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { gsap } from "gsap";
 
-const BgComponent = () => {
+const BgComponent = (props) => {
 
     useEffect(() => {
         const waves = gsap.timeline({

@@ -15,7 +15,7 @@ const ProductSlider = (props) => {
 
     return (
         <div className="top_con">
-            <BgComponent />
+            <BgComponent windowWidth={windowWidth} />
             {/* Display product title at the top for mobile */}
             {
                 windowWidth < 1025
