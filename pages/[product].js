@@ -217,7 +217,8 @@ export default function Home() {
         setWindowWidth(window.innerWidth);
         fetchAllProducts();
 
-        ReactGA.initialize('GTM-T5D3KBB');
+        // ReactGA.initialize('GTM-T5D3KBB', { debug: true });
+        ReactGA.initialize('G-3V9MVCBWMK');
         ReactGA.pageview(window.location.pathname + window.location.search);
 
     },[]);
