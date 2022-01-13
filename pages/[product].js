@@ -95,11 +95,15 @@ export default function Home() {
         ];
         // // // Add an item to the checkout
         const checkoutDataUpdated = await client.checkout.addLineItems(checkoutData.id, lineItemsToAdd);
-        
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
         toggleCart();
+        ReactGA.event({
+            category: 'Product: ' + productDetail.title,
+            action: 'Added to the cart',
+            value: 1
+        });
         // setItemAdded(true);
         // setTimeout(() => { setItemAdded(false); },5000);
     };
@@ -162,6 +166,17 @@ export default function Home() {
         // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
+
+        let itemName = "";
+        checkoutData.lineItems.forEach((item) => {
+            if (item.id === id) {
+                itemName = item.title;
+            }
+        });
+        ReactGA.event({
+            category: 'Product: ' + itemName,
+            action: 'Removed from the cart',
+        });
     }
 
     const toggleCart = () => {
