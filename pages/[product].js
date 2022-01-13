@@ -101,12 +101,18 @@ export default function Home() {
         setLoader(false);
         toggleCart();
 
-        // gtag.event('add_to_cart',"Cart", 'Product: ' + productDetail.title, 1);
-        window.gtag('event', 'add_to_cart', {
-            event_category: "Cart",
-            event_label: 'Product: ' + productDetail.title,
+        gtag.event({
+            action: 'add_to_cart',
+            category: 'Cart',
+            label: 'Product: ' + productDetail.title,
             value: 1,
         });
+        // gtag.event('add_to_cart',"Cart", 'Product: ' + productDetail.title, 1);
+        // window.gtag('event', 'add_to_cart', {
+        //     event_category: "Cart",
+        //     event_label: 'Product: ' + productDetail.title,
+        //     value: 1,
+        // });
 
 
         // ReactGA.event('add_to_cart', {
@@ -187,11 +193,16 @@ export default function Home() {
         });
 
         
-        // gtag.event('remove_from_cart',"Cart", 'Product: ' + itemName);
-        window.gtag('event', 'remove_from_cart', {
-            event_category: "Cart",
-            event_label: 'Product: ' + itemName,
+        gtag.event({
+            action: 'remove_from_cart',
+            category: 'Cart',
+            label: 'Product: ' + itemName,
         });
+        // gtag.event('remove_from_cart',"Cart", 'Product: ' + itemName);
+        // window.gtag('event', 'remove_from_cart', {
+        //     event_category: "Cart",
+        //     event_label: 'Product: ' + itemName,
+        // });
 
 
         // ReactGA.event('removed_product_from_cart', {
