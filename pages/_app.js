@@ -1,12 +1,50 @@
 import '../styles/globals.css';
-import ReactGA from "react-ga4";
+// import ReactGA from "react-ga4";
+import { useEffect } from 'react';
+import * as gtag from "../analytics/gtag";
+import { useRouter } from 'next/router';
+import Script from 'next/script';
 const isServer = typeof window === 'undefined';
 
-ReactGA.initialize('G-RJCDWD4WHM');
+// ReactGA.initialize('G-RJCDWD4WHM');
+// ReactGA.initialize('G-3V9MVCBWMK');
 
 function MyApp({ Component, pageProps }) {
+
+    // for google analytics
+    const router = useRouter()
+    useEffect(() => {
+        const handleRouteChange = (url) => {
+            gtag.pageview(url);
+        }
+        router.events.on('routeChangeComplete', handleRouteChange)
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange)
+        }
+    }, [router.events]);
+
+
     return (
         <>
+            {/* Global Site Tag (gtag.js) - Google Analytics */}
+            <Script
+                strategy="afterInteractive"
+                src={`https://www.googletagmanager.com/gtag/js?id=G-3V9MVCBWMK`}
+            />
+            <Script
+                id="gtag-init"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-3V9MVCBWMK', {
+                    page_path: window.location.pathname,
+                    });
+                `,
+                }}
+            />
             <Component {...pageProps} />
         </>
     );

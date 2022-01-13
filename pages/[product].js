@@ -11,7 +11,8 @@ import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
 import Loader from "../components/loader";
 import RelatedProducts from "../components/related-products";
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
+import * as gtag from "../analytics/gtag";
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -99,11 +100,22 @@ export default function Home() {
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
         toggleCart();
-        ReactGA.event('add_to_cart', {
-            category: 'Product: ' + productDetail.title,
-            action: 'Added to the cart',
-            value: 1
+
+        // gtag.event('add_to_cart',"Cart", 'Product: ' + productDetail.title, 1);
+        window.gtag('event', 'add_to_cart', {
+            event_category: "Cart",
+            event_label: 'Product: ' + productDetail.title,
+            value: 1,
         });
+
+
+        // ReactGA.event('add_to_cart', {
+        //     category: 'Product: ' + productDetail.title,
+        //     action: 'Added to the cart',
+        //     value: 1
+        // });
+
+
         // setItemAdded(true);
         // setTimeout(() => { setItemAdded(false); },5000);
     };
@@ -173,10 +185,19 @@ export default function Home() {
                 itemName = item.title;
             }
         });
-        ReactGA.event('removed_product_from_cart', {
-            category: 'Product: ' + itemName,
-            action: 'Removed from the cart',
+
+        
+        // gtag.event('remove_from_cart',"Cart", 'Product: ' + itemName);
+        window.gtag('event', 'remove_from_cart', {
+            event_category: "Cart",
+            event_label: 'Product: ' + itemName,
         });
+
+
+        // ReactGA.event('removed_product_from_cart', {
+        //     category: 'Product: ' + itemName,
+        //     action: 'Removed from the cart',
+        // });
     }
 
     const toggleCart = () => {
@@ -217,7 +238,7 @@ export default function Home() {
         setWindowWidth(window.innerWidth);
         fetchAllProducts();
 
-        ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
+        // ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
 
     },[]);
 
