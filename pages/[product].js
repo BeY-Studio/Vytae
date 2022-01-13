@@ -173,7 +173,7 @@ export default function Home() {
                 itemName = item.title;
             }
         });
-        ReactGA.event({
+        ReactGA.event('removed_product_from_cart', {
             category: 'Product: ' + itemName,
             action: 'Removed from the cart',
         });
@@ -217,7 +217,7 @@ export default function Home() {
         setWindowWidth(window.innerWidth);
         fetchAllProducts();
 
-        ReactGA.pageview(window.location.pathname + window.location.search);
+        ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
 
     },[]);
 
