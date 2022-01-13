@@ -1,5 +1,5 @@
 import React from "react";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const Cart = (props) => {
 
@@ -94,7 +94,7 @@ const Cart = (props) => {
                                             </div>
                                         </div>
                                     ))
-                                }                            
+                                }
                             </div>
                             <div className="checkout_con mb_20">
                                 <button className="normal_button color_white" onClick={props.toggleCart}> <i className="fa fa-long-arrow-alt-left"></i> {props.lang === "it" ? "Continua con lo Shopping" : "Continue Shopping"}</button>

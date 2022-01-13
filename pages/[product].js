@@ -11,7 +11,7 @@ import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
 import Loader from "../components/loader";
 import RelatedProducts from "../components/related-products";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -64,7 +64,7 @@ export default function Home() {
         // old method fetch product by id
         // let productId = window.location.pathname.replace("/","");
         // fetchProductWithId(productId);
-        
+
         if (allProducts?.length) {
             let productName = "";
             productName = window.location.pathname.replace("/","");
@@ -99,7 +99,7 @@ export default function Home() {
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
         toggleCart();
-        ReactGA.event({
+        ReactGA.event('add_to_cart', {
             category: 'Product: ' + productDetail.title,
             action: 'Added to the cart',
             value: 1
@@ -160,7 +160,7 @@ export default function Home() {
 
     const deleteLineItem = async (id) => {
         setLoader(true);
-        const lineItemIdsToRemove = [id];        
+        const lineItemIdsToRemove = [id];
         // Remove an item from the checkout
         const checkoutDataUpdated = await client.checkout.removeLineItems(checkoutData.id, lineItemIdsToRemove)
         // update the product in the state checkout
@@ -203,9 +203,9 @@ export default function Home() {
                 nameIndex = i;
             }
         }
-        productName = langProdList[lang][nameIndex]; 
-        window.location.href = window.location.origin + "/" + productName + "?lang=" + lang;     
-    }    
+        productName = langProdList[lang][nameIndex];
+        window.location.href = window.location.origin + "/" + productName + "?lang=" + lang;
+    }
 
     useEffect(() => {
         SetLangValue();
@@ -217,8 +217,6 @@ export default function Home() {
         setWindowWidth(window.innerWidth);
         fetchAllProducts();
 
-        // ReactGA.initialize('GTM-T5D3KBB', { debug: true });
-        ReactGA.initialize('G-3V9MVCBWMK');
         ReactGA.pageview(window.location.pathname + window.location.search);
 
     },[]);
