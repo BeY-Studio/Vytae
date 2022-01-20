@@ -1,13 +1,8 @@
 import '../styles/globals.css';
-// import ReactGA from "react-ga4";
 import { useEffect } from 'react';
 import * as gtag from "../analytics/gtag";
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-const isServer = typeof window === 'undefined';
-
-// ReactGA.initialize('G-RJCDWD4WHM');
-// ReactGA.initialize('G-3V9MVCBWMK');
 
 function MyApp({ Component, pageProps }) {
 

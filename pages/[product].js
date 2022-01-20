@@ -11,7 +11,6 @@ import Packaging from "../components/packaging";
 import HandsSec from "../components/hands-sec";
 import Loader from "../components/loader";
 import RelatedProducts from "../components/related-products";
-// import ReactGA from 'react-ga4';
 import * as gtag from "../analytics/gtag";
 
 export default function Home() {
@@ -87,7 +86,7 @@ export default function Home() {
     // const addItemToCheckout = async (variantId, quantity) => {
     const addItemToCheckout = async () => {
         setLoader(true);
-        let variantId = productDetail.variants[0].id;
+        let variantId = productDetail?.variants?.[0].id;
         const lineItemsToAdd = [
             {
               variantId: variantId,
@@ -95,36 +94,34 @@ export default function Home() {
             }
         ];
         // // // Add an item to the checkout
-        const checkoutDataUpdated = await client.checkout.addLineItems(checkoutData.id, lineItemsToAdd);
+        const checkoutDataUpdated = await client.checkout?.addLineItems(checkoutData?.id, lineItemsToAdd);
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
+        setItemAdded(true);
         setLoader(false);
         toggleCart();
+    };
 
+    useEffect(() => {
+        // { action, category, label, item_details, value }
+        // this should run once the product has been added to the checkoutData to send the updated value to google tag manager.
+        let itemQuantity = 0;
+        checkoutData?.lineItems?.forEach((item) => {
+            if (item?.variant?.id === productDetail?.variants[0].id) { itemQuantity = item.quantity; }
+        });
         gtag.event({
             action: 'add_to_cart',
             category: 'Cart',
             label: 'Product: ' + productDetail.title,
-            value: 1,
+            items: {
+                "id": productDetail?.id,
+                "name": productDetail?.title,
+                "quantity": itemQuantity,
+                "price": productDetail?.variants?.[0].price
+            },
         });
-        // gtag.event('add_to_cart',"Cart", 'Product: ' + productDetail.title, 1);
-        // window.gtag('event', 'add_to_cart', {
-        //     event_category: "Cart",
-        //     event_label: 'Product: ' + productDetail.title,
-        //     value: 1,
-        // });
-
-
-        // ReactGA.event('add_to_cart', {
-        //     category: 'Product: ' + productDetail.title,
-        //     action: 'Added to the cart',
-        //     value: 1
-        // });
-
-
-        // setItemAdded(true);
-        // setTimeout(() => { setItemAdded(false); },5000);
-    };
+        setItemAdded(false);
+    }, [itemAdded]);
 
     const createCheckout = async () => {
         const checkoutData = await client.checkout.create();
@@ -143,7 +140,7 @@ export default function Home() {
         if (window.location?.search) {
             let langValue = "en";
             if (window.location?.search?.length > 0) {
-                const langSplit = window.location?.search.split("lang=")[1];
+                const langSplit = window.location?.search?.split("lang=")[1];
                 try {
                     langSplit = langSplit.split("&")[0];
                 }
@@ -170,7 +167,7 @@ export default function Home() {
         setLoader(true);
         const lineItemsToUpdate = [ {id: id, quantity: quantity} ];
         // Update the line item on the checkout (change the quantity or variant)
-        const checkoutDataUpdated = await client.checkout.updateLineItems(checkoutData.id, lineItemsToUpdate);
+        const checkoutDataUpdated = await client?.checkout?.updateLineItems(checkoutData?.id, lineItemsToUpdate);
         // // // update the product in the state checkout
         setCheckoutData(checkoutDataUpdated);
         setLoader(false);
@@ -178,37 +175,32 @@ export default function Home() {
 
     const deleteLineItem = async (id) => {
         setLoader(true);
-        const lineItemIdsToRemove = [id];
-        // Remove an item from the checkout
-        const checkoutDataUpdated = await client.checkout.removeLineItems(checkoutData.id, lineItemIdsToRemove)
-        // update the product in the state checkout
-        setCheckoutData(checkoutDataUpdated);
-        setLoader(false);
 
-        let itemName = "";
+        // send google tag manager the info of the product to be removed 
+        // before actually removing the product from checkoutData.
         checkoutData.lineItems.forEach((item) => {
             if (item.id === id) {
-                itemName = item.title;
+                gtag.event({
+                    action: 'remove_from_cart',
+                    category: 'Cart',
+                    label: 'Product: ' + item?.title,
+                    items: {
+                        "id": item?.id,
+                        "name": item?.title,
+                        "quantity": item?.quantity,
+                        "price": item?.variant?.price
+                    },
+                });
             }
         });
 
+        const lineItemIdsToRemove = [id];
+        // Remove an item from the checkout
+        const checkoutDataUpdated = await client?.checkout?.removeLineItems(checkoutData?.id, lineItemIdsToRemove);
+        // update the product in the state checkout
+        setCheckoutData(checkoutDataUpdated);
+        setLoader(false);
         
-        gtag.event({
-            action: 'remove_from_cart',
-            category: 'Cart',
-            label: 'Product: ' + itemName,
-        });
-        // gtag.event('remove_from_cart',"Cart", 'Product: ' + itemName);
-        // window.gtag('event', 'remove_from_cart', {
-        //     event_category: "Cart",
-        //     event_label: 'Product: ' + itemName,
-        // });
-
-
-        // ReactGA.event('removed_product_from_cart', {
-        //     category: 'Product: ' + itemName,
-        //     action: 'Removed from the cart',
-        // });
     }
 
     const toggleCart = () => {
