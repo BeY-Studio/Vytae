@@ -12,6 +12,7 @@ export const event = ({ action, category, label, item_details, value }) => {
   window.gtag('event', action, {
     'event_category': category,
     'event_label': label,
+    "currency": "EUR",
     'items': item_details,
     'value': value,
   });
