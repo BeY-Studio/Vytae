@@ -119,6 +119,7 @@ export default function Home() {
                 "quantity": itemQuantity,
                 "price": productDetail?.variants?.[0].price
             }],
+            value: Number(productDetail?.variants?.[0].price)
         });
 
         // window.dataLayer.push({
@@ -203,6 +204,7 @@ export default function Home() {
                         "quantity": item?.quantity,
                         "price": item?.variant?.price
                     }],
+                    value: Number(item?.variant?.price)
                 });
             }
         });
