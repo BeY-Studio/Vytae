@@ -116,10 +116,10 @@ export default function Home() {
             items: [{
                 "id": productDetail?.id,
                 "name": productDetail?.title,
-                "quantity": itemQuantity,
-                "price": productDetail?.variants?.[0].price
+                "quantity": Number(itemQuantity),
+                "price": Number(productDetail?.variants?.[0].price)
             }],
-            value: Number(productDetail?.variants?.[0].price)
+            value: (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
         });
 
         // window.dataLayer.push({
@@ -201,10 +201,10 @@ export default function Home() {
                     items: [{
                         "id": item?.id,
                         "name": item?.title,
-                        "quantity": item?.quantity,
-                        "price": item?.variant?.price
+                        "quantity": Number(item?.quantity),
+                        "price": Number(item?.variant?.price)
                     }],
-                    value: Number(item?.variant?.price)
+                    value: (Number(item?.quantity) * Number(item?.variant?.price))
                 });
             }
         });
