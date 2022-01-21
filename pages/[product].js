@@ -113,13 +113,26 @@ export default function Home() {
             action: 'add_to_cart',
             category: 'Cart',
             label: 'Product: ' + productDetail.title,
-            items: {
+            items: [{
                 "id": productDetail?.id,
                 "name": productDetail?.title,
                 "quantity": itemQuantity,
                 "price": productDetail?.variants?.[0].price
-            },
+            }],
         });
+
+        // window.dataLayer.push({
+        //     'event': 'add_to_cart',
+        //     'pageUrl': window.location.pathname,
+        //     'pageTitle': productDetail.title,
+        //     'items': [{
+        //         "id": productDetail?.id,
+        //         "name": productDetail?.title,
+        //         "quantity": itemQuantity,
+        //         "price": productDetail?.variants?.[0].price
+        //     }],
+        // });
+
         setItemAdded(false);
     }, [itemAdded]);
 
@@ -184,12 +197,12 @@ export default function Home() {
                     action: 'remove_from_cart',
                     category: 'Cart',
                     label: 'Product: ' + item?.title,
-                    items: {
+                    items: [{
                         "id": item?.id,
                         "name": item?.title,
                         "quantity": item?.quantity,
                         "price": item?.variant?.price
-                    },
+                    }],
                 });
             }
         });
