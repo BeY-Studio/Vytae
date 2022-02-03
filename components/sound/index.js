@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import SoundPopup from './popup';
 
-const SoundButton = () => {
+const SoundButton = (props) => {
     const [popup, showPopup] = useState(false);
 
     const toggleSoundClick = (e) => {
@@ -16,7 +16,7 @@ const SoundButton = () => {
                     <p className="textSound">White noise</p>
                 </div>
             </div>
-            {popup && <SoundPopup toggle={toggleSoundClick} />}
+            {popup && <SoundPopup toggle={toggleSoundClick} lang={props.lang} />}
         </>
     );
 }
