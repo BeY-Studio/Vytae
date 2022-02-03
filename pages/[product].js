@@ -309,7 +309,7 @@ export default function Home() {
                 products={products}
                 productDetail={productDetail}
             />
-            <SoundButton />
+            <SoundButton lang={lang} />
         </Main>
     );
 }
