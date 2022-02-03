@@ -1180,6 +1180,198 @@ button:not(:disabled) {
   margin-top: 0px;
 }
 
+/* styling for the sound popup */
+#ondaHomeBut24 {
+  width: 250px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.iconAudioMobile {
+  cursor: pointer;
+  max-width: 40px;
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10em;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-width: 1px;
+  border-color: #7c756f;
+  border-radius: 20em;
+  padding-block: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.textSound {
+  display: flex;
+  white-space: nowrap;
+  margin: 0;
+  overflow-wrap: break-word;
+  font-size: 12px;
+}
+.iconAudioMobile img {
+  mix-blend-mode: difference;
+}
+#ondaHomeBut23 {
+  max-width: 40px;
+}
+.closeModal2 {
+  cursor: pointer;
+  width: 15px;
+  position: absolute;
+  z-index: 999;
+}
+.modal2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 999999;
+}
+.modal2Content {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal2Content h1 {
+  color: #7a7a7a !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 400;
+}
+.modal2Content .reliefe {
+  font-weight: 700;
+}
+
+.modal2Content p {
+  color: #7a7a7a !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 400;
+  margin-block: 0;
+}
+
+.modal2Title {
+  color: #7a7a7a !important;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.modal2Parag {
+  font-size: 12px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.modal2Icon {
+  width: 140px;
+}
+.iconAudioMobile img {
+  mix-blend-mode: difference;
+}
+#audioButtonNewAll {
+  max-width: 40px;
+}
+.containermob2 {
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: "Poppins", sans-serif;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding-inline: 30px;
+  padding-block: 20px;
+  margin-inline: 20px;
+  margin-block: 20px;
+}
+.containermob2 h1 {
+  margin-block: 0;
+}
+.containerAudioNew {
+  max-width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "Poppins", sans-serif;
+  padding-inline: 15px;
+  padding-block: 15px;
+}
+.audioButton {
+  display: flex;
+  flex-direction: column;
+  max-width: 100px;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5;
+  position: relative;
+}
+.audioButton span {
+  text-align: center;
+  color: #7a7a7a;
+  font-size: 12px;
+  z-index: 1;
+}
+.audioButton img {
+  width: 50px;
+  margin-inline: 15px;
+  z-index: 1;
+}
+.click_div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+@media (min-width: 320px) {
+  .closeModal2 {
+      right: 30px;
+      top: 10px;
+      width: 25px;
+  }
+}
+@media (min-width: 620px) {
+  .closeModal2 {
+      right: 14px;
+      top: 2px;
+  }
+}
+@media (min-width: 520px) {
+  .sound_button {
+    position: fixed !important;
+    bottom: 30px;
+    left: 20px;
+    z-index: 350;
+    max-width: 250px;
+  }
+  .iconAudioMobile {
+    max-width: 250px!important;
+  }
+}
+/* end of styling for the sound popup */
+
 @media only screen and (min-width: 1301px) and (max-width: 1400px) {
   .react-tabs__tab-list {
     width: 34%;
@@ -1959,6 +2151,18 @@ button:not(:disabled) {
   border-radius: 50%;
   -webkit-animation: spinBack 1s linear infinite;
   animation: spinBack 1s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .sound_button {
+    bottom: 75px;
+    position: fixed;
+    left: 20px;
+  }
+  .textSound { display: none; }
+  #ondaHomeBut24 { width: auto !important; }
+  #ondaHomeBut24 span { padding: 5px !important; }
+  
 }
 
 @-webkit-keyframes spin {
