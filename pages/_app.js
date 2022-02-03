@@ -37,6 +37,7 @@ function MyApp({ Component, pageProps }) {
                     gtag('config', 'G-3V9MVCBWMK', {
                     page_path: window.location.pathname,
                     });
+                    gtag('require', 'ecommerce');
                 `,
                 }}
             />
