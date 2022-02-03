@@ -12,6 +12,7 @@ import HandsSec from "../components/hands-sec";
 import Loader from "../components/loader";
 import RelatedProducts from "../components/related-products";
 import * as gtag from "../analytics/gtag";
+import SoundButton from "../components/sound";
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -308,6 +309,7 @@ export default function Home() {
                 products={products}
                 productDetail={productDetail}
             />
+            <SoundButton />
         </Main>
     );
 }
