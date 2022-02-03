@@ -348,7 +348,7 @@ p {
 .add_to_cart_con {
   right: 40px;
   width: 260px;
-  height: 100px;
+  height: auto;
 }
 .add_to_cart {
   color: var(--color-white);
@@ -415,7 +415,7 @@ p {
 
 .fixed_cart_btn {
   position: fixed;
-  top: 85%;
+  bottom: 30px;
   z-index: 10;
 }
 
