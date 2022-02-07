@@ -24,7 +24,7 @@ const Menu = (props) => {
                         <a href={"https://vytae.com/?lang=" + props.lang}>Home</a>
                     </li>
                     <li className="drop_menu">
-                        <a href="#">
+                        <a href={`https://www.vytae.com/shop/?lang=it${props.lang}`}>
                             {
                                 props.lang === "it"
                                 ? "Shop"
