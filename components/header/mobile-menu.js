@@ -52,11 +52,13 @@ const MobileMenu = (props) => {
                             className={toggleProducts ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"}
                             onClick={() => setToggleProducts(!toggleProducts)}
                         >
-                            {
-                                props.lang === "it"
-                                ? "Shop"
-                                : "Shop"
-                            }
+                            <a href={`https://www.vytae.com/shop/?lang=it${props.lang}`}>
+                                {
+                                    props.lang === "it"
+                                    ? "Shop"
+                                    : "Shop"
+                                }
+                            </a>
                             &nbsp;
                             <i className="fa fa-caret-down"></i>
                         </span>
