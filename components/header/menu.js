@@ -24,7 +24,7 @@ const Menu = (props) => {
                         <a href={"https://vytae.com/?lang=" + props.lang}>Home</a>
                     </li>
                     <li className="drop_menu">
-                        <a href={`https://www.vytae.com/shop/?lang=it${props.lang}`}>
+                        <a href={`https://www.vytae.com/shop/?lang=${props.lang}`}>
                             {
                                 props.lang === "it"
                                 ? "Shop"
@@ -58,39 +58,39 @@ const Menu = (props) => {
                         </a>
                         <div className="menu_dropdown">
                             <Link 
-                                href={"https://vytae.com/" + (props.lang === "it" ? "sec-101/?lang=it" : "learn/sec-101/")}
+                                href={"https://vytae.com/sec-101/?lang=" + props.lang}
                             >
                                 <a className="menu_span_dd">SEC 101</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-101/?lang=it" : "learn/cbd-101/")}
+                                href={"https://vytae.com/cbd-101/?lang" + props.lang}
                             >
                                 <a className="menu_span_dd">CBD 101</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sonno/?lang=it" : "learn/cdb-e-sonno/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sonno/?lang=it" : "learn/cdb-e-sonno/?lang=en")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e Sonno" : "CDB and Insomnia"}</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-ansia/?lang=it" : "learn/cbd-and-anxiety/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-ansia/?lang=it" : "learn/cbd-and-anxiety/?lang=en")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e Ansia" : "CBD and Anxiety"}</a>
                             </Link>
                             <Link 
-                                href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sollievo-dal-dolore/?lang=it" : "learn/cdb-and-pain-relief/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cdb-e-sollievo-dal-dolore/?lang=it" : "learn/cdb-and-pain-relief/?lang=en")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e sollievo dal dolore" : "CBD and Pain Relief"}</a>
                             </Link>
                             <Link
-                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-infiammazione/?lang=it" : "learn/cbd-and-inflammation/")}
+                                href={"https://vytae.com/" + (props.lang === "it" ? "cbd-e-infiammazione/?lang=it" : "learn/cbd-and-inflammation/?lang=en")}
                             >
                                 <a className="menu_span_dd">{props.lang === "it" ? "CBD e infiammazione" : "CBD and Inflammation"}</a>
                             </Link>
                         </div>
                     </li>
                     <li>
-                        <a href={"https://www.vytae.com/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/")}>
+                        <a href={"https://www.vytae.com/" + ( props.lang === "it" ? "sostenibilita/?lang=it" : "sustainability/?lang=en")}>
                             {
                                 props.lang === "it"
                                 ? "Sostenibilità"
