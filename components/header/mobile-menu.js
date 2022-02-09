@@ -52,7 +52,7 @@ const MobileMenu = (props) => {
                             className={toggleProducts ? "theme_text_color menu_dropdown_bottom_border" : "theme_text_color"}
                             onClick={() => setToggleProducts(!toggleProducts)}
                         >
-                            <a href={`https://www.vytae.com/shop/?lang=${props.lang}`}>
+                            <a className='shop_btn_mobile' href={`https://www.vytae.com/shop/?lang=${props.lang}`}>
                                 {
                                     props.lang === "it"
                                     ? "Shop"
@@ -89,7 +89,7 @@ const MobileMenu = (props) => {
                                 : "Learn"
                             }
                             &nbsp;
-                            <i className="fa fa-caret-down"></i>
+                            <i className="fa fa-caret-down learn_fa"></i>
                         </span>
                         <div className="sub_menu_mob">
                             <ul>
