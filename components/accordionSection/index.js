@@ -4,6 +4,10 @@ import { CapsuleCalmDesc, CalmCapsDesc } from './description/calm';
 import { CapsuleSleepDesc, SleepCapsDesc } from './description/sleep';
 import { OlioCBDTenDesc, CBDOilTenDesc } from './description/cbd-10';
 import { OlioCBDFourDesc, CBDOilFourDesc } from './description/cbd-4';
+import { CBDOilFourWarnings, OlioCBDFourWarnings } from './warnings/cbd-4';
+import { CBDOilTenWarnings, OlioCBDTenWarnings } from './warnings/cbd-10';
+import { CalmCapsWarnings, CapsuleCalmWarnings } from './warnings/calm';
+import { CapsuleSleepWarnings, SleepCapsWarnings } from './warnings/sleep';
 
 const AccordionSection = (props) => {
     return (
@@ -283,7 +287,9 @@ const AccordionSection = (props) => {
                 </Accordion.Item>
                 {
                     props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
-                    props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps"
+                    props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps" ||
+                    props.productDetail?.title === "Olio CBD 4%" || props.productDetail?.title === "CBD Oil 4%" ||
+                    props.productDetail?.title === "Olio CBD 10%" || props.productDetail?.title === "CBD Oil 10%"
                     ?
                     <Accordion.Item eventKey="3">
                         <Accordion.Header>
@@ -294,39 +300,28 @@ const AccordionSection = (props) => {
                         </Accordion.Header>
                         <Accordion.Body>
                             {
-                                props.lang === "it"
+                                props.productDetail?.title === "Calm Caps"
                                 ?
-                                <>
-                                    {
-                                        props.productDetail?.title === "Capsule Calm"
-                                        ?
-                                        <>
-                                            <p>Tenere fuori dalla portata dei bambini al di sotto dei tre anni. Non superare la dose giornaliera consigliata.</p>
-                                            <p>Gli integratori non devono essere intesi come sostituto di una dieta variata ed equilibrata e di uno stile di vita sano. Se si assumono dei farmaci, prima di utilizzare il prodotto chiedere il parere del medico perché l’estratto di iperico può interferire sul metabolismo inibendone anche l’attività.</p>
-                                            <p>L’estratto di iperico è controindicato in età pediatrica e nell’adolescenza.</p>
-                                            <p>Conservare in luogo fresco e asciutto, lontano da fonti dirette di luce e dall’umidità, alla temperatura massima di 25°C.</p>
-                                        </>
-                                        :
-                                        <>
-                                            <p>Tenere fuori dalla portata dei bambini al di sotto dei tre anni.</p>
-                                            <p>Non superare la dose giornaliera consigliata.</p>
-                                            <p>Gli integratori non vanno intesi come sostituto di una dieta variata ed equilibrata e di uno stile di vita sano.</p>
-                                            <p>Conservare in luogo fresco e asciutto, lontano da fonti dirette di luce e dall’umidità, alla temperatura massima di 25°C.</p>
-                                        </>
-                                    }
-                                </>
-                                : 
-                                <>
-                                    <p>Keep out of reach of children under 3 years of age. Do not exceed the recommended daily dose.</p>
-                                    <p>Food supplements are not to be intended as a substitute of a balanced and varied diet, nor of a healthy lifestyle.</p>
-                                    {
-                                        props.productDetail?.title === "Calm Caps"
-                                        ?
-                                        <p>If you are taking medication, seek medical advice before using the product, since the extract of Hypericum may interfere with your metabolism and also inhibit its activity. The extract of Hypericum is contraindicated in children and adolescents. </p>
-                                        : null
-                                    }
-                                    <p>Store in a cool, dry place, away from direct light and moisture, at a maximum temperature of 25°C.</p>
-                                </>
+                                <>{props.lang === 'it' ? <CapsuleCalmWarnings /> : <CalmCapsWarnings />}</>
+                                : null
+                            }
+                            {
+                                props.productDetail?.title === "Sleep Caps"
+                                ?
+                                <>{props.lang === 'it' ? <CapsuleSleepWarnings /> : <SleepCapsWarnings />}</>
+                                : null
+                            }
+                            {
+                                props.productDetail?.title === "Olio CBD 4%"
+                                ?
+                                <>{props.lang === 'it' ? <OlioCBDFourWarnings /> : <CBDOilFourWarnings />}</>
+                                : null
+                            }
+                            {
+                                props.productDetail?.title === "Olio CBD 10%"
+                                ?
+                                <>{props.lang === 'it' ? <OlioCBDTenWarnings /> : <CBDOilTenWarnings />}</>
+                                : null
                             }
                         </Accordion.Body>
                     </Accordion.Item>
