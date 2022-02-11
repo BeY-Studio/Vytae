@@ -287,25 +287,25 @@ const TabsSection = (props) => {
                     ? 
                         <TabPanel>
                             {
-                                props.productDetail?.title === "Capsule Sleep"
-                                ?
-                                <>{props.lang === 'it' ? <CapsuleSleepWarnings /> : <SleepCapsWarnings />}</>                              
-                                : null                                    
-                            }
-                            {
-                                props.productDetail?.title === "Capsule Calm"
+                                props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps"
                                 ?
                                 <>{props.lang === 'it' ? <CapsuleCalmWarnings /> : <CalmCapsWarnings />}</>
                                 : null
                             }
                             {
-                                props.productDetail?.title === "Olio CBD 4%"
+                                props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps"
+                                ?
+                                <>{props.lang === 'it' ? <CapsuleSleepWarnings /> : <SleepCapsWarnings />}</>                              
+                                : null                                    
+                            }
+                            {
+                                props.productDetail?.title === "Olio CBD 4%" || props.productDetail?.title === "CBD Oil 4%"
                                 ?
                                 <>{props.lang === 'it' ? <OlioCBDFourWarnings /> : <CBDOilFourWarnings />}</>
                                 : null
                             }
                             {
-                                props.productDetail?.title === "Olio CBD 10%"
+                                props.productDetail?.title === "Olio CBD 10%" || props.productDetail?.title === "CBD Oil 10%"
                                 ?
                                 <>{props.lang === 'it' ? <OlioCBDTenWarnings /> : <CBDOilTenWarnings />}</>
                                 : null
