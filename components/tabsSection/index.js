@@ -36,15 +36,6 @@ const TabsSection = (props) => {
                         : null
                     }
                     {
-                        props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
-                        props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps" ||
-                        props.productDetail?.title === "Olio CBD 4%" || props.productDetail?.title === "CBD Oil 4%" ||
-                        props.productDetail?.title === "Olio CBD 10%" || props.productDetail?.title === "CBD Oil 10%"
-                        ?
-                        <Tab>{ props.lang === "it" ? "Avvertenze" : "Warnings" }</Tab>
-                        : null
-                    }
-                    {
                         props.productDetail?.title === "Olio CBD 4%" || props.productDetail?.title === "CBD Oil 4%" ||
                         props.productDetail?.title === "Olio CBD 10%" || props.productDetail?.title === "CBD Oil 10%"
                         ?
@@ -58,7 +49,7 @@ const TabsSection = (props) => {
                         <Tab>{ props.lang === "it" ? "Modo d'uso" : "How to use" }</Tab>
                         : null
                     }
-                    
+                    <Tab>{ props.lang === "it" ? "Avvertenze" : "Warnings" }</Tab>                    
                 </TabList>
                 <TabPanel>
                     { props.productDetail?.title === "Capsule Calm" ? <CapsuleCalmDesc /> : null }
@@ -280,40 +271,6 @@ const TabsSection = (props) => {
                     : null
                 }
                 {
-                    props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps" ||
-                    props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps" ||
-                    props.productDetail?.title === "Olio CBD 4%" || props.productDetail?.title === "CBD Oil 4%" ||
-                    props.productDetail?.title === "Olio CBD 10%" || props.productDetail?.title === "CBD Oil 10%"
-                    ? 
-                        <TabPanel>
-                            {
-                                props.productDetail?.title === "Capsule Calm" || props.productDetail?.title === "Calm Caps"
-                                ?
-                                <>{props.lang === 'it' ? <CapsuleCalmWarnings /> : <CalmCapsWarnings />}</>
-                                : null
-                            }
-                            {
-                                props.productDetail?.title === "Capsule Sleep" || props.productDetail?.title === "Sleep Caps"
-                                ?
-                                <>{props.lang === 'it' ? <CapsuleSleepWarnings /> : <SleepCapsWarnings />}</>                              
-                                : null                                    
-                            }
-                            {
-                                props.productDetail?.title === "Olio CBD 4%" || props.productDetail?.title === "CBD Oil 4%"
-                                ?
-                                <>{props.lang === 'it' ? <OlioCBDFourWarnings /> : <CBDOilFourWarnings />}</>
-                                : null
-                            }
-                            {
-                                props.productDetail?.title === "Olio CBD 10%" || props.productDetail?.title === "CBD Oil 10%"
-                                ?
-                                <>{props.lang === 'it' ? <OlioCBDTenWarnings /> : <CBDOilTenWarnings />}</>
-                                : null
-                            }
-                        </TabPanel>
-                    : null
-                }
-                {
                     props.productDetail?.title === "Olio CBD 4%" || props.productDetail?.title === "CBD Oil 4%" ||
                     props.productDetail?.title === "Olio CBD 10%" || props.productDetail?.title === "CBD Oil 10%"
                     ?
@@ -348,7 +305,19 @@ const TabsSection = (props) => {
                     </TabPanel>
                     : null
                 }
-                
+                <TabPanel>
+                    { props.productDetail?.title === "Capsule Calm" ? <CapsuleCalmWarnings /> : null }
+                    { props.productDetail?.title === "Calm Caps" ? <CalmCapsWarnings /> : null }
+                    
+                    { props.productDetail?.title === "Capsule Sleep" ? <CapsuleSleepWarnings /> : null }                   
+                    { props.productDetail?.title === "Sleep Caps" ? <SleepCapsWarnings /> : null }    
+
+                    { props.productDetail?.title === "Olio CBD 10%" ? <OlioCBDTenWarnings /> : null }
+                    { props.productDetail?.title === "CBD Oil 10%" ? <CBDOilTenWarnings /> : null }
+
+                    { props.productDetail?.title === "Olio CBD 4%" ? <OlioCBDFourWarnings /> : null }
+                    { props.productDetail?.title === "CBD Oil 4%" ? <CBDOilFourWarnings /> : null }
+                </TabPanel>                
             </Tabs>
         </div>
     );
