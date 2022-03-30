@@ -1,14 +1,14 @@
 import Header from "../components/header/site-header";
 import Footer from "../components/footer/site-footer";
 import Head from "next/head";
-import {META_DESCRIPTION, META_IMAGE, META_KEYWORDS, META_TITLE} from "../configs/configs";
+import { META_IMAGE, META_KEYWORDS } from "../configs/configs";
 import Cart from "../components/cart-sidebar";
 
 const Main = (
     {
         children,
-        title = META_TITLE,
-        description = META_DESCRIPTION,
+        title,
+        description,
         imageUrl = META_IMAGE,
         keyword = META_KEYWORDS,
         products,
@@ -21,6 +21,7 @@ const Main = (
         changeLangFromMenu
     }
 ) => {
+
   return (
     <>
       <Head>

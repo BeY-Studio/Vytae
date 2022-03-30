@@ -13,6 +13,7 @@ import Loader from "../components/loader";
 import RelatedProducts from "../components/related-products";
 import * as gtag from "../analytics/gtag";
 import SoundButton from "../components/sound";
+import { getMetaTitle, getMetaDescription } from "../layouts/products-meta-desc";
 
 export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
@@ -62,10 +63,6 @@ export default function Home() {
     };
 
     const getProductDetails = (allProducts) => {
-        // old method fetch product by id
-        // let productId = window.location.pathname.replace("/","");
-        // fetchProductWithId(productId);
-
         if (allProducts?.length) {
             let productName = "";
             productName = window.location.pathname.replace("/","");
@@ -104,7 +101,6 @@ export default function Home() {
     };
 
     useEffect(() => {
-        // { action, category, label, item_details, value }
         // this should run once the product has been added to the checkoutData to send the updated value to google tag manager.
         let itemQuantity = 0;
         checkoutData?.lineItems?.forEach((item) => {
@@ -122,18 +118,6 @@ export default function Home() {
             }],
             value: (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
         });
-
-        // window.dataLayer.push({
-        //     'event': 'add_to_cart',
-        //     'pageUrl': window.location.pathname,
-        //     'pageTitle': productDetail.title,
-        //     'items': [{
-        //         "id": productDetail?.id,
-        //         "name": productDetail?.title,
-        //         "quantity": itemQuantity,
-        //         "price": productDetail?.variants?.[0].price
-        //     }],
-        // });
 
         setItemAdded(false);
     }, [itemAdded]);
@@ -263,8 +247,8 @@ export default function Home() {
 
     return (
         <Main
-            title={productDetail?.title}
-            description={productDetail?.descriptionHtml}
+            title={getMetaTitle(productDetail?.title)}
+            description={getMetaDescription(productDetail?.title)}
             imageUrl={productDetail?.images ? productDetail.images[0]?.src : null}
             keyword={"Hemp Oil, Canapa, Olio, Oil"}
             products={products}
