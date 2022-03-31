@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-                    gtag('config', 'G-3V9MVCBWMK', {
+                    gtag('config', 'GTM-T5D3KBB', {
                     page_path: window.location.pathname,
                     });
                     gtag('require', 'ecommerce');
