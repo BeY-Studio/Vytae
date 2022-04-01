@@ -118,6 +118,19 @@ export default function Home() {
             }],
             value: (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
         });
+        window?.dataLayer.push({
+            'event': 'add_to_cart',
+            'category': 'Cart',
+            'label': 'Product: ' + productDetail.title,
+            'visitorType': 'customer',
+            'items': [{
+                "id": productDetail?.id,
+                "name": productDetail?.title,
+                "quantity": Number(itemQuantity),
+                "price": Number(productDetail?.variants?.[0].price)
+            }],
+            'value': (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
+        });
 
         setItemAdded(false);
     }, [itemAdded]);
