@@ -24,3 +24,6 @@ export const event = ({ action, category, label, item_details, value }) => {
 //     event_label: "Product: Calm Caps",
 //     value: value,
 //   })
+
+// correct code
+// https://developers.google.com/tag-platform/devguides/datalayer
