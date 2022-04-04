@@ -118,19 +118,19 @@ export default function Home() {
             }],
             value: (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
         });
-        // window?.dataLayer.push({
-        //     'event': 'add_to_cart',
-        //     'category': 'Cart',
-        //     'label': 'Product: ' + productDetail.title,
-        //     'visitorType': 'customer',
-        //     'items': [{
-        //         "id": productDetail?.id,
-        //         "name": productDetail?.title,
-        //         "quantity": Number(itemQuantity),
-        //         "price": Number(productDetail?.variants?.[0].price)
-        //     }],
-        //     'value': (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
-        // });
+        window?.dataLayer.push({
+            'event': 'add_to_cart',
+            'category': 'Cart',
+            'label': 'Product: ' + productDetail.title,
+            'visitorType': 'customer',
+            'items': [{
+                "id": productDetail?.id,
+                "name": productDetail?.title,
+                "quantity": Number(itemQuantity),
+                "price": Number(productDetail?.variants?.[0].price)
+            }],
+            'value': (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
+        });
 
         setItemAdded(false);
     }, [itemAdded]);
@@ -152,7 +152,7 @@ export default function Home() {
         if (window.location?.search) {
             let langValue = "en";
             if (window.location?.search?.length > 0) {
-                const langSplit = window.location?.search?.split("lang=")[1];
+                let langSplit = window.location?.search?.split("lang=")[1];
                 try {
                     langSplit = langSplit.split("&")[0];
                 }
@@ -203,6 +203,19 @@ export default function Home() {
                         "price": Number(item?.variant?.price)
                     }],
                     value: (Number(item?.quantity) * Number(item?.variant?.price))
+                });
+                window?.dataLayer.push({
+                    'event': 'remove_from_cart',
+                    'category': 'Cart',
+                    'label': 'Product: ' + item?.title,
+                    'visitorType': 'customer',
+                    'items': [{
+                        "id": item?.id,
+                        "name": item?.title,
+                        "quantity": Number(item?.itemQuantity),
+                        "price": Number(item?.uctDetail?.variants?.[0].price)
+                    }],
+                    'value': (Number(item?.quantity) * Number(item?.variant?.price))
                 });
             }
         });
