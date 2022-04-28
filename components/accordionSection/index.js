@@ -300,13 +300,13 @@ const AccordionSection = (props) => {
                         </Accordion.Header>
                         <Accordion.Body>
                             {
-                                props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Calm Caps"
+                                props.productDetail?.title === "Calm Caps" || props.productDetail?.title === "Capsule Calm"
                                 ?
                                 <>{props.lang === 'it' ? <CapsuleCalmWarnings /> : <CalmCapsWarnings />}</>
                                 : null
                             }
                             {
-                                props.productDetail?.title === "Sleep Caps" || props.productDetail?.title === "Sleep Caps"
+                                props.productDetail?.title === "Sleep Caps" || props.productDetail?.title === "Capsule Sleep"
                                 ?
                                 <>{props.lang === 'it' ? <CapsuleSleepWarnings /> : <SleepCapsWarnings />}</>
                                 : null
