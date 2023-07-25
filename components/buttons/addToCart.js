@@ -22,8 +22,8 @@ const AddToCartButton = (props) => {
                 </div>
             </div> */}
             {
-                props.price?.variants?.length > 0 &&
-                <button className="add_to_cart" onClick={props.onClick}><span>&euro;{props.price?.variants[0].price}</span> - {props.lang ==="it" ? "Aggiungi al carrello" : "Add to cart"}</button>
+                props?.price?.variants?.length > 0 &&
+                <button className="add_to_cart" onClick={props.onClick}><span>&euro;{props?.price?.variants?.[0]?.price?.amount}</span> - {props.lang ==="it" ? "Aggiungi al carrello" : "Add to cart"}</button>
             }
             
         </div>

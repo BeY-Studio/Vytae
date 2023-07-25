@@ -4,7 +4,7 @@ import ReactGA from 'react-ga4';
 const Cart = (props) => {
 
     const goToShopifyCheckout = () => {
-        if (props.checkout.lineItems.length) {
+        if (props?.checkout?.lineItems?.length > 0) {
             localStorage.clear();
             ReactGA.outboundLink(
                 {
@@ -17,7 +17,7 @@ const Cart = (props) => {
             );
             // window.location.href = props.checkout.webUrl;
         } else {
-            alert("You do not have any item in the cart.");
+            console.log("You do not have any item in the cart.");
         }
     }
 
@@ -73,23 +73,23 @@ const Cart = (props) => {
                 </div>
                 <h2 className="section_h2 color_theme_text cart_h2">{props.lang === "it" ? "Carrello": "Cart"}</h2>
                 {
-                    props.checkout?.lineItems?.length
+                    props.checkout?.lineItems?.length > 0
                     ?
                         <>
                             <div className="c_p_con color_theme_text">
                                 {
-                                    props.checkout?.lineItems.map((item, index) => (
+                                    props?.checkout?.lineItems.map((item, index) => (
                                         <div className="inner" key={"vy_" + index}>
-                                            <span className="title font_500">{returnProductName(props.lang,item)}</span>
+                                            <span className="title font_500">{returnProductName(props.lang, item)}</span>
                                             <div className="p_and_q color_black">
-                                                <span className="price font_500">&euro;{item.variant?.price}</span>
+                                                <span className="price font_500">&euro;{item?.variant?.price?.amount}</span>
                                                 <div className="quantity">
                                                     <div className="q_inner">
-                                                        <i className="fa fa-minus color_theme_text" onClick={() => updateProductQuantity("minus", item.id, item.quantity)}></i>
+                                                        <i className="fa fa-minus color_theme_text" onClick={() => updateProductQuantity("minus", item?.id, item?.quantity)}></i>
                                                         <span className="quantity_number">{item.quantity}</span>
-                                                        <i className="fa fa-plus color_theme_text" onClick={() => updateProductQuantity("plus", item.id, item.quantity)}></i>
+                                                        <i className="fa fa-plus color_theme_text" onClick={() => updateProductQuantity("plus", item?.id, item?.quantity)}></i>
                                                     </div>
-                                                    <i className="fa fa-trash-alt" onClick={() => props.deleteLineItem(item.id)}></i>
+                                                    <i className="fa fa-trash-alt" onClick={() => props.deleteLineItem(item?.id)}></i>
                                                 </div>
                                             </div>
                                         </div>

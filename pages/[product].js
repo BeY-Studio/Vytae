@@ -62,15 +62,6 @@ export default function Home() {
         setProductDetail(productDetails);
     };
 
-    const getProductDetails = (allProducts) => {
-        if (allProducts?.length) {
-            let productName = "";
-            productName = window.location.pathname.replace("/","");
-            matchProductAndFetchIt(allProducts, productName)
-        }
-        setLoader(false);
-    }
-
     const matchProductAndFetchIt = (allProducts, productName) => {
         let productId = "";
         for (let i=0;i<allProducts.length;i++) {
@@ -81,10 +72,19 @@ export default function Home() {
         fetchProductWithId(productId);
     }
 
+    const getProductDetails = (allProducts) => {
+        if (allProducts?.length > 0) {
+            let productName = "";
+            productName = window.location.pathname.replace("/","");
+            matchProductAndFetchIt(allProducts, productName)
+        }
+        setLoader(false);
+    }
+
     // const addItemToCheckout = async (variantId, quantity) => {
     const addItemToCheckout = async () => {
         setLoader(true);
-        let variantId = productDetail?.variants?.[0].id;
+        let variantId = productDetail?.variants?.[0]?.id;
         const lineItemsToAdd = [
             {
               variantId: variantId,
@@ -104,7 +104,7 @@ export default function Home() {
         // this should run once the product has been added to the checkoutData to send the updated value to google tag manager.
         let itemQuantity = 0;
         checkoutData?.lineItems?.forEach((item) => {
-            if (item?.variant?.id === productDetail?.variants[0].id) { itemQuantity = item.quantity; }
+            if (item?.variant?.id === productDetail?.variants?.[0].id) { itemQuantity = item.quantity; }
         });
         gtag.event({
             action: 'add_to_cart',
@@ -114,22 +114,22 @@ export default function Home() {
                 "id": productDetail?.id,
                 "name": productDetail?.title,
                 "quantity": Number(itemQuantity),
-                "price": Number(productDetail?.variants?.[0].price)
+                "price": Number(productDetail?.variants?.[0]?.price?.amount)
             }],
-            value: (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
+            value: (Number(itemQuantity) * Number(productDetail?.variants?.[0]?.price?.amount))
         });
         window?.dataLayer.push({
             'event': 'add_to_cart',
             'category': 'Cart',
-            'label': 'Product: ' + productDetail.title,
+            'label': 'Product: ' + productDetail?.title,
             'visitorType': 'customer',
             'items': [{
                 "id": productDetail?.id,
                 "name": productDetail?.title,
                 "quantity": Number(itemQuantity),
-                "price": Number(productDetail?.variants?.[0].price)
+                "price": Number(productDetail?.variants?.[0]?.price?.amount)
             }],
-            'value': (Number(itemQuantity) * Number(productDetail?.variants?.[0].price))
+            'value': (Number(itemQuantity) * Number(productDetail?.variants?.[0]?.price?.amount))
         });
 
         setItemAdded(false);
@@ -191,7 +191,7 @@ export default function Home() {
         // send google tag manager the info of the product to be removed 
         // before actually removing the product from checkoutData.
         checkoutData.lineItems.forEach((item) => {
-            if (item.id === id) {
+            if (item?.id === id) {
                 gtag.event({
                     action: 'remove_from_cart',
                     category: 'Cart',
@@ -200,9 +200,9 @@ export default function Home() {
                         "id": item?.id,
                         "name": item?.title,
                         "quantity": Number(item?.quantity),
-                        "price": Number(item?.variant?.price)
+                        "price": Number(item?.variant?.price?.amount)
                     }],
-                    value: (Number(item?.quantity) * Number(item?.variant?.price))
+                    value: (Number(item?.quantity) * Number(item?.variant?.price?.amount))
                 });
                 window?.dataLayer.push({
                     'event': 'remove_from_cart',
@@ -212,10 +212,10 @@ export default function Home() {
                     'items': [{
                         "id": item?.id,
                         "name": item?.title,
-                        "quantity": Number(item?.itemQuantity),
-                        "price": Number(item?.uctDetail?.variants?.[0].price)
+                        "quantity": Number(item?.quantity),
+                        "price": Number(item?.variant?.price?.amount)
                     }],
-                    'value': (Number(item?.quantity) * Number(item?.variant?.price))
+                    'value': (Number(item?.quantity) * Number(item?.variant?.price?.amount))
                 });
             }
         });

@@ -22,7 +22,7 @@ const ProductSlider = (props) => {
                 ?
                 <div className="slider_product_details_left">
                     <div>
-                        <h1 className="theme_text_color">{props.productDetail?.title}</h1>
+                        <h1 className="theme_text_color">{props?.productDetail?.title}</h1>
                         {/* <h2 className="theme_text_color">CBD OIL | 1500mg</h2> */}
                     </div>    
                 </div>
@@ -38,8 +38,8 @@ const ProductSlider = (props) => {
                 >
                     {
                         props.productDetail && props.productDetail?.images?.map((image) => (
-                            <SwiperSlide key={image.src}>
-                                <img className="product_img" src={image.src} alt={"product name here"} />
+                            <SwiperSlide key={image?.src}>
+                                <img className="product_img" src={image?.src} alt={props?.productDetail?.title} />
                             </SwiperSlide>
                         ))
                     }
@@ -53,7 +53,7 @@ const ProductSlider = (props) => {
                 ?
                 <div className="slider_product_details_left">
                     <div className="">
-                        <h1 className="theme_text_color">{props.productDetail?.title}</h1>
+                        <h1 className="theme_text_color">{props?.productDetail?.title}</h1>
                         {/* <h2 className="theme_text_color">CBD OIL | 1500mg</h2> */}
                         <div className="p_slider_icons">
                             {/* <img src="./images/icons/sleep.png" alt="sleep icon" />
@@ -101,7 +101,7 @@ const ProductSlider = (props) => {
                     : null
                 }
                 <div className="description theme_text_color text_right">
-                    <div dangerouslySetInnerHTML={{__html: props.productDetail?.descriptionHtml}}></div>
+                    <div dangerouslySetInnerHTML={{__html: props?.productDetail?.descriptionHtml}}></div>
                 </div>
             </div>
         </div>
