@@ -13,11 +13,11 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                 windowWidth > 768 
                 ? 
                 <div className="hands_con">
-                    <img id="left_hand" className="left" src="./images/backgrounds/hands-left-1-cropped.png" alt="hand-left" />
-                    <img id="right_hand" className="right" src="./images/backgrounds/hands-right-1-cropped.png" alt="hand-left" />
+                    <img id="left_hand" className="left" src="./images/backgrounds/hands-left-1-cropped.webp" alt="hand-left" />
+                    <img id="right_hand" className="right" src="./images/backgrounds/hands-right-1-cropped.webp" alt="hand-left" />
                 </div>
                 :
-                <img className="hands_img_mob" src="./images/backgrounds/hands-mob-1.png" alt="hands image" />
+                <img className="hands_img_mob" src="./images/backgrounds/hands-mob-1.webp" alt="hands image" />
             }
             </div>
             <div className="content text_center hands_sec_content hands_sec_top">
@@ -69,7 +69,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
             <div className="content text_center hands_sec_content_two">
                 <h2 className="section_h2 color_white">{ lang === "it" ? "Canapa" : "Hemp"}</h2>
                 <h3 className="section_h3 color_white">{ lang === "it" ? "per la Salute del Pianeta" : "for Planet Health"}</h3>
-                <img id="globe" src="./images/backgrounds/globe-mob.png" alt="globe image" />
+                <img id="globe" src="./images/backgrounds/globe-mob.webp" alt="globe image" />
                 <p className="text_center color_white font_300 font_italic hands_sec_italic_text">
                     { 
                         lang === "it"

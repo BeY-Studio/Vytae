@@ -6,12 +6,12 @@ const Packaging = (props) => {
     return (
         <div
             className="dark_bg_con packaging_con"
-            style={{ "backgroundImage": "url(./images/backgrounds/packaging-bg-desktop.png)" }}
+            style={{ "backgroundImage": "url(./images/backgrounds/packaging-bg-desktop.webp)" }}
         >
             <div className="content text_center packaging_content">
                 <div className="images_con">
-                    <img className="left" src="./images/backgrounds/packaging-whole.png" alt="whole packaging image" />
-                    { props.windowWidth > 999 ? <img className="right" src="./images/backgrounds/packaging-product.png" alt="packaging product image" /> : null }
+                    <img className="left" src="./images/backgrounds/packaging-whole.webp" alt="whole packaging image" />
+                    { props.windowWidth > 999 ? <img className="right" src="./images/backgrounds/packaging-product.webp" alt="packaging product image" /> : null }
                 </div>
                 <div className="inner">
                     <h2 className="section_h2 color_white">{ props.lang === "it" ? "Sostenibilità" : "Sustainability"}</h2>
