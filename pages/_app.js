@@ -1,3 +1,5 @@
+import '../styles/animate.min.css';
+import '../styles/fontawesome-all.css';
 import '../styles/globals.css';
 import { useEffect } from 'react';
 import * as gtag from "../analytics/gtag";
