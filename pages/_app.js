@@ -1,4 +1,4 @@
-import '../styles/animate.min.css';
+// import '../styles/animate.min.css';
 import '../styles/fontawesome-all.css';
 import '../styles/globals.css';
 import { useEffect } from 'react';
