@@ -13,11 +13,28 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                 windowWidth > 768 
                 ? 
                 <div className="hands_con">
-                    <img id="left_hand" className="left" src="./images/backgrounds/hands-left-1-cropped.webp" alt="hand-left" />
-                    <img id="right_hand" className="right" src="./images/backgrounds/hands-right-1-cropped.webp" alt="hand-left" />
+                    <img
+                        id="left_hand"
+                        className="left"
+                        src="./images/backgrounds/hands-left-1-cropped.webp"
+                        alt="hand-left"
+                        loading="lazy"
+                    />
+                    <img
+                        id="right_hand"
+                        className="right"
+                        src="./images/backgrounds/hands-right-1-cropped.webp"
+                        alt="hand-left"
+                        loading="lazy"
+                    />
                 </div>
                 :
-                <img className="hands_img_mob" src="./images/backgrounds/hands-mob-1.webp" alt="hands image" />
+                <img
+                    className="hands_img_mob"
+                    src="./images/backgrounds/hands-mob-1.webp"
+                    alt="hands image"
+                    loading="lazy"
+                />
             }
             </div>
             <div className="content text_center hands_sec_content hands_sec_top">
@@ -69,7 +86,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
             <div className="content text_center hands_sec_content_two">
                 <h2 className="section_h2 color_white">{ lang === "it" ? "Canapa" : "Hemp"}</h2>
                 <h3 className="section_h3 color_white">{ lang === "it" ? "per la Salute del Pianeta" : "for Planet Health"}</h3>
-                <img id="globe" src="./images/backgrounds/globe-mob.webp" alt="globe image" />
+                <img id="globe" src="./images/backgrounds/globe-mob.webp" alt="globe image" loading="lazy" />
                 <p className="text_center color_white font_300 font_italic hands_sec_italic_text">
                     { 
                         lang === "it"
@@ -102,16 +119,16 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
                             productDetail?.title === "Calm Caps" || productDetail?.title === "Sleep Caps"
                             ?
                                 productDetail?.title === "Calm Caps"
-                                ? <img src={"./images/icons/CALM/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + "_text-ok-01.svg"} alt="stainability icons" />
-                                : <img src={"./images/icons/SLEEP/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
-                            : <img src={"./images/icons/OIL/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
+                                ? <img src={"./images/icons/CALM/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + "_text-ok-01.svg"} alt="stainability icons" loading="lazy" />
+                                : <img src={"./images/icons/SLEEP/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" loading="lazy" />
+                            : <img src={"./images/icons/OIL/Sustainability/Desktop/Vytae_Sustainability_Desktop_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" loading="lazy" />
                         :
                             productDetail?.title === "Calm Caps" || productDetail?.title === "Sleep Caps"
                             ?
                                 productDetail?.title === "Calm Caps"
-                                ? <img src={"./images/icons/CALM/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="stainability icons" />
-                                : <img src={"./images/icons/SLEEP/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
-                            : <img src={"./images/icons/OIL/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" />
+                                ? <img src={"./images/icons/CALM/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + "_text_ok-01.svg"} alt="stainability icons" loading="lazy" />
+                                : <img src={"./images/icons/SLEEP/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" loading="lazy" />
+                            : <img src={"./images/icons/OIL/Sustainability/Mobile/Vytae_Sustainability_Mobile_" + (lang === "it" ? "ITA" : "ENG") + ".svg"} alt="stainability icons" loading="lazy" />
                     }
                 </div>
             </div>

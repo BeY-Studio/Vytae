@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+// import Image from 'next/image';
 
 const RelatedProducts = (props) => {
   return (
@@ -13,7 +14,7 @@ const RelatedProducts = (props) => {
               product.id !== props.productDetail?.id ? (
                 <div className="product_con" key={product.id}>
                   <div className="img_con">
-                    <img src={product?.images?.[0]?.src} alt={product?.title} />
+                    <img src={product?.images?.[0]?.src} alt={product?.title} loading="lazy" />
                   </div>
                   <div className="title">{product?.title}</div>
                   <button className="buy">
