@@ -6,7 +6,7 @@ const HandsSec = ({ windowWidth, productDetail, lang }) => {
     return (
         <div
             className="dark_bg_con hands_section_bg"
-            style={{ "backgroundImage": "url(./images/backgrounds/hands-sec-mob-bg.png)" }}
+            style={{ "backgroundImage": "url(./images/backgrounds/hands-sec-mob-bg.webp)" }}
         >
             <div className="hand_images_con">
             {
